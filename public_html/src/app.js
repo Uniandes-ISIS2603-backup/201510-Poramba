@@ -1,27 +1,27 @@
 (function () {
 
-	var mainApp = angular.module('mainApp', ['ngRoute', 'sportModule','tvShowModule']);
+	var mainApp = angular.module('mainApp', ['ngRoute', 'hotelModule', 'eventModule']);
 
 	mainApp.config(['$routeProvider', function ($routeProvider) {
-			$routeProvider.when('/sport', {
-				templateUrl: 'src/modules/sport/sport.tpl.html'
-			}, $routeProvider.when('/tvShow',{templateUrl:'src/modules/tvShow/tvShow.tpl.html'})).otherwise('/');
+			$routeProvider.when('/hotel', {
+				templateUrl: 'src/modules/hotel/hotel.tpl.html'
+			}, $routeProvider.when('/event',{templateUrl:'src/modules/Event/event.tpl.html'})).otherwise('/');
 		}]);
 
-	//Configuración módulo sport
-	var sportModule = angular.module('sportModule', ['CrudModule', 'MockModule']);
+	//Configuración módulo hotel
+	var hotelModule = angular.module('hotelModule', ['CrudModule', 'MockModule']);
 
-	sportModule.constant('sport.context', 'sports');
+	hotelModule.constant('hotel.context', 'hotels');
 
-	sportModule.config(['sport.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
+	hotelModule.config(['hotel.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
 			urlsProvider.registerUrl(context);
 		}]);
             //configuración moduloTVSHOW
-         var tvShowModule = angular.module('tvShowModule', ['CrudModule', 'MockModule']);
+         var eventModule = angular.module('eventModule', ['CrudModule', 'MockModule']);
 
-	tvShowModule.constant('tvShow.context', 'tvShow');
+	eventModule.constant('event.context', 'event');
 
-	tvShowModule.config(['tvShow.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
+	eventModule.config(['event.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
 			urlsProvider.registerUrl(context);
 		}]);
 })();

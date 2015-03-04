@@ -1,7 +1,7 @@
 (function () {
-	var app = angular.module('eventModule');
+	var app = angular.module('hotelModule');
 
-	app.controller('eventCtrl', ['$scope', 'CRUDUtils', 'event.context', function ($scope, CRUDUtils, context) {
+	app.controller('hotelCtrl', ['$scope', 'CRUDUtils', 'hotel.context', function ($scope, CRUDUtils, context) {
 			this.url = context;
 			CRUDUtils.extendCtrl(this, $scope);
                         
