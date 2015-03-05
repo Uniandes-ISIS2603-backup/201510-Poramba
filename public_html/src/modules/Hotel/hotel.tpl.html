@@ -18,9 +18,9 @@
 				<div class="collapse navbar-collapse" id="country-navbar">
 					<button class="btn btn-default navbar-btn" ng-hide="hotelCtrl.editMode" ng-click="hotelCtrl.createRecord(); hotelCtrl.inicializarNombre(); hotelCtrl.inicializarUbicacion();hotelCtrl.inicializarDescripcion();hotelCtrl.inicializarUrl()"><span class="glyphicon glyphicon-plus"></span> Mas detalle</button>
 					<button class="btn btn-default navbar-btn" ng-hide="hotelCtrl.editMode" ng-click="hotelCtrl.fetchRecords()"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
-					<button class="btn btn-default navbar-btn" ng-show="hotelCtrl.editMode" ng-click="hotelCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+					<button class="btn btn-default navbar-btn" ng-show="hotelCtrl.editMode" ng-click="hotelCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> volver</button>
 					<button class="btn btn-default navbar-btn" ng-show="hotelCtrl.editMode" ng-click="hotelCtrl.fetchRecords()"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-					<button class="btn btn-default navbar-btn" ng-show="hotelCtrl.editMode" ng-click="hotelCtrl.fetchRecords()"><span class="glyphicon glyphicon-plus"></span> Agregar</button>
+					<button class="btn btn-default navbar-btn" ng-show="hotelCtrl.editMode" ng-click="hotelCtrl.ana()"><span class="glyphicon glyphicon-plus"></span> Agregar</button>
 
                                 </div>
 			</div>
@@ -36,7 +36,9 @@
 					<th>Descripcion</th>                                             
 					<th>Link</th>
 				</tr>
+                               
 			</thead>
+                         <img src="src/assets/img/img-4.jpg" class="img-responsive" alt="workimg">
 			<tbody>
 				<tr ng-repeat="record in records">
 					<td>{{record.name}}</td>
@@ -64,11 +66,18 @@
 				<label for="ubicacion">Ubicacion</label>
 				<input id="ubicacion" class="form-control" type="text" ng-model="currentRecord.ubicacionHot"/>
 			</div>
+                        
 			<div class="form-group">
 				<label for="estrellas">Estrellas</label>
-				<input id="estrellas" class="form-control" type="text" ng-model="currentRecord.estrellas"/>
+				<label >{{currentRecord.estrellas}}</label>
 			</div>
-			
+                          <select ng-model="currentRecord.estrellas">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                        </select>
+                        <br></br>
                         <div class="form-group">
 				<label for="Descripcion">Descripcion</label>
 				<input id="Descripcion" class="form-control" type="text" ng-model="currentRecord.descripcion"/>
