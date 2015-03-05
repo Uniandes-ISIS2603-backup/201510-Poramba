@@ -1,0 +1,96 @@
+<div ng-controller="transportationCtrl as transportationCtrl">
+	<div id="header">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#country-navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Transporte</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="country-navbar">
+					<button class="btn btn-default navbar-btn" ng-hide="transportationCtrl.editMode" ng-click="transportationCtrl.createRecord()"><span class="glyphicon glyphicon-plus"></span> Crear</button>
+					<button class="btn btn-default navbar-btn" ng-hide="transportationCtrl.editMode" ng-click="transportationCtrl.fetchRecords()"><span class="glyphicon glyphicon-refresh"></span> Actualizar</button>
+					<button class="btn btn-default navbar-btn" ng-show="transportationCtrl.editMode" ng-click="transportationCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
+					<button class="btn btn-default navbar-btn" ng-show="transportationCtrl.editMode" ng-click="transportationCtrl.fetchRecords()"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<div ng-hide="transportationCtrl.editMode">
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>Ciudad Origen</th>
+                                        <th>Ciudad Destino</th> 
+                                        <th>Distancia (KM)</th>
+                                        <th>Medio de Transporte</th>
+                                        <th>Opciones</th>
+                                 
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="record in records">
+					<td>{{record.origin}}</td>
+					<td>{{record.destiny}}</td>
+                                        <td>{{'se lo damos'}}</td>
+                                        <td>{{record.transport}}</td>
+					<td>
+						<button class="btn btn-default btn-sm" ng-click="transportationCtrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+						<button class="btn btn-default btn-sm" ng-click="transportationCtrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Delete</button>
+					   
+                                        </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div ng-show="transportationCtrl.editMode">
+		<form name="countryForm" role="form">
+			<input id="name" class="form-control" type="hidden" ng-model="currentRecord.id"/>
+			<div class="form-group">
+				<label for="origin">Ciudad de Origen</label>
+				<input type=text list=origin ng-model="currentRecord.origin" >
+                                <datalist id=origin >
+                                    <option> Nueva York
+                                    <option> Bogotá
+                                    <option> Madrid
+                                    <option> Beijin
+                                    <option> Rio de Janeiro
+                                    <option> Taipei
+                                </datalist>
+                        </div>
+			<div class="form-group">
+				<label for="destiny">Ciudad Destino</label>
+				<input type=text list=destiny ng-model="currentRecord.destiny" >
+                                <datalist id=destiny >
+                                    <option> Nueva York
+                                    <option> Bogotá
+                                    <option> Madrid
+                                    <option> Beijin
+                                    <option> Rio de Janeiro
+                                    <option> Taipei
+                                </datalist>
+                        </div>
+                        <div class="form-group">
+				<label for="transport">Medio de Transporte  </label>
+				<input type=text list=transportation ng-model="currentRecord.transport" >
+                                <datalist id=transportation >
+                                    <option> Bus
+                                    <option> Carro Particular
+                                    <option> Taxi
+                                    <option> Barco
+                                    <option> Tren
+                                    <option> Avion
+                                </datalist>
+                        </div>
+		</form>
+	</div>
+    
+    
+</div>
