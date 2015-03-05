@@ -1,3 +1,4 @@
+<div ng-app="mainApp" ng-init="name='John'">
 <div ng-controller="hotelCtrl as hotelCtrl">
 	<div id="header">
 		<nav class="navbar navbar-default" role="navigation">
@@ -15,11 +16,13 @@
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="country-navbar">
-					<button class="btn btn-default navbar-btn" ng-hide="hotelCtrl.editMode" ng-click="hotelCtrl.createRecord()"><span class="glyphicon glyphicon-plus"></span> Create</button>
+					<button class="btn btn-default navbar-btn" ng-hide="hotelCtrl.editMode" ng-click="hotelCtrl.createRecord(); hotelCtrl.inicializarNombre(); hotelCtrl.inicializarUbicacion();hotelCtrl.inicializarDescripcion();hotelCtrl.inicializarUrl()"><span class="glyphicon glyphicon-plus"></span> Mas detalle</button>
 					<button class="btn btn-default navbar-btn" ng-hide="hotelCtrl.editMode" ng-click="hotelCtrl.fetchRecords()"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
-					<button class="btn btn-default navbar-btn" ng-show="hotelCtrl.editMode" ng-click="hotelCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+					<button class="btn btn-default navbar-btn" ng-show="hotelCtrl.editMode" ng-click="hotelCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> volver</button>
 					<button class="btn btn-default navbar-btn" ng-show="hotelCtrl.editMode" ng-click="hotelCtrl.fetchRecords()"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-				</div>
+					<button class="btn btn-default navbar-btn" ng-show="hotelCtrl.editMode" ng-click="hotelCtrl.ana()"><span class="glyphicon glyphicon-plus"></span> Agregar</button>
+
+                                </div>
 			</div>
 		</nav>
 	</div>
@@ -28,23 +31,25 @@
 			<thead>
 				<tr>
 					<th>Name</th>
-                                        <th>Estellas</th> 
-					<th>Descripcion</th>
-                                        <th>Ubicacion</th>     
-					<th>Actions</th>
+                                        <th>Ubicacion</th>
+                                        <th>Estrellas</th> 
+					<th>Descripcion</th>                                             
+					<th>Link</th>
 				</tr>
+                               
 			</thead>
+                         <img src="src/assets/img/img-4.jpg" class="img-responsive" alt="workimg">
 			<tbody>
 				<tr ng-repeat="record in records">
 					<td>{{record.name}}</td>
+                                        <td>{{record.ubicacionHot}}</td>
 					<td>{{record.estrellas}}</td>
-					<td>{{record.maxAge}}</td>
-                                        <td>{{record.rules}}</td>
-                                        <td>{{(record.minAge + record.maxAge)/2}}</td>
+                                        <td>{{record.descripcion}}</td>
+                                        <td><a href="/{{record.link}}">Hotel</a>}}</td>
 					<td>
-						<button class="btn btn-default btn-sm" ng-click="hotelCtrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
-						<button class="btn btn-default btn-sm" ng-click="hotelCtrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Delete</button>
-					   
+					<button class="btn btn-default btn-sm" ng-click="hotelCtrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Delete</button>
+	
+                                            <button class="btn btn-default btn-sm" ng-click="hotelCtrl.editRecord(record)"><span class="glyphicon glyphicon-plus"></span> Edit</button>					   
                                         </td>
 				</tr>
 			</tbody>
@@ -54,20 +59,34 @@
 		<form name="countryForm" role="form">
 			<input id="name" class="form-control" type="hidden" ng-model="currentRecord.id"/>
 			<div class="form-group">
+                          
 				<label for="name">Name</label>
-				<input id="name" class="form-control" type="text" ng-model="currentRecord.name"/>
+                               
+				<input id="name" class="form-control" type="text" ng-model="currentRecord.name"  />
+			</div> 
+                        <div class="form-group">
+				<label for="ubicacion">Ubicacion</label>
+				<input id="ubicacion" class="form-control" type="text" ng-model="currentRecord.ubicacionHot"/>
 			</div>
+                        
 			<div class="form-group">
 				<label for="estrellas">Estrellas</label>
-				<input id="estrellas" class="form-control" type="number" ng-model="currentRecord.estrellas"/>
+				<label >{{currentRecord.estrellas}}</label>
 			</div>
-			<div class="form-group">
-				<label for="ubicacion">Ubicacion</label>
-				<input id="ubicacion" class="form-control" type="number" ng-model="currentRecord.ubicacion"/>
-			</div>
+                          <select ng-model="currentRecord.estrellas">
+                          <option value="1">&#9733;</option>
+                          <option value="2">&#9733;&#9733;</option>
+                          <option value="3">&#9733;&#9733;&#9733;</option>
+                          <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
+                        </select>
+                        <br></br>
                         <div class="form-group">
 				<label for="Descripcion">Descripcion</label>
-				<input id="Descripcion" class="form-control" type="text" ng-model="currentRecord.Descripcion"/>
+				<input id="Descripcion" class="form-control" type="text" ng-model="currentRecord.descripcion"/>
+			</div>
+                        <div class="form-group">
+				<label for="link">Link</label>
+				<input id="link" class="form-control" type="text" ng-model="currentRecord.link"/>
 			</div>
 		</form>
             <div class="ec-stars-wrapper">
@@ -79,5 +98,5 @@
             </div>
 	</div>
     
-    
+    </div>
 </div>
