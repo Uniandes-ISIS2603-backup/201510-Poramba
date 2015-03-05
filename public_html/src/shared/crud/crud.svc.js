@@ -24,9 +24,7 @@
                                 
                             };
                             
-                            this.inicializarNombre = function(){
-                                $scope.currentRecord.name = 'Pestana casino park';
-                            };
+                           
                              this.inicializarUbicacion = function(){
                                 $scope.currentRecord.ubicacionHot = 'Isla de madeira';
                             };
