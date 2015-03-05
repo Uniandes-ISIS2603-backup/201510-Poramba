@@ -47,7 +47,9 @@
                                         <td>{{record.descripcion}}</td>
                                         <td><a href="/{{record.link}}">Hotel</a>}}</td>
 					<td>
-						<button class="btn btn-default btn-sm" ng-click="hotelCtrl.editRecord(record)"><span class="glyphicon glyphicon-plus"></span> Edit</button>					   
+					<button class="btn btn-default btn-sm" ng-click="hotelCtrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Delete</button>
+	
+                                            <button class="btn btn-default btn-sm" ng-click="hotelCtrl.editRecord(record)"><span class="glyphicon glyphicon-plus"></span> Edit</button>					   
                                         </td>
 				</tr>
 			</tbody>
@@ -72,10 +74,10 @@
 				<label >{{currentRecord.estrellas}}</label>
 			</div>
                           <select ng-model="currentRecord.estrellas">
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
+                          <option value="1">&#9733;</option>
+                          <option value="2">&#9733;&#9733;</option>
+                          <option value="3">&#9733;&#9733;&#9733;</option>
+                          <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
                         </select>
                         <br></br>
                         <div class="form-group">
