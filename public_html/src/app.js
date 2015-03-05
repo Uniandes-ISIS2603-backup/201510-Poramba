@@ -1,6 +1,6 @@
 (function () {
 
-    var mainApp = angular.module('mainApp', ['ngRoute', 'hotelModule', 'eventModule','travelerModule']);
+    var mainApp = angular.module('mainApp', ['ngRoute', 'hotelModule', 'eventModule','travelerModule', 'transportationModule']);
 
     mainApp.config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/hotel', {
@@ -9,6 +9,9 @@
             $routeProvider.when('/event', {templateUrl: 'src/modules/Event/event.tpl.html'})).otherwise('/');
             $routeProvider.when('/traveler', {
                 templateUrl: 'src/modules/traveler/traveler.tpl.html'
+            }),
+                    $routeProvider.when('/transportation', {
+                templateUrl: 'src/modules/Transportation/transportation.tpl.html'
             }).otherwise('/');
         }]);
 
@@ -33,6 +36,11 @@
     var playerModule = angular.module('travelerModule', ['CrudModule', 'MockModule']);
     playerModule.constant('traveler.context', 'travelers');
     playerModule.config(['traveler.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
+            urlsProvider.registerUrl(context);
+        }]);
+    var transportationModule = angular.module('transportationModule', ['CrudModule', 'MockModule']);
+    transportationModule.constant('transportation.context', 'travelers');
+    transportationModule.config(['transportation.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
             urlsProvider.registerUrl(context);
         }]);
 })();
