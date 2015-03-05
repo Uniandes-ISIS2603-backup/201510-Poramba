@@ -19,8 +19,9 @@
 					<button class="btn btn-default navbar-btn" ng-hide="hotelCtrl.editMode" ng-click="hotelCtrl.createRecord(); hotelCtrl.inicializarNombre(); hotelCtrl.inicializarUbicacion();hotelCtrl.inicializarDescripcion();hotelCtrl.inicializarUrl()"><span class="glyphicon glyphicon-plus"></span> Mas detalle</button>
 					<button class="btn btn-default navbar-btn" ng-hide="hotelCtrl.editMode" ng-click="hotelCtrl.fetchRecords()"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
 					<button class="btn btn-default navbar-btn" ng-show="hotelCtrl.editMode" ng-click="hotelCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
-					<button class="btn btn-default navbar-btn" ng-show="hotelCtrl.editMode" ng-click="hotelCtrl.inicializarNombre()"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-				
+					<button class="btn btn-default navbar-btn" ng-show="hotelCtrl.editMode" ng-click="hotelCtrl.fetchRecords()"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+					<button class="btn btn-default navbar-btn" ng-show="hotelCtrl.editMode" ng-click="hotelCtrl.fetchRecords()"><span class="glyphicon glyphicon-plus"></span> Agregar</button>
+
                                 </div>
 			</div>
 		</nav>
@@ -43,11 +44,8 @@
 					<td>{{record.estrellas}}</td>
                                         <td>{{record.descripcion}}</td>
                                         <td><a href="/{{record.link}}">Hotel</a>}}</td>
-                                        <p>You wrote: {{ record.link }}</p>
 					<td>
-						<button class="btn btn-default btn-sm" ng-click="hotelCtrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
-						<button class="btn btn-default btn-sm" ng-click="hotelCtrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Delete</button>
-					   
+						<button class="btn btn-default btn-sm" ng-click="hotelCtrl.editRecord(record)"><span class="glyphicon glyphicon-plus"></span> Edit</button>					   
                                         </td>
 				</tr>
 			</tbody>
@@ -73,7 +71,7 @@
 			
                         <div class="form-group">
 				<label for="Descripcion">Descripcion</label>
-				<input id="Descripcion" class="form-control" type="text" ng-model="currentRecord.Descripcion"/>
+				<input id="Descripcion" class="form-control" type="text" ng-model="currentRecord.descripcion"/>
 			</div>
                         <div class="form-group">
 				<label for="link">Link</label>

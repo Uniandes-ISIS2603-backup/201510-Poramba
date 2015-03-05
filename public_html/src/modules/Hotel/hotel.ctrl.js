@@ -7,6 +7,10 @@
                         
 			this.fetchRecords();
 		}]);           
+            this.nuevaj = function()
+            {
+                window.location.replace("http://www.mydomain.com/new-page.html");
+            };
             
             
             

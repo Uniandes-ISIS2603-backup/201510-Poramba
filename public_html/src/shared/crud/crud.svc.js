@@ -31,7 +31,7 @@
                                 $scope.currentRecord.ubicacionHot = 'Isla de madeira';
                             };
                               this.inicializarDescripcion = function(){
-                                $scope.currentRecord.Descripcion = 'EL PESTANA CASINO PARK FORMA PARTE DEL'+ '\n'+' COMPLEJO TURÍSTICO MÁS EMBLEMÁTICO DE LA ISLA DE MADEIRA.';
+                                $scope.currentRecord.descripcion = 'EL PESTANA CASINO PARK FORMA PARTE DEL COMPLEJO TURÍSTICO MÁS EMBLEMÁTICO DE LA ISLA DE MADEIRA.';
                             };
                               this.inicializarUrl = function(){
                                 $scope.currentRecord.link = 'http://www.pestana.com/es/pestana-casino-park-hotel/pages/home.aspx';
@@ -39,6 +39,7 @@
 				this.createRecord = function () {
 					this.editMode = true;
 					$scope.currentRecord = {};
+                                        
 				};
 				this.saveRecord = function () {
 					var self = this;
