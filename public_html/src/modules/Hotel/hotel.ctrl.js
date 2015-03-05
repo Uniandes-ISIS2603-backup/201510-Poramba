@@ -6,7 +6,8 @@
 			CRUDUtils.extendCtrl(this, $scope);
                         
 			this.fetchRecords();
-		}]);                                  
+		}]);           
+            
             
             
 })();
