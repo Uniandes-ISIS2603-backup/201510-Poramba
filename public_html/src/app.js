@@ -10,6 +10,9 @@
             $routeProvider.when('/traveler', {
                 templateUrl: 'src/modules/traveler/traveler.tpl.html'
             }).otherwise('/');
+            $routeProvider.when('/transportation', {
+                templateUrl: 'src/modules/Transportation/transportation.tpl.html'
+            }).otherwise('/'); 
             $routeProvider.when('/itinerary', {
                 templateUrl: 'src/modules/Itinerary/itinerary.tpl.html'
             }).otherwise('/'); 
@@ -36,6 +39,13 @@
     var playerModule = angular.module('travelerModule', ['CrudModule', 'MockModule']);
     playerModule.constant('traveler.context', 'travelers');
     playerModule.config(['traveler.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
+            urlsProvider.registerUrl(context);
+        }]);
+    
+    //configuración modulo Transportation
+    var transportationModule = angular.module('transportationModule', ['CrudModule', 'MockModule']);
+    transportationModule.constant('transportation.context', 'transportations');
+    transportationModule.config(['transportation.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
             urlsProvider.registerUrl(context);
         }]);
     
