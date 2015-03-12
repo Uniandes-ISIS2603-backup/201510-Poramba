@@ -196,7 +196,7 @@ atrbN,
 </tr>
 <tr>
 <td>put</td>
-<td>/city/:id</td>
+<td>/transporte/:id</td>
 <td>actualizar los atributos de un transporte con un identificador determinado</td>
 <td>Objeto Json de transporte</td>
 <td><strong>@PathParam id: </strong> identificador del registro</td>
@@ -261,7 +261,7 @@ atrbN,
 </tr>
 <tr>
 <td>put</td>
-<td>/city/:id</td>
+<td>/intinerary/:id</td>
 <td>actualizar los atributos de un intinerario con un identificador determinado</td>
 <td>Objeto Json de intinerario</td>
 <td><strong>@PathParam id: </strong> identificador del registro</td>
