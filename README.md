@@ -146,3 +146,198 @@ atrbN,
 </tr>
 </tbody>
 </table>
+
+
+<h2 id="transporte">Transporte</h2>
+<p>En la siguiente tabla se detalla los servicios REST generados para la entidad transporte.</p>
+<h3 id="estructura-de-un-objeto-json-de-un-transporte-">Estructura de un objeto Json del transporte.</h3>
+<p>{
+    <strong>ciudad_origen</strong>: '' /<em>Tipo String</em>/,
+    <strong>ciudad_destino</strong>: '' /<em>Tipo String</em>/,
+    <strong>distancia</strong>: '' /<em>Tipo Long</em>/,
+    <strong>medio_de_transporte</strong>: '' /<em>Tipo Integer</em>/,
+    <strong>reglas</strong>: '' /<em>Tipo String</em>/
+}</p>
+<table>
+<thead>
+<tr>
+<th>Metodo</th>
+<th>URI</th>
+<th>ACCION</th>
+<th>PARAMETROS</th>
+<th>CUERPO</th>
+<th>RETORNO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>get</td>
+<td>/transporte</td>
+<td>obtener todos los objetos Json de transporte</td>
+<td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima transporte</td>
+<td>transporte</td>
+<td>UN objeto Json con coleccion de objetos y la cantidad con la que llega</td>
+</tr>
+<tr>
+<td>get</td>
+<td>/transporte/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del transporte con un id</td>
+</tr>
+<tr>
+<td>post</td>
+<td>/transporte/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td></td>
+<td>Objeto Json a crear de transporte</td>
+<td>un objeto Json de transporte creado</td>
+</tr>
+<tr>
+<td>put</td>
+<td>/transporte/:id</td>
+<td>actualizar los atributos de un transporte con un identificador determinado</td>
+<td>Objeto Json de transporte</td>
+<td><strong>@PathParam id: </strong> identificador del registro</td>
+<td>un objeto Json con el sus atributos actualizados</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>/transporte/:id</td>
+<td>Borra una instancia de un transporte  con un identificador</td>
+<td>Objeto Json de transporte</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="intinerary">Intinerario</h2>
+<p>En la siguiente tabla se detalla los servicios REST generados para la entidad intinerario.</p>
+<h3 id="estructura-de-un-objeto-json-de-un-intinerario-">Estructura de un objeto Json del intinerario.</h3>
+<p>{
+    <strong>nombre</strong>: '' /<em>Tipo String</em>/,
+    <strong>descripcion</strong>: '' /<em>Tipo String</em>/,
+    <strong>inicio</strong>: '' /<em>Tipo String</em>/,
+    <strong>final</strong>: '' /<em>Tipo String</em>/,
+    <strong>acciones</strong>: '' /<em>Tipo String</em>/
+}</p>
+<table>
+<thead>
+<tr>
+<th>Metodo</th>
+<th>URI</th>
+<th>ACCION</th>
+<th>PARAMETROS</th>
+<th>CUERPO</th>
+<th>RETORNO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>get</td>
+<td>/intinerary</td>
+<td>obtener todos los objetos Json de intinerario</td>
+<td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima intinerario</td>
+<td>intinerary</td>
+<td>UN objeto Json con coleccion de objetos y la cantidad con la que llega</td>
+</tr>
+<tr>
+<td>get</td>
+<td>/intinerary/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del intinerario con un id</td>
+</tr>
+<tr>
+<td>post</td>
+<td>/intinerary/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td></td>
+<td>Objeto Json a crear de intinerario</td>
+<td>un objeto Json de intinerario creado</td>
+</tr>
+<tr>
+<td>put</td>
+<td>/intinerary/:id</td>
+<td>actualizar los atributos de un intinerario con un identificador determinado</td>
+<td>Objeto Json de intinerario</td>
+<td><strong>@PathParam id: </strong> identificador del registro</td>
+<td>un objeto Json con el sus atributos actualizados</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>/intinerary/:id</td>
+<td>Borra una instancia de un intinerario  con un identificador</td>
+<td>Objeto Json de intinerario</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="city">Ciudad</h2>
+<p>En la siguiente tabla se detalla los servicios REST generados para la entidad Ciudad.</p>
+<h3 id="estructura-de-un-objeto-json-de-un-ciudad-">Estructura de un objeto Json del Ciudad.</h3>
+<p>{
+    <strong>nombre</strong>: '' /<em>Tipo String</em>/,
+    <strong>descripcion</strong>: '' /<em>Tipo String</em>/,
+    <strong>link</strong>: '' /<em>Tipo String</em>/,
+    
+}</p>
+<table>
+<thead>
+<tr>
+<th>Metodo</th>
+<th>URI</th>
+<th>ACCION</th>
+<th>PARAMETROS</th>
+<th>CUERPO</th>
+<th>RETORNO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>get</td>
+<td>/city</td>
+<td>obtener todos los objetos Json de Ciudad</td>
+<td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima Ciudad</td>
+<td>city</td>
+<td>UN objeto Json con coleccion de objetos y la cantidad con la que llega</td>
+</tr>
+<tr>
+<td>get</td>
+<td>/city/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del Ciudad con un id</td>
+</tr>
+<tr>
+<td>post</td>
+<td>/city/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td></td>
+<td>Objeto Json a crear de Ciudad</td>
+<td>un objeto Json de Ciudad creado</td>
+</tr>
+<tr>
+<td>put</td>
+<td>/city/:id</td>
+<td>actualizar los atributos de un Ciudad con un identificador determinado</td>
+<td>Objeto Json de Ciudad</td>
+<td><strong>@PathParam id: </strong> identificador del registro</td>
+<td>un objeto Json con el sus atributos actualizados</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>/city/:id</td>
+<td>Borra una instancia de un Ciudad  con un identificador</td>
+<td>Objeto Json de Ciudad</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
