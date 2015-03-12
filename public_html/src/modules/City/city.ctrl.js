@@ -6,6 +6,8 @@
 			CRUDUtils.extendCtrl(this, $scope);
                         
 			this.fetchRecords();
+                        $scope.showForm = true;
+			
 		}]);                                  
             
             
