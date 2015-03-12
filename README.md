@@ -77,7 +77,7 @@ atrbN,
 <td>/hotel/:id</td>
 <td>Borra una instancia de hotel con un identificador</td>
 <td>Objeto Json de hotel</td>
-<td><strong>@PathParam id:</strong> identificador del registro a borrar</td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
@@ -141,7 +141,7 @@ atrbN,
 <td>/event/:id</td>
 <td>Borra una instancia de un evento  con un identificador</td>
 <td>Objeto Json de evento</td>
-<td><strong>@PathParam id:</strong> identificador del registro a borrar</td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
