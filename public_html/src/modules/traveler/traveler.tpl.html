@@ -10,7 +10,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Traveler</a>
+                    <a class="navbar-brand" href="#">Viajero</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -30,7 +30,7 @@
                     <th>Pasaporte</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
-                    <th>Edad</th>                    
+                    <th>Fecha de Nacimiento</th>                    
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -39,7 +39,7 @@
                     <td>{{record.pasaporte}}</td>
                     <td>{{record.nombre}}</td>
                     <td>{{record.apellido}}</td>
-                    <td>{{record.edad}}</td>                    
+                    <td>{{record.fecha_nac}}</td>                    
                     <td>
                         <button class="btn btn-default btn-sm" ng-click="travelerCtrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
                         <button class="btn btn-default btn-sm" ng-click="travelerCtrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Delete</button>                        
@@ -64,8 +64,8 @@
                 <input id="apellido" class="form-control" type="text" ng-model="currentRecord.apellido"/>
             </div>
             <div class="form-group">
-                <label for="edad">Edad</label>
-                <input id="edad" class="form-control" type="number" ng-model="currentRecord.edad"/>
+                <label for="fecha_nac">Fecha de Nacimiento</label>
+                <input id="fecha_nac" class="form-control" type="date" ng-model="currentRecord.edad"/>
             </div>
         </form>
     </div>
