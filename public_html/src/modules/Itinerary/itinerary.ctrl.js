@@ -7,26 +7,26 @@
                       
 			this.fetchRecords();
                         ciudadService.fetchRecords().then(function(data){
-                            $scope.ciudadRecords = data;
+                            $scope.records = data;
                             });
                             
                         this.fetchRecords();
                         eventService.fetchRecords().then(function(data){
-                            $scope.eventRecords = data;
+                            $scope.records = data;
                             });    
                             
                              this.getCiudadName = function(id){
-                for (var i in $scope.ciudadRecords) {
+                for (var i in $scope.records) {
                     
-                    if ($scope.ciudadRecords[i].id === id) {
-                        return $scope.ciudadRecords[i].name;
+                    if ($scope.records[i].id === id) {
+                        return $scope.records[i].name;
                     }
                 }
                 return;
                     };
             this.getEnventName= function(id){
-                for (var i in $scope.eventRecords) {
-                    if ($scope.eventRecords[i].id === id) {
+                for (var i in $scope.records) {
+                    if ($scope.records[i].id === id) {
                         return $scope.eventRecords[i].name;
                     }
                 }
