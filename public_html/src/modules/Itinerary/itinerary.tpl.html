@@ -31,16 +31,19 @@
                                         <th>Descripcion</th>
                                         <th>Inicio</th>     
 					<th>Final</th>
+                                        <th>Ciudad</th>
+                                        <th>Eventos</th>
                                         <th>Actions</th>
 				</tr>
-			</thead>
-			<tbody>
+			
 				<tr ng-repeat="record in records">
 					<td>{{record.name}}</td>
 					<td>{{record.descripcion}}</td>
 					<td>{{record.inicio}}</td>
                                         <td>{{record.final}}</td>
-                               		<td>
+                                        <td>{{itineraryCtrl.getCiudadName(record.ciudad)}}</td>
+                                         <td>{{itineraryCtrl.getEnventName(record.evento)}}</td>
+                               		
 						<button class="btn btn-default btn-sm" ng-click="itineraryCtrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
 						<button class="btn btn-default btn-sm" ng-click="itineraryCtrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Delete</button>
 					   
@@ -68,10 +71,21 @@
 				<label for="name">Final</label>
 				<input id="final" class="form-control" type="date" ng-model="currentRecord.final"/>
 			</div>
+                         
                         <div class="form-group">
 				<label for="rules">Rules</label>
 				<input id="rules" class="form-control" type="text" ng-model="currentRecord.rules"/>
 			</div>
+                        
+                          <div class="form-group">
+                <label for="ciudad">Ciudad</label>
+                <select id="ciudad" class="form-control" ng-options="ciudad.id as ciudad.name for ciudad in ciudadRecords" ng-model="currentRecord.ciudad"></select>
+                            </div>
+                        
+                         <div class="form-group">
+                <label for="eventos">Eventos</label>
+                <select id="eventos" class="form-control" ng-options="event.id as event.name for ciudad in eventRecords" ng-model="currentRecord.event"></select>
+                            </div>
 		</form>
             
 	</div>
