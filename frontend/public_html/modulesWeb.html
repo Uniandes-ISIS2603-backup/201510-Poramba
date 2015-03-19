@@ -68,7 +68,12 @@
                 <script src="src/modules/Transportation/transportation.ctrl.js"></script>
     </head>
     <body>
-		<div class="container">
+        <div class="container">
+                        <div class="col-md-10">
+				<ul class="nav nav-pills nav-stacked">
+					<li><a href="index.html">Inicio</a></li>
+				</ul>
+			</div>
                         <div class="col-md-10">
 				<ul class="nav nav-pills nav-stacked">
 					<li><a href="#/hotel">Hoteles</a></li>
@@ -89,7 +94,7 @@
 					<li><a href="#/itinerary">Itinerario</a></li>
 				</ul>
 			</div>
-                    			<div class="col-md-10">
+                    	<div class="col-md-10">
 				<ul class="nav nav-pills nav-stacked">
 					<li><a href="#/transportation">Transporte</a></li>
 				</ul>
@@ -98,9 +103,9 @@
                             <ul class="nav nav-pills nav-stacked">
 					<li><a href="#/traveler">Viajero</a></li>
 				</ul>
-				<div ng-view></div>
+				
 			</div>
-			
+			<div ng-view></div>
 		</div>
 	</body>
 </html>
