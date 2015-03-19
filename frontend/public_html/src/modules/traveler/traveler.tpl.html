@@ -3,6 +3,19 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
+                
+     <section class="intro-text">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 text-center">
+                        <h2 class="wow animated fadeInDown"><img src="src/assets/img/traveler.png" alt="VACAS"></span></h2>
+                        <p class="lead animated fadeIn">
+                           Nuestros viajeros, conoce a otras personas que compartan tus intereses!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#country-navbar">
                         <span class="sr-only">Toggle navigation</span>
@@ -50,22 +63,22 @@
     </div>
     <div ng-show="travelerCtrl.editMode">
         <form name="countryForm" role="form">
-            <input id="name" class="form-control" type="hidden" ng-model="currentRecord.id"/>
+            <input id="name" class="form-control" type="hidden" ng-model="currentRecord.id" required/>
             <div class="form-group">
                 <label for="pasaporte">Pasaporte</label>
-                <input id="pasaporte" class="form-control" type="text" ng-model="currentRecord.pasaporte"/>
+                <input id="pasaporte" class="form-control" type="text" ng-model="currentRecord.pasaporte" required/>
             </div>
             <div class="form-group">
                 <label for="nombre">Nombre</label>
-                <input id="nombre" class="form-control" type="text" ng-model="currentRecord.nombre"/>
+                <input id="nombre" class="form-control" type="text" ng-model="currentRecord.nombre" required/>
             </div>
             <div class="form-group">
                 <label for="apellido">Apellido</label>
-                <input id="apellido" class="form-control" type="text" ng-model="currentRecord.apellido"/>
+                <input id="apellido" class="form-control" type="text" ng-model="currentRecord.apellido" required/>
             </div>
             <div class="form-group">
                 <label for="fecha_nac">Fecha de Nacimiento</label>
-                <input id="fecha_nac" class="form-control" type="date" ng-model="currentRecord.edad"/>
+                <input id="fecha_nac" class="form-control" type="date" ng-model="currentRecord.edad" required/>
             </div>
         </form>
     </div>

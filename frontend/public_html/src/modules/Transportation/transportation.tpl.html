@@ -2,6 +2,19 @@
 	<div id="header">
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="container-fluid">
+                            
+                                                                                        <section class="intro-text">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 text-center">
+                        <h2 class="wow animated fadeInDown"><img src="src/assets/img/airplane.png" alt="VACAS"></span></h2>
+                        <p class="lead animated fadeIn">
+                           Los viajes en los mejores horario y con los mejores precios estan acá!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#country-navbar">
@@ -55,7 +68,7 @@
 			<input id="name" class="form-control" type="hidden" ng-model="currentRecord.id"/>
 			<div class="form-group">
 				<label for="origin">Ciudad de Origen</label>
-				<input type=text list=origin ng-model="currentRecord.origin" >
+				<input type=text list=origin ng-model="currentRecord.origin" required>
                                 <datalist id=origin >
                                     <option> Nueva York
                                     <option> Bogotá
@@ -67,7 +80,7 @@
                         </div>
 			<div class="form-group">
 				<label for="destiny">Ciudad Destino</label>
-				<input type=text list=destiny ng-model="currentRecord.destiny" >
+				<input type=text list=destiny ng-model="currentRecord.destiny" required/>
                                 <datalist id=destiny >
                                     <option> Nueva York
                                     <option> Bogotá
@@ -79,7 +92,7 @@
                         </div>
                         <div class="form-group">
 				<label for="transport">Medio de Transporte  </label>
-				<input type=text list=transportation ng-model="currentRecord.transport" >
+				<input type=text list=transportation ng-model="currentRecord.transport" required>
                                 <datalist id=transportation >
                                     <option> Bus
                                     <option> Carro Particular

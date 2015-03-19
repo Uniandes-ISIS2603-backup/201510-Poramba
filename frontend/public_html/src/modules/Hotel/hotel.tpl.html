@@ -3,6 +3,19 @@
 	<div id="header">
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="container-fluid">
+                            
+                                                            <section class="intro-text">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 text-center">
+                        <h2 class="wow animated fadeInDown"><img src="src/assets/img/hotel.png" alt="VACAS"></span></h2>
+                        <p class="lead animated fadeIn">
+                           Hotel 5 estrellas? un hostal? lo que se acomode a tus necesidades lo encuentras aca!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#country-navbar">
@@ -58,16 +71,16 @@
 	</div>
 	<div ng-show="hotelCtrl.editMode">
 		<form name="countryForm" role="form">
-			<input id="name" class="form-control" type="text" ng-model="currentRecord.id"/>
+			<input id="name" class="form-control" type="text" ng-model="currentRecord.id" required/>
 			<div class="form-group">
                           
 				<label for="name">Name</label>
                                
-				<input id="name" class="form-control" type="text" ng-model="currentRecord.name"  />
+				<input id="name" class="form-control" type="text" ng-model="currentRecord.name" required />
 			</div> 
                         <div class="form-group">
 				<label for="ubicacion">Ubicacion</label>
-				<input id="ubicacion" class="form-control" type="text" ng-model="currentRecord.ubicacionHot"/>
+				<input id="ubicacion" class="form-control" type="text" ng-model="currentRecord.ubicacionHot" required/>
 			</div>
                         
 			<div class="form-group">
@@ -83,11 +96,11 @@
                         <br></br>
                         <div class="form-group">
 				<label for="Descripcion">Descripcion</label>
-				<input id="Descripcion" class="form-control" type="text" ng-model="currentRecord.descripcion"/>
+				<input id="Descripcion" class="form-control" type="text" ng-model="currentRecord.descripcion" required/>
 			</div>
                         <div class="form-group">
 				<label for="link">Link</label>
-				<input id="link" class="form-control" type="text" ng-model="currentRecord.link"/>
+				<input id="link" class="form-control" type="text" ng-model="currentRecord.link" required/>
 			</div>
 		</form>
             <div class="ec-stars-wrapper">
