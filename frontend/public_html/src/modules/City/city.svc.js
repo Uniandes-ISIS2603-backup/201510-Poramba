@@ -1,10 +1,9 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-module.exports = function (grunt) {
-    // Project configuration.
-    grunt.initConfig({
-    });
-};
+(function () {
+    var cityModule = angular.module('cityModule', ['CrudModule', 'MockModule','countryModule']);
+/*se debe construire otro mock*/
+    cityModule.constant('city.context', 'citys');
+
+    cityModule.config(['city.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
+            urlsProvider.registerUrl(context);
+        }]);
+})();

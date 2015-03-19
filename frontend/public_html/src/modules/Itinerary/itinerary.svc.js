@@ -1,5 +1,5 @@
 (function () {
-    var eventModule = angular.module('eventModule', ['CrudModule', 'MockModule','countryModule']);
+    var eventModuleInt = angular.module('eventModuleInt', ['CrudModule', 'MockModule','eventModuleInt']);
 /*se debe construire otro mock*/
     eventModule.constant('event.context', 'events');
 
@@ -7,3 +7,6 @@
             urlsProvider.registerUrl(context);
         }]);
 })();
+
+
+
