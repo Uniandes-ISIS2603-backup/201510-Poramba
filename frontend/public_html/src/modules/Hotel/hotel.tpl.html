@@ -38,7 +38,7 @@
 				</tr>
                                
 			</thead>
-                         <img src="src/assets/img/img-4.jpg" class="img-responsive" alt="workimg">
+                        
 			<tbody>
 				<tr ng-repeat="record in records">
 					<td>{{record.name}}</td>
@@ -53,11 +53,12 @@
                                         </td>
 				</tr>
 			</tbody>
+                         <img src="src/assets/img/img-4.jpg" class="img-responsive" alt="workimg">
 		</table>
 	</div>
 	<div ng-show="hotelCtrl.editMode">
 		<form name="countryForm" role="form">
-			<input id="name" class="form-control" type="hidden" ng-model="currentRecord.id"/>
+			<input id="name" class="form-control" type="text" ng-model="currentRecord.id"/>
 			<div class="form-group">
                           
 				<label for="name">Name</label>
