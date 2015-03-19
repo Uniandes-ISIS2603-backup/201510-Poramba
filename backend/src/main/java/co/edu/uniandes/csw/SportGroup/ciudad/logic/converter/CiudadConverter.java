@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.SportGroup.usuario.logic.converter;
+package co.edu.uniandes.csw.SportGroup.ciudad.logic.converter;
 
+import co.edu.uniandes.csw.SportGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.SportGroup.usuario.logic.converter.*;
 import co.edu.uniandes.csw.SportGroup.transporte.logic.converter.*;
 import co.edu.uniandes.csw.SportGroup.country.logic.dto.CountryDTO;
 import co.edu.uniandes.csw.SportGroup.country.logic.entity.CountryEntity;
 import co.edu.uniandes.csw.SportGroup.usuario.logic.dto.UsuarioDTO;
-import co.edu.uniandes.csw.SportGroup.usuario.logic.entity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,15 +18,14 @@ import java.util.List;
  *
  * @author afesguerra
  */
-public class UsuarioConverter {
-    public static UsuarioDTO entity2PersistenceDTO(UsuarioEntity entity) {
+public class CiudadConverter {
+    public static CiudadDTO entity2PersistenceDTO(CiudadEntity entity) {
         if (entity != null) {
-            UsuarioDTO dto = new UsuarioDTO();
-            dto.setId(entity.getId());
-            dto.setPasaporte(entity.getPasaporte());
+            CiudadDTO dto = new CiudadDTO();
+            dto.setId(entity.getId());            
             dto.setNombre(entity.getNombre());
-            dto.setApellido(entity.getApellido());
-            dto.setFechaNacimento(entity.getFechaNacimiento());
+            dto.setDescripcion(entity.getDescripcion());
+            dto.setLink(entity.getLink());
             /*dto.setPopulation(entity.getPopulation());*/
             return dto;
         } else {
@@ -33,15 +33,15 @@ public class UsuarioConverter {
         }
     }
 
-    public static UsuarioEntity persistenceDTO2Entity(UsuarioDTO dto) {
+    public static CiudadEntity persistenceDTO2Entity(CiudadDTO dto) {
         if (dto != null) {
-            UsuarioEntity entity = new UsuarioEntity();
+            CiudadEntity entity = new CiudadEntity();
             entity.setId(dto.getId());
 
             entity.setPasaporte(dto.getPasaporte());
             entity.setNombre(dto.getNombre());
-            entity.setApellido(dto.getApellido());
-            entity.setFechaNacimiento(dto.getFechaNacimiento());
+            entity.setDescripcion(dto.getDescripcion());
+            entity.setLink(dto.getLink());
 
             return entity;
         } else {
@@ -49,17 +49,17 @@ public class UsuarioConverter {
         }
     }
 
-    public static List<UsuarioDTO> entity2PersistenceDTOList(List<UsuarioEntity> entities) {
-        List<UsuarioDTO> dtos = new ArrayList<UsuarioDTO>();
-        for (UsuarioEntity entity : entities) {
+    public static List<CiudadDTO> entity2PersistenceDTOList(List<CiudadEntity> entities) {
+        List<c> dtos = new ArrayList<CiudadDTO>();
+        for (CiudadEntity entity : entities) {
             dtos.add(entity2PersistenceDTO(entity));
         }
         return dtos;
     }
 
-    public static List<UsuarioEntity> persistenceDTO2EntityList(List<UsuarioDTO> dtos) {
-        List<UsuarioEntity> entities = new ArrayList<UsuarioEntity>();
-        for (UsuarioDTO dto : dtos) {
+    public static List<CiudadEntity> persistenceDTO2EntityList(List<CiudadDTO> dtos) {
+        List<v> entities = new ArrayList<CiudadEntity>();
+        for (CiudadDTO dto : dtos) {
             entities.add(persistenceDTO2Entity(dto));
         }
         return entities;
