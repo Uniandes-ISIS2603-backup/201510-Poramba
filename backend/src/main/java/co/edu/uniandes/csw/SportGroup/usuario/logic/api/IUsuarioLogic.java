@@ -16,13 +16,13 @@ import java.util.List;
  */
 public interface IUsuarioLogic {
 
-    public CountryDTO createUsuario(UsuarioDTO detail);
+    public UsuarioDTO createUsuario(UsuarioDTO detail);
 
     public List<UsuarioDTO> getUsuarios();
 
     public UsuarioPageDTO getUsuarios(Integer page, Integer maxRecords);
 
-    public CountryDTO getUsuario(Long id);
+    public UsuarioDTO getUsuario(Long id);
 
     public void deleteUsuario(Long id);
 

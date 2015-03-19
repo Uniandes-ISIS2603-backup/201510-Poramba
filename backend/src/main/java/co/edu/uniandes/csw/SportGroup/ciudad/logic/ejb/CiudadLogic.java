@@ -6,7 +6,7 @@ import co.edu.uniandes.csw.SportGroup.ciudad.logic.dto.CiudadDTO;
 import co.edu.uniandes.csw.SportGroup.ciudad.logic.dto.CiudadPageDTO;
 import co.edu.uniandes.csw.SportGroup.ciudad.logic.entity.CiudadEntity;
 import co.edu.uniandes.csw.SportGroup.usuario.logic.ejb.*;
-import co.edu.uniandes.csw.SportGroup.country.logic.api.ICiudadLogic;
+import co.edu.uniandes.csw.SportGroup.ciudad.logic.api.ICiudadLogic;
 import co.edu.uniandes.csw.SportGroup.country.logic.converter.CountryConverter;
 import co.edu.uniandes.csw.SportGroup.country.logic.dto.CountryDTO;
 import co.edu.uniandes.csw.SportGroup.country.logic.entity.CountryEntity;
