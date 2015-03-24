@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.SportGroup.evento.logic.converter;
+package co.edu.uniandes.csw.eventoGroup.evento.logic.converter;
 
 import co.edu.uniandes.csw.SportGroup.usuario.logic.converter.*;
 import co.edu.uniandes.csw.SportGroup.transporte.logic.converter.*;

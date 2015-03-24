@@ -1,7 +1,6 @@
-package co.edu.uniandes.csw.SportGroup.ciudad.logic.dto;
+package co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto;
 
-import co.edu.uniandes.csw.SportGroup.usuario.logic.dto.*;
-import co.edu.uniandes.csw.SportGroup.transporte.logic.dto.*;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
