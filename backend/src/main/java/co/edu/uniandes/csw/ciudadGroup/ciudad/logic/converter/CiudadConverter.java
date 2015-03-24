@@ -3,21 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.SportGroup.ciudad.logic.converter;
+package co.edu.uniandes.csw.CiudadGroup.ciudad.logic.converter;
 
-import co.edu.uniandes.csw.SportGroup.ciudad.logic.dto.CiudadDTO;
-import co.edu.uniandes.csw.SportGroup.usuario.logic.converter.*;
-import co.edu.uniandes.csw.SportGroup.transporte.logic.converter.*;
-import co.edu.uniandes.csw.SportGroup.country.logic.dto.CountryDTO;
-import co.edu.uniandes.csw.SportGroup.country.logic.entity.CountryEntity;
-import co.edu.uniandes.csw.SportGroup.usuario.logic.dto.UsuarioDTO;
+
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author afesguerra
- */
+
+import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.entity.CiudadEntity;
+
 public class CiudadConverter {
     public static CiudadDTO entity2PersistenceDTO(CiudadEntity entity) {
         if (entity != null) {
@@ -50,7 +45,7 @@ public class CiudadConverter {
     }
 
     public static List<CiudadDTO> entity2PersistenceDTOList(List<CiudadEntity> entities) {
-        List<c> dtos = new ArrayList<CiudadDTO>();
+        List<CiudadDTO> dtos = new ArrayList<CiudadDTO>();
         for (CiudadEntity entity : entities) {
             dtos.add(entity2PersistenceDTO(entity));
         }
@@ -58,7 +53,7 @@ public class CiudadConverter {
     }
 
     public static List<CiudadEntity> persistenceDTO2EntityList(List<CiudadDTO> dtos) {
-        List<v> entities = new ArrayList<CiudadEntity>();
+        List<CiudadEntity> entities = new ArrayList<CiudadEntity>();
         for (CiudadDTO dto : dtos) {
             entities.add(persistenceDTO2Entity(dto));
         }

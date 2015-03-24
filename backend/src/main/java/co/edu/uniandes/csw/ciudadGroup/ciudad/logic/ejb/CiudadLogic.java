@@ -1,4 +1,4 @@
-package co.edu.uniandes.csw.SportGroup.ciudad.logic.ejb;
+package co.edu.uniandes.csw.CiudadGroup.ciudad.logic.ejb;
 
 import co.edu.uniandes.csw.SportGroup.ciudad.logic.api.ICiudadLogic;
 import co.edu.uniandes.csw.SportGroup.ciudad.logic.converter.CiudadConverter;

@@ -1,7 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>co.edu.uniandes.csw.SportGroup</groupId>
+<<<<<<< HEAD
   <artifactId>Vacas.logic</artifactId>
+=======
+  <artifactId>vacas.logic</artifactId>
+>>>>>>> origin/master
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
         <!-- embedded glassfish 3.1.2 --> 
@@ -50,5 +54,9 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+<<<<<<< HEAD
     <name>Vacas.logic</name>
+=======
+    <name>vacas.logic</name>
+>>>>>>> origin/master
 </project>
