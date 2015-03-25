@@ -13,6 +13,16 @@ public class CiudadEntity {
     private String nombre;
     private String descripcion;
     private String link;
+    private String pasaporte;
+    
+    public String getPasaporte()
+    {
+        return pasaporte;
+    }
+    public void setPasaporte(String pasaporte)
+    {
+        this.pasaporte = pasaporte;
+    }
  
 
     public Long getId() {
@@ -42,8 +52,12 @@ public class CiudadEntity {
         this.link = link;
     }
     
-    public String hetLink() {
+    public String getLink() {
         return link;
+    }
+    public void setLink(String link)
+    {
+        this.link = link;
     }
     
     
