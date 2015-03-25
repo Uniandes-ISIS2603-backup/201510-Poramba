@@ -20,7 +20,6 @@ public interface ICiudadLogic {
 
     public List<CiudadDTO> getCiudades();
 
-    public CiudadDTO getCiudades(Integer page, Integer maxRecords);
 
     public CiudadDTO getCiudad(Long id);
 

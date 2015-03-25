@@ -1,7 +1,5 @@
-package co.edu.uniandes.csw.SportGroup.evento.logic.entity;
+package co.edu.uniandes.csw.eventoGroup.evento.logic.entity;
 
-import co.edu.uniandes.csw.SportGroup.usuario.logic.entity.*;
-import co.edu.uniandes.csw.SportGroup.transporte.logic.entity.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -51,7 +49,7 @@ public class EventoEntity {
     }
     
     public String getRules() {
-        return nombre;
+        return rules;
     }
     
     public void setRules(String rules) {

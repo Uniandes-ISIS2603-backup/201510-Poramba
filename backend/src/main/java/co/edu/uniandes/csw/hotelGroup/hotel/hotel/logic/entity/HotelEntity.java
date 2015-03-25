@@ -1,7 +1,6 @@
-package co.edu.uniandes.csw.SportGroup.hotel.logic.entity;
+package co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.entity;
 
-import co.edu.uniandes.csw.SportGroup.usuario.logic.entity.*;
-import co.edu.uniandes.csw.SportGroup.transporte.logic.entity.*;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;

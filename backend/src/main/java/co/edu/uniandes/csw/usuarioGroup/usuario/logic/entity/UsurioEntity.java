@@ -1,6 +1,5 @@
-package co.edu.uniandes.csw.SportGroup.usuario.logic.entity;
+package co.edu.uniandes.csw.usuarioGroup.usuario.logic.entity;
 
-import co.edu.uniandes.csw.SportGroup.transporte.logic.entity.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
