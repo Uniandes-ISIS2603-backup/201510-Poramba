@@ -11,7 +11,7 @@ import java.util.List;
 
 
 import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
-import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.entity.CiudadEntity;
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity.CiudadEntity;
 
 public class CiudadConverter {
     public static CiudadDTO entity2PersistenceDTO(CiudadEntity entity) {
@@ -31,13 +31,10 @@ public class CiudadConverter {
     public static CiudadEntity persistenceDTO2Entity(CiudadDTO dto) {
         if (dto != null) {
             CiudadEntity entity = new CiudadEntity();
-            entity.setId(dto.getId());
-
-            entity.setPasaporte(dto.getPasaporte());
+            entity.setId(dto.getId());            
             entity.setNombre(dto.getNombre());
             entity.setDescripcion(dto.getDescripcion());
             entity.setLink(dto.getLink());
-
             return entity;
         } else {
             return null;

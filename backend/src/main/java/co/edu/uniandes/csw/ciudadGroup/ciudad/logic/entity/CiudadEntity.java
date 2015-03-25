@@ -1,4 +1,4 @@
-package co.edu.uniandes.csw.CiudadGroup.ciudad.logic.entity;
+package co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,17 +13,6 @@ public class CiudadEntity {
     private String nombre;
     private String descripcion;
     private String link;
-    private String pasaporte;
-    
-    public String getPasaporte()
-    {
-        return pasaporte;
-    }
-    public void setPasaporte(String pasaporte)
-    {
-        this.pasaporte = pasaporte;
-    }
- 
 
     public Long getId() {
         return id;
@@ -32,33 +21,29 @@ public class CiudadEntity {
     public void setId(Long id) {
         this.id = id;
     }
-    public void setDescripcion(String descripcion){
+
+    public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    public String getDescripcion()
-    {
+
+    public String getDescripcion() {
         return this.descripcion;
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
-    
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void Link(String link) {
-        this.link = link;
-    }
-    
     public String getLink() {
         return link;
     }
-    public void setLink(String link)
-    {
+
+    public void setLink(String link) {
         this.link = link;
     }
-    
-    
+
 }
