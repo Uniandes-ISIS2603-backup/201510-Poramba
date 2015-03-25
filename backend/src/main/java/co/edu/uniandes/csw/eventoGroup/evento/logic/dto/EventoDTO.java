@@ -1,4 +1,4 @@
-package co.edu.uniandes.csw.SportGroup.evento.logic.dto;
+package co.edu.uniandes.csw.eventoGroup.evento.logic.dto;
 
 
 import javax.xml.bind.annotation.XmlRootElement;

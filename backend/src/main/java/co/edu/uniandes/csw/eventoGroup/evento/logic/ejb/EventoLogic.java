@@ -1,7 +1,7 @@
-package co.edu.uniandes.csw.SportGroup.evento.logic.ejb;
+package co.edu.uniandes.csw.eventoSportGroup.evento.logic.ejb;
 
 
-import co.edu.uniandes.csw.SportGroup.evento.logic.dto.EventoDTO;
+import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.api.IEventoLogic;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.converter.*;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.entity.*;
@@ -42,15 +42,6 @@ public class EventoLogic implements IEventoLogic{
         EventoConverter.entity2PersistenceDTO(entity);
     }
 
-    /*public CountryDTO getMostPopulated() {
-        Query query = entityManager.createQuery("select u from CountryEntity u WHERE u.population = (SELECT MAX(v.population) from CountryEntity v)");
-        return CountryConverter.entity2PersistenceDTO((CountryEntity)query.getSingleResult());
-    }
-
-    public CountryDTO getLeastPopulated() {
-        Query query = entityManager.createQuery("select u from CountryEntity u WHERE u.population = (SELECT MIN(v.population) from CountryEntity v)");
-        return CountryConverter.entity2PersistenceDTO((CountryEntity)query.getSingleResult());
-    }*/
 
   
 }
