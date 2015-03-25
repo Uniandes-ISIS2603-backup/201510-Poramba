@@ -17,17 +17,17 @@ import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.dto.itinerarioPageDT
  */
 public interface IitinerarioLogic {
 
-    public itinerarioDTO createitinerario(itinerarioDTO detail);
+    public itinerarioDTO createItinerario(itinerarioDTO detail);
 
-    public List<itinerarioDTO> getitinerarios();
+    public List<itinerarioDTO> getItinerarios();
 
-    public itinerarioPageDTO getitinerarios(Integer page, Integer maxRecords);
+    public itinerarioPageDTO getItinerarios(Integer page, Integer maxRecords);
 
-    public itinerarioDTO getitinerario(Long id);
+    public itinerarioDTO getItinerario(Long id);
 
-    public void deleteitinerario(Long id);
+    public void deleteItinerario(Long id);
 
-    public void updateitinerario(itinerarioDTO detail);
+    public void updateItinerario(itinerarioDTO detail);
     
    
 }

@@ -1,5 +1,11 @@
 package co.edu.uniandes.csw.LugarGroup.lugar.logic.entity;
 
+import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;
+import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelDTO;
+import co.edu.uniandes.csw.transporteGroup.transporte.logic.dto.transporteDTO;
+import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -8,42 +14,118 @@ import javax.persistence.Id;
 public class LugarEntity {
 
     @Id
-    @GeneratedValue(generator = "Ciudad")
-    private Long id;
-    private String nombre;
-    private String descripcion;
-    private String link;
+    @GeneratedValue(generator = "Luugar")
+    
+    private String id;
 
-    public Long getId() {
+    private Date inico;
+    private Date fin;
+    
+    private HotelDTO hotelActual;
+    
+    private transporteDTO transporteActual;
+    
+    private List<EventoDTO> eventos;
+    
+    private CiudadDTO ciudad;
+
+    /**
+     * @return the id
+     */
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    /**
+     * @param id the id to set
+     */
+    public void setId(String id) {
         this.id = id;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    /**
+     * @return the inico
+     */
+    public Date getInico() {
+        return inico;
     }
 
-    public String getDescripcion() {
-        return this.descripcion;
+    /**
+     * @param inico the inico to set
+     */
+    public void setInico(Date inico) {
+        this.inico = inico;
     }
 
-    public String getNombre() {
-        return this.nombre;
+    /**
+     * @return the fin
+     */
+    public Date getFin() {
+        return fin;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    /**
+     * @param fin the fin to set
+     */
+    public void setFin(Date fin) {
+        this.fin = fin;
     }
 
-    public String getLink() {
-        return link;
+    /**
+     * @return the hotelActual
+     */
+    public HotelDTO getHotelActual() {
+        return hotelActual;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    /**
+     * @param hotelActual the hotelActual to set
+     */
+    public void setHotelActual(HotelDTO hotelActual) {
+        this.hotelActual = hotelActual;
     }
+
+    /**
+     * @return the transporteActual
+     */
+    public transporteDTO getTransporteActual() {
+        return transporteActual;
+    }
+
+    /**
+     * @param transporteActual the transporteActual to set
+     */
+    public void setTransporteActual(transporteDTO transporteActual) {
+        this.transporteActual = transporteActual;
+    }
+
+    /**
+     * @return the eventos
+     */
+    public List<EventoDTO> getEventos() {
+        return eventos;
+    }
+
+    /**
+     * @param eventos the eventos to set
+     */
+    public void setEventos(List<EventoDTO> eventos) {
+        this.eventos = eventos;
+    }
+
+    /**
+     * @return the ciudad
+     */
+    public CiudadDTO getCiudad() {
+        return ciudad;
+    }
+
+    /**
+     * @param ciudad the ciudad to set
+     */
+    public void setCiudad(CiudadDTO ciudad) {
+        this.ciudad = ciudad;
+    }
+ 
 
 }

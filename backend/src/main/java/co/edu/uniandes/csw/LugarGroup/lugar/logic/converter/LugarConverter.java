@@ -5,8 +5,6 @@
  */
 package co.edu.uniandes.csw.LugarGroup.lugar.logic.converter;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,23 +17,26 @@ public class LugarConverter {
         if (entity != null) {
             LugarDTO dto = new LugarDTO();
             dto.setId(entity.getId());            
-            dto.setNombre(entity.getNombre());
-            dto.setDescripcion(entity.getDescripcion());
-            dto.setLink(entity.getLink());
-            /*dto.setPopulation(entity.getPopulation());*/
+            dto.setInico(entity.getInico());
+            dto.setFin(entity.getFin());
+            dto.setHotelActual(entity.getHotelActual());
+            dto.setTransporteActual(entity.getTransporteActual());
+            dto.setCiudad(entity.getCiudad());
+           
             return dto;
-        } else {
-            return null;
         }
+        return null;
     }
 
     public static LugarEntity persistenceDTO2Entity(LugarDTO dto) {
         if (dto != null) {
             LugarEntity entity = new LugarEntity();
             entity.setId(dto.getId());            
-            entity.setNombre(dto.getNombre());
-            entity.setDescripcion(dto.getDescripcion());
-            entity.setLink(dto.getLink());
+            entity.setInico(dto.getInico());
+            entity.setFin(dto.getFin());
+            entity.setHotelActual(dto.getHotelActual());
+            entity.setTransporteActual(dto.getTransporteActual());
+            entity.setCiudad(dto.getCiudad());
             return entity;
         } else {
             return null;

@@ -1,7 +1,6 @@
 package co.edu.uniandes.csw.LugarGroup.lugar.logic.dto;
 
 
-import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.*;
 import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 

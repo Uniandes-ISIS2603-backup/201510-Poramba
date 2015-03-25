@@ -19,14 +19,10 @@ public interface IHotelLogic {
 
     public List<HotelDTO> getHoteles();
 
-
     public HotelDTO getHotel(Long id);
 
     public void deleteHotel(Long id);
 
     public void updateHotel(HotelDTO detail);
     
-    /*public UsuarioDTO getMostPopulated();
-    
-    public UsuarioDTO getLeastPopulated();*/
 }
