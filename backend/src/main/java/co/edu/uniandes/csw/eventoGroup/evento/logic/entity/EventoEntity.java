@@ -9,17 +9,17 @@ public class EventoEntity {
 
     @Id
     @GeneratedValue(generator = "Evento")
-    private Long id;
+    private String id;
     private String nombre;
     private Integer minage;
     private Integer maxage;
     private String rules;
     
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

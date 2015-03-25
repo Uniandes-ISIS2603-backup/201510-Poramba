@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class CiudadDTO {
-    private Long id;
+    private String id;
 
     private String nombre;
     private String descripcion;
@@ -21,11 +21,11 @@ public class CiudadDTO {
 //    {
 //        this.pasaporte = pasaporte;
 //    }
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

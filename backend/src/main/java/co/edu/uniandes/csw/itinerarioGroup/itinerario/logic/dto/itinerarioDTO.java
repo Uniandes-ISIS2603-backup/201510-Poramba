@@ -10,7 +10,7 @@ public class itinerarioDTO {
 	private String descripcion;
 	private String terminacion;
 	private String acciones;
-	private long id;
+	private String id;
 	public String getNombe() {
 		return nombe;
 	}
@@ -35,10 +35,10 @@ public class itinerarioDTO {
 	public void setAcciones(String acciones) {
 		this.acciones = acciones;
 	}
-	public long getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	
