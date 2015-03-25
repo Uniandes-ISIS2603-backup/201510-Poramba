@@ -1,11 +1,10 @@
-package co.edu.uniandes.csw.eventoSportGroup.evento.logic.ejb;
+package co.edu.uniandes.csw.eventoGroup.evento.logic.ejb;
 
 
 import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.api.IEventoLogic;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.converter.*;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.entity.*;
-import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.*;
 
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -41,7 +40,5 @@ public class EventoLogic implements IEventoLogic{
         EventoEntity entity = entityManager.merge(EventoConverter.persistenceDTO2Entity(evento));
         EventoConverter.entity2PersistenceDTO(entity);
     }
-
-
   
 }
