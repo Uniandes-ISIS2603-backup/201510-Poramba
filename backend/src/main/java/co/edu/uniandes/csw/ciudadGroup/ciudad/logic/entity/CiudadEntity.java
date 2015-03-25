@@ -1,6 +1,5 @@
 package co.edu.uniandes.csw.CiudadGroup.ciudad.logic.entity;
 
-import co.edu.uniandes.csw.SportGroup.usuario.logic.entity.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -22,6 +21,13 @@ public class CiudadEntity {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    public void setDescripcion(String descripcion){
+        this.descripcion = descripcion;
+    }
+    public String getDescripcion()
+    {
+        return this.descripcion;
     }
 
     public String getNombre() {
