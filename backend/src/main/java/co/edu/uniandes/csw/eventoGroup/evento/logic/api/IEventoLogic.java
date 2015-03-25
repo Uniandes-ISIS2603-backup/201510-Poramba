@@ -23,7 +23,6 @@ public interface IEventoLogic {
 
     public List<EventoDTO> getEventos();
 
-    public EventoPageDTO getEventos(Integer page, Integer maxRecords);
 
     public EventoDTO getEvento(Long id);
 
