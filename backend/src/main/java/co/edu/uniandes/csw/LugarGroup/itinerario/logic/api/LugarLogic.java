@@ -5,8 +5,9 @@
  */
 package co.edu.uniandes.csw.LugarGroup.itinerario.logic.api;
 
-import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.api.*;
+
 import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.LugarGroup.lugar.logic.dto.LugarDTO;
 import java.util.List;
 
 /**
@@ -15,12 +16,11 @@ import java.util.List;
  */
 public interface LugarLogic {
 
-    public CiudadDTO createCiudad(CiudadDTO detail);
+    public LugarDTO createLugar(LugarDTO detail);
 
     public List<CiudadDTO> getCiudades();
 
-
-    public CiudadDTO getCiudad(Long id);
+    public LugarDTO getCiudad(Long id);
 
     public void deleteCiudad(Long id);
 
