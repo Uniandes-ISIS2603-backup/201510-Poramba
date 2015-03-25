@@ -13,12 +13,21 @@ import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.dto.itinerarioPageDT
 
 /**
  *
- * @author afesguerra
+ * @author Vacas
  */
 public interface IitinerarioLogic {
 
+    /**
+     * Crea un intinerario apartir del dato obtenido por parametro
+     * @param detail Caracteristicas del nuevo itinerario crear. 
+     * @return El nuevo itinerario creado 
+     */
     public itinerarioDTO createItinerario(itinerarioDTO detail);
 
+    /**
+     * Retorna todos los itineraris existentes
+     * @return Lista con los itinerarios existentes
+     */
     public List<itinerarioDTO> getItinerarios();
 
     public itinerarioPageDTO getItinerarios(Integer page, Integer maxRecords);
@@ -28,6 +37,8 @@ public interface IitinerarioLogic {
     public void deleteItinerario(Long id);
 
     public void updateItinerario(itinerarioDTO detail);
+    
+    
     
    
 }

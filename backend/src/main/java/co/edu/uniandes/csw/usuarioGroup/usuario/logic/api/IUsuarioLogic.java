@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author afesguerra
+ * @author poramba
  */
 public interface IUsuarioLogic {
 

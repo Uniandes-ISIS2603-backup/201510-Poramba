@@ -14,7 +14,7 @@ import javax.persistence.Id;
 public class LugarEntity {
 
     @Id
-    @GeneratedValue(generator = "Luugar")
+    @GeneratedValue(generator = "Lugar")
     
     private String id;
 

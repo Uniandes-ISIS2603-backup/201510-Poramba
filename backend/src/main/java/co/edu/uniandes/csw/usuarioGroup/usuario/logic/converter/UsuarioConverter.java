@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author afesguerra
+ * @author poramba
  */
 public class UsuarioConverter {
     public static UsuarioDTO entity2PersistenceDTO(UsuarioEntity entity) {

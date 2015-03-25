@@ -17,6 +17,7 @@ public class LugarLogic implements ILugarLogic{
 
     @PersistenceContext(unitName = "LugarLogicClassPU")
     protected EntityManager entityManager;
+    
 
     public LugarDTO createLugar(LugarDTO detail) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

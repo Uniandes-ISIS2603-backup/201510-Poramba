@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  *
- * @author afesguerra
+ * @author poramba
  */
 public class HotelConverter {
     public static HotelDTO entity2PersistenceDTO(HotelEntity entity) {

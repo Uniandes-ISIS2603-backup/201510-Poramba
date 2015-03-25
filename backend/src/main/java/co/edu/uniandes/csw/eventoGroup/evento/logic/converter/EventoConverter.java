@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  *
- * @author afesguerra
+ * @author poramba
  */
 public class EventoConverter {
     public static EventoDTO entity2PersistenceDTO(EventoEntity entity) {
