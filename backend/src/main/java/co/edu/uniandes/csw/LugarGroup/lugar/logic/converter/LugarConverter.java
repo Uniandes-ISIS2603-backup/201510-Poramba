@@ -6,18 +6,18 @@
 package co.edu.uniandes.csw.LugarGroup.lugar.logic.converter;
 
 
-import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.converter.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import co.edu.uniandes.csw.LugarGroup.lugar.logic.dto.LugarDTO;
+import co.edu.uniandes.csw.LugarGroup.lugar.logic.entity.LugarEntity;
 
-import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
-import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity.CiudadEntity;
 
 public class LugarConverter {
-    public static CiudadDTO entity2PersistenceDTO(CiudadEntity entity) {
+    public static LugarDTO entity2PersistenceDTO(LugarEntity entity) {
         if (entity != null) {
-            CiudadDTO dto = new CiudadDTO();
+            LugarDTO dto = new LugarDTO();
             dto.setId(entity.getId());            
             dto.setNombre(entity.getNombre());
             dto.setDescripcion(entity.getDescripcion());
@@ -29,9 +29,9 @@ public class LugarConverter {
         }
     }
 
-    public static CiudadEntity persistenceDTO2Entity(CiudadDTO dto) {
+    public static LugarEntity persistenceDTO2Entity(LugarDTO dto) {
         if (dto != null) {
-            CiudadEntity entity = new CiudadEntity();
+            LugarEntity entity = new LugarEntity();
             entity.setId(dto.getId());            
             entity.setNombre(dto.getNombre());
             entity.setDescripcion(dto.getDescripcion());
@@ -42,17 +42,17 @@ public class LugarConverter {
         }
     }
 
-    public static List<CiudadDTO> entity2PersistenceDTOList(List<CiudadEntity> entities) {
-        List<CiudadDTO> dtos = new ArrayList<CiudadDTO>();
-        for (CiudadEntity entity : entities) {
+    public static List<LugarDTO> entity2PersistenceDTOList(List<LugarEntity> entities) {
+        List<LugarDTO> dtos = new ArrayList<LugarDTO>();
+        for (LugarEntity entity : entities) {
             dtos.add(entity2PersistenceDTO(entity));
         }
         return dtos;
     }
 
-    public static List<CiudadEntity> persistenceDTO2EntityList(List<CiudadDTO> dtos) {
-        List<CiudadEntity> entities = new ArrayList<CiudadEntity>();
-        for (CiudadDTO dto : dtos) {
+    public static List<LugarEntity> persistenceDTO2EntityList(List<LugarDTO> dtos) {
+        List<LugarEntity> entities = new ArrayList<LugarEntity>();
+        for (LugarDTO dto : dtos) {
             entities.add(persistenceDTO2Entity(dto));
         }
         return entities;
