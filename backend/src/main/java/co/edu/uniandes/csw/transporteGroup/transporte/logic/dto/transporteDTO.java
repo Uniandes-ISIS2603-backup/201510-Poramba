@@ -10,7 +10,7 @@ public class transporteDTO {
     private Long distancia;
     private Integer medio_de_transporte;
     private String reglas ;
-    private Long id;
+    private String id;
 	public String getCiudad_origen() {
 		return ciudad_origen;
 	}
@@ -41,10 +41,10 @@ public class transporteDTO {
 	public void setReglas(String reglas) {
 		this.reglas = reglas;
 	}
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
  

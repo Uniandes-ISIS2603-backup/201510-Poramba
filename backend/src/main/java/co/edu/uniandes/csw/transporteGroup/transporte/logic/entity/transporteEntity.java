@@ -10,11 +10,11 @@ public class transporteEntity {
 
     @Id
     @GeneratedValue(generator = "transporte")
-    private Long id;
-    public Long getId() {
+    private String id;
+    public String getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	private String ciudad_origen;
