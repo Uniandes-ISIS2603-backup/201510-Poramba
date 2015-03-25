@@ -6,7 +6,7 @@
 package co.edu.uniandes.csw.eventoGroup.evento.logic.converter;
 
 /*import co.edu.uniandes.csw.SportGroup.evento.logic.entity;*/
-import co.edu.uniandes.csw.SportGroup.evento.logic.dto.EventoDTO;
+import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.entity.EventoEntity;
 import java.util.ArrayList;
 import java.util.List;

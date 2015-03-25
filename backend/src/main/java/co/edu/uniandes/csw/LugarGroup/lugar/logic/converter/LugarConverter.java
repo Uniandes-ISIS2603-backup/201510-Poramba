@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.CiudadGroup.ciudad.logic.converter;
+package co.edu.uniandes.csw.LugarGroup.lugar.logic.converter;
 
 
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.converter.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
 import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
 import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity.CiudadEntity;
 
-public class CiudadConverter {
+public class LugarConverter {
     public static CiudadDTO entity2PersistenceDTO(CiudadEntity entity) {
         if (entity != null) {
             CiudadDTO dto = new CiudadDTO();

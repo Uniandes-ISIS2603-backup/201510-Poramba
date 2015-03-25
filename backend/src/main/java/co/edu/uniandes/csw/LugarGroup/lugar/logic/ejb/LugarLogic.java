@@ -1,5 +1,6 @@
-package co.edu.uniandes.csw.CiudadGroup.ciudad.logic.ejb;
+package co.edu.uniandes.csw.LugarGroup.lugar.logic.ejb;
 
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.ejb.*;
 import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.api.ICiudadLogic;
 import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.converter.*;
 import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
@@ -10,7 +11,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 
-public class CiudadLogic implements ICiudadLogic{
+public class LugarLogic implements ICiudadLogic{
 
     @PersistenceContext(unitName = "CiudadClassPU")
     protected EntityManager entityManager;

@@ -5,7 +5,7 @@
  */
 package co.edu.uniandes.csw.eventoGroup.evento.logic.api;
 
-import co.edu.uniandes.csw.SportGroup.evento.logic.dto.EventoDTO;
+import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;
 import java.util.List;
 
 /**
@@ -25,7 +25,5 @@ public interface IEventoLogic {
 
     public void updateEvento(EventoDTO detail);
     
-    /*public UsuarioDTO getMostPopulated();
     
-    public UsuarioDTO getLeastPopulated();*/
 }

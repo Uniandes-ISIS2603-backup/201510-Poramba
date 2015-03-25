@@ -1,14 +1,15 @@
-package co.edu.uniandes.csw.eventoGroup.evento.logic.dto;
+package co.edu.uniandes.csw.LugarGroup.lugar.logic.dto;
 
-import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;
+
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.*;
 import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class EventoPageDTO {
+public class LugarPageDTO {
     private Long totalRecords;
 
-    private List<EventoDTO> records;
+    private List<LugarDTO> records;
 
     public Long getTotalRecords() {
         return totalRecords;
@@ -18,11 +19,11 @@ public class EventoPageDTO {
         this.totalRecords = totalRecords;
     }
 
-    public List<EventoDTO> getRecords() {
+    public List<LugarDTO> getRecords() {
         return records;
     }
 
-    public void setRecords(List<EventoDTO> records) {
+    public void setRecords(List<LugarDTO> records) {
         this.records = records;
     }
 }

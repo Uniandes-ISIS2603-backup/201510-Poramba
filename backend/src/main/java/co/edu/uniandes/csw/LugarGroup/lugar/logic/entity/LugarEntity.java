@@ -1,11 +1,12 @@
-package co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity;
+package co.edu.uniandes.csw.LugarGroup.lugar.logic.entity;
 
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class CiudadEntity {
+public class LugarEntity {
 
     @Id
     @GeneratedValue(generator = "Ciudad")
