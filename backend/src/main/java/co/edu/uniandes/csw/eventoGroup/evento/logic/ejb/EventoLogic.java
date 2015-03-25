@@ -1,19 +1,12 @@
 package co.edu.uniandes.csw.SportGroup.evento.logic.ejb;
 
-import co.edu.uniandes.csw.SportGroup.usuario.logic.ejb.*;
-import co.edu.uniandes.csw.SportGroup.evento.logic.api.IEventoLogic;
-import co.edu.uniandes.csw.SportGroup.country.logic.converter.CountryConverter;
-import co.edu.uniandes.csw.SportGroup.country.logic.dto.CountryDTO;
-import co.edu.uniandes.csw.SportGroup.country.logic.entity.CountryEntity;
-import co.edu.uniandes.csw.SportGroup.evento.logic.api.IEventoLogic;
-import co.edu.uniandes.csw.SportGroup.evento.logic.converter.EventoConverter;
+
 import co.edu.uniandes.csw.SportGroup.evento.logic.dto.EventoDTO;
-import co.edu.uniandes.csw.SportGroup.evento.logic.dto.EventoPageDTO;
-import co.edu.uniandes.csw.SportGroup.evento.logic.entity.EventoEntity;
-import co.edu.uniandes.csw.SportGroup.usuario.logic.api.IUsuarioLogic;
-import co.edu.uniandes.csw.SportGroup.usuario.logic.converter.UsuarioConverter;
-import co.edu.uniandes.csw.SportGroup.usuario.logic.dto.UsuarioDTO;
-import co.edu.uniandes.csw.SportGroup.usuario.logic.dto.UsuarioPageDTO;
+import co.edu.uniandes.csw.eventoGroup.evento.logic.api.IEventoLogic;
+import co.edu.uniandes.csw.eventoGroup.evento.logic.converter.*;
+import co.edu.uniandes.csw.eventoGroup.evento.logic.entity.*;
+import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.*;
+
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -33,21 +26,6 @@ public class EventoLogic implements IEventoLogic{
     public List<EventoDTO> getEventos() {
         Query q = entityManager.createQuery("select u from EventoEntity u");
         return EventoConverter.entity2PersistenceDTOList(q.getResultList());
-    }
-
-    public EventoPageDTO getEventos(Integer page, Integer maxRecords) {
-        Query count = entityManager.createQuery("select count(u) from EventoEntity u");
-        Long regCount = 0L;
-        regCount = Long.parseLong(count.getSingleResult().toString());
-        Query q = entityManager.createQuery("select u from EventoEntity u");
-        if (page != null && maxRecords != null) {
-            q.setFirstResult((page - 1) * maxRecords);
-            q.setMaxResults(maxRecords);
-        }
-        EventoPageDTO response = new EventoPageDTO();
-        response.setTotalRecords(regCount);
-        response.setRecords(EventoConverter.entity2PersistenceDTOList(q.getResultList()));
-        return response;
     }
 
     public EventoDTO getEvento(Long id) {
@@ -73,4 +51,6 @@ public class EventoLogic implements IEventoLogic{
         Query query = entityManager.createQuery("select u from CountryEntity u WHERE u.population = (SELECT MIN(v.population) from CountryEntity v)");
         return CountryConverter.entity2PersistenceDTO((CountryEntity)query.getSingleResult());
     }*/
+
+  
 }
