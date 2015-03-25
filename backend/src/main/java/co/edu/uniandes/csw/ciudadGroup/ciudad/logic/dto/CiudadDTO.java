@@ -10,9 +10,17 @@ public class CiudadDTO {
     private String nombre;
     private String descripcion;
     private String link;
+    private String pasaporte;
 
 
-
+    public String getPasaporte()
+    {
+        return pasaporte;
+    }
+//    public void setPasaporte(String pasaporte)
+//    {
+//        this.pasaporte = pasaporte;
+//    }
     public Long getId() {
         return id;
     }
@@ -33,8 +41,19 @@ public class CiudadDTO {
         this.link = link;
     }
     
-    public String hetLink() {
+    public String getLink() {
         return link;
+    }
+    public void setLink(String link)
+    {
+        this.link = link;
+    }
+    public void setDescripcion(String descripcion)
+    {
+        this.descripcion = descripcion;
+    }
+    public String getDescripcion(){
+        return this.descripcion;
     }
     
     

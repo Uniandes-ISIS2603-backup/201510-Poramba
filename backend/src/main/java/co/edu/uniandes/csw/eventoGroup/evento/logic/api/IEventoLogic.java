@@ -5,12 +5,7 @@
  */
 package co.edu.uniandes.csw.eventoGroup.evento.logic.api;
 
-import co.edu.uniandes.csw.SportGroup.usuario.logic.api.*;
-import co.edu.uniandes.csw.SportGroup.country.logic.dto.CountryDTO;
 import co.edu.uniandes.csw.SportGroup.evento.logic.dto.EventoDTO;
-import co.edu.uniandes.csw.SportGroup.evento.logic.dto.EventoPageDTO;
-import co.edu.uniandes.csw.SportGroup.usuario.logic.dto.UsuarioDTO;
-import co.edu.uniandes.csw.SportGroup.usuario.logic.dto.UsuarioPageDTO;
 import java.util.List;
 
 /**

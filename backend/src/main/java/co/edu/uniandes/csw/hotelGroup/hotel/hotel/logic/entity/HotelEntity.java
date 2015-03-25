@@ -69,6 +69,10 @@ public class HotelEntity {
         this.link = link;
     }
 
+    public void setDescripcion(String descripcion) {
+    this.descripcion = descripcion;
+    }
+
     
     
 }

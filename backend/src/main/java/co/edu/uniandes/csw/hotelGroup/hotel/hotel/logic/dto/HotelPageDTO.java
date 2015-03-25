@@ -1,7 +1,6 @@
-package co.edu.uniandes.csw.SportGroup.hotel.logic.dto;
+package co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto;
 
-import co.edu.uniandes.csw.SportGroup.usuario.logic.dto.*;
-import co.edu.uniandes.csw.SportGroup.transporte.logic.dto.*;
+import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelDTO;
 import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 

@@ -5,14 +5,9 @@
  */
 package co.edu.uniandes.csw.eventoGroup.evento.logic.converter;
 
-import co.edu.uniandes.csw.SportGroup.usuario.logic.converter.*;
-import co.edu.uniandes.csw.SportGroup.transporte.logic.converter.*;
-import co.edu.uniandes.csw.SportGroup.country.logic.dto.CountryDTO;
-import co.edu.uniandes.csw.SportGroup.country.logic.entity.CountryEntity;
-import co.edu.uniandes.csw.SportGroup.evento.logic.dto.EventoDTO;
-import co.edu.uniandes.csw.SportGroup.evento.logic.entity.EventoEntity;
-import co.edu.uniandes.csw.SportGroup.usuario.logic.dto.UsuarioDTO;
 /*import co.edu.uniandes.csw.SportGroup.evento.logic.entity;*/
+import co.edu.uniandes.csw.SportGroup.evento.logic.dto.EventoDTO;
+import co.edu.uniandes.csw.eventoGroup.evento.logic.entity.EventoEntity;
 import java.util.ArrayList;
 import java.util.List;
 

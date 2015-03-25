@@ -1,18 +1,11 @@
-package co.edu.uniandes.csw.SportGroup.hotel.logic.ejb;
+package co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.ejb;
 
-import co.edu.uniandes.csw.SportGroup.usuario.logic.ejb.*;
-import co.edu.uniandes.csw.SportGroup.hotel.logic.api.IHotelLogic;
-import co.edu.uniandes.csw.SportGroup.country.logic.converter.CountryConverter;
-import co.edu.uniandes.csw.SportGroup.country.logic.dto.CountryDTO;
-import co.edu.uniandes.csw.SportGroup.country.logic.entity.CountryEntity;
-import co.edu.uniandes.csw.SportGroup.hotel.logic.converter.HotelConverter;
-import co.edu.uniandes.csw.SportGroup.hotel.logic.dto.HotelDTO;
-import co.edu.uniandes.csw.SportGroup.hotel.logic.dto.HotelPageDTO;
-import co.edu.uniandes.csw.SportGroup.hotel.logic.entity.HotelEntity;
-import co.edu.uniandes.csw.SportGroup.usuario.logic.api.IUsuarioLogic;
-import co.edu.uniandes.csw.SportGroup.usuario.logic.converter.UsuarioConverter;
-import co.edu.uniandes.csw.SportGroup.usuario.logic.dto.UsuarioDTO;
-import co.edu.uniandes.csw.SportGroup.usuario.logic.dto.UsuarioPageDTO;
+
+import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelDTO;
+import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.api.IHotelLogic;
+import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.converter.HotelConverter;
+import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.entity.HotelEntity;
+
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -34,20 +27,7 @@ public class HotelLogic implements IHotelLogic{
         return HotelConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
-    public HotelPageDTO getHoteles(Integer page, Integer maxRecords) {
-        Query count = entityManager.createQuery("select count(u) from HotelyEntity u");
-        Long regCount = 0L;
-        regCount = Long.parseLong(count.getSingleResult().toString());
-        Query q = entityManager.createQuery("select u from HotelyEntity u");
-        if (page != null && maxRecords != null) {
-            q.setFirstResult((page - 1) * maxRecords);
-            q.setMaxResults(maxRecords);
-        }
-        HotelPageDTO response = new HotelPageDTO();
-        response.setTotalRecords(regCount);
-        response.setRecords(HotelConverter.entity2PersistenceDTOList(q.getResultList()));
-        return response;
-    }
+  
 
     public HotelDTO getHotel(Long id) {
         return HotelConverter.entity2PersistenceDTO(entityManager.find(HotelEntity.class, id));
@@ -72,4 +52,6 @@ public class HotelLogic implements IHotelLogic{
         Query query = entityManager.createQuery("select u from CountryEntity u WHERE u.population = (SELECT MIN(v.population) from CountryEntity v)");
         return CountryConverter.entity2PersistenceDTO((CountryEntity)query.getSingleResult());
     }*/
+
+   
 }

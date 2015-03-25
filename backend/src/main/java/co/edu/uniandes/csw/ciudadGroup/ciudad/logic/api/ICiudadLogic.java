@@ -5,9 +5,7 @@
  */
 package co.edu.uniandes.csw.CiudadGroup.ciudad.logic.api;
 
-import co.edu.uniandes.csw.SportGroup.usuario.logic.api.*;
 import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
-import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadPageDTO;
 import java.util.List;
 
 /**

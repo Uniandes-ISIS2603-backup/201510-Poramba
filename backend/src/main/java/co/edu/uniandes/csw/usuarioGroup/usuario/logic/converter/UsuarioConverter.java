@@ -3,13 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.SportGroup.usuario.logic.converter;
-
-import co.edu.uniandes.csw.SportGroup.transporte.logic.converter.*;
-import co.edu.uniandes.csw.SportGroup.country.logic.dto.CountryDTO;
-import co.edu.uniandes.csw.SportGroup.country.logic.entity.CountryEntity;
-import co.edu.uniandes.csw.SportGroup.usuario.logic.dto.UsuarioDTO;
-/*import co.edu.uniandes.csw.SportGroup.usuario.logic.entity;*/
+package co.edu.uniandes.csw.usuarioGroup.usuario.logic.converter;
+import co.edu.uniandes.csw.usuarioGroup.usuario.logic.dto.UsuarioDTO;
+import co.edu.uniandes.csw.usuarioGroup.usuario.logic.entity.*;
 import java.util.ArrayList;
 import java.util.List;
 

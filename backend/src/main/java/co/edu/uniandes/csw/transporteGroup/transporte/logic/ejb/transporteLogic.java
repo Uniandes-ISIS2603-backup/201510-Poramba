@@ -1,17 +1,13 @@
 package co.edu.uniandes.csw.transporteGroup.transporte.logic.ejb;
 
 import co.edu.uniandes.csw.transporteGroup.transporte.logic.api.ITransporteLogic;
-import co.edu.uniandes.csw.transporteGroup.transporte.logic.api.ItransporteLogic;
-import co.edu.uniandes.csw.transporteGroup.transporte.logic.converter.transporteConverter;
 import co.edu.uniandes.csw.transporteGroup.transporte.logic.dto.transporteDTO;
 import co.edu.uniandes.csw.transporteGroup.transporte.logic.dto.transportePageDTO;
-import co.edu.uniandes.csw.transporteGroup.transporte.logic.entity.transporteEntity;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 public class transporteLogic implements ITransporteLogic{
 

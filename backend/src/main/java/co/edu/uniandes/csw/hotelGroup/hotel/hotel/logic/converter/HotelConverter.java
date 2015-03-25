@@ -1,18 +1,15 @@
+package co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.converter;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.SportGroup.hotel.logic.converter;
 
-import co.edu.uniandes.csw.SportGroup.usuario.logic.converter.*;
-import co.edu.uniandes.csw.SportGroup.transporte.logic.converter.*;
-import co.edu.uniandes.csw.SportGroup.country.logic.dto.CountryDTO;
-import co.edu.uniandes.csw.SportGroup.country.logic.entity.CountryEntity;
-import co.edu.uniandes.csw.SportGroup.hotel.logic.dto.HotelDTO;
-import co.edu.uniandes.csw.SportGroup.hotel.logic.entity.HotelEntity;
-import co.edu.uniandes.csw.SportGroup.usuario.logic.dto.UsuarioDTO;
+
 /*import co.edu.uniandes.csw.SportGroup.usuario.logic.entity;*/
+import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelDTO;
+import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.entity.HotelEntity;
 import java.util.ArrayList;
 import java.util.List;
 
