@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class UsuarioDTO {
-    private Long id;
+    private String id;
 
     private String pasaporte;
     private String nombre;
@@ -12,11 +12,11 @@ public class UsuarioDTO {
     private String fechaNacimiento;
 
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
