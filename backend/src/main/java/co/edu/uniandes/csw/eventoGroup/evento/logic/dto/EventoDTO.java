@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class EventoDTO {
-    private Long id;
+    private String id;
 
 
     private String nombre;
@@ -14,11 +14,11 @@ public class EventoDTO {
     private String rules;
 
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

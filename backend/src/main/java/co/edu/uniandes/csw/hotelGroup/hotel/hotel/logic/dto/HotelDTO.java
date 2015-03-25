@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class HotelDTO {
-    private Long id;
+    private String id;
 
     private String nombre;
     private String ubicacion;
@@ -13,11 +13,11 @@ public class HotelDTO {
     private String link;
 
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

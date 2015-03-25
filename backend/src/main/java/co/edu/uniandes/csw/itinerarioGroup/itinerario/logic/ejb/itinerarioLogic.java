@@ -1,58 +1,43 @@
 package co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.ejb;
 
-
-
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.api.IitinerarioLogic;
+import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.converter.*;
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.dto.itinerarioDTO;
-import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.dto.itinerarioPageDTO;
+import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.entity.*;
+import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.api.IitinerarioLogic;
 
-public class itinerarioLogic implements IitinerarioLogic{
+public class itinerarioLogic implements IitinerarioLogic {
 
-    @PersistenceContext(unitName = "transporteClassPU")
+    @PersistenceContext(unitName = "ItinerarioClassPU")
     protected EntityManager entityManager;
 
-	@Override
-	public itinerarioDTO createitinerario(itinerarioDTO detail) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public itinerarioDTO createCiudad(itinerarioDTO ciudad) {
+        itinerarioEntity entity = itinerarioConverter.persistenceDTO2Entity(ciudad);
+        entityManager.persist(entity);
+        return itinerarioConverter.entity2PersistenceDTO(entity);
+    }
 
-	@Override
-	public List<itinerarioDTO> getitinerarios() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public List<itinerarioDTO> getItinerarios() {
+        Query q = entityManager.createQuery("select u from itinerarioEntity u");
+        return itinerarioConverter.entity2PersistenceDTOList(q.getResultList());
+    }
 
-	@Override
-	public itinerarioPageDTO getitinerarios(Integer page, Integer maxRecords) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public itinerarioDTO getItinerario(Long id) {
+        return itinerarioConverter.entity2PersistenceDTO(entityManager.find(itinerarioEntity.class, id));
+    }
 
-	@Override
-	public itinerarioDTO getitinerario(Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public void deleteItinerario(Long id) {
+        itinerarioEntity entity = entityManager.find(itinerarioEntity.class, id);
+        entityManager.remove(entity);
+    }
 
-	@Override
-	public void deleteitinerario(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void updateitinerario(itinerarioDTO detail) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
+    public void updateItinerario(itinerarioDTO itinerario) {
+        itinerarioEntity entity = entityManager.merge(itinerarioConverter.persistenceDTO2Entity(itinerario));
+        itinerarioConverter.entity2PersistenceDTO(entity);
+    }
 
 }

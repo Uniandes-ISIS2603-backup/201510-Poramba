@@ -1,6 +1,5 @@
 package co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.ejb;
 
-
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelDTO;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.api.IHotelLogic;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.converter.HotelConverter;
@@ -11,7 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-public class HotelLogic implements IHotelLogic{
+public class HotelLogic implements IHotelLogic {
 
     @PersistenceContext(unitName = "HotelClassPU")
     protected EntityManager entityManager;
@@ -27,14 +26,12 @@ public class HotelLogic implements IHotelLogic{
         return HotelConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
-  
-
     public HotelDTO getHotel(Long id) {
         return HotelConverter.entity2PersistenceDTO(entityManager.find(HotelEntity.class, id));
     }
 
     public void deleteHotel(Long id) {
-       HotelEntity entity = entityManager.find(HotelEntity.class, id);
+        HotelEntity entity = entityManager.find(HotelEntity.class, id);
         entityManager.remove(entity);
     }
 
@@ -44,14 +41,12 @@ public class HotelLogic implements IHotelLogic{
     }
 
     /*public CountryDTO getMostPopulated() {
-        Query query = entityManager.createQuery("select u from CountryEntity u WHERE u.population = (SELECT MAX(v.population) from CountryEntity v)");
-        return CountryConverter.entity2PersistenceDTO((CountryEntity)query.getSingleResult());
-    }
+     Query query = entityManager.createQuery("select u from CountryEntity u WHERE u.population = (SELECT MAX(v.population) from CountryEntity v)");
+     return CountryConverter.entity2PersistenceDTO((CountryEntity)query.getSingleResult());
+     }
 
-    public CountryDTO getLeastPopulated() {
-        Query query = entityManager.createQuery("select u from CountryEntity u WHERE u.population = (SELECT MIN(v.population) from CountryEntity v)");
-        return CountryConverter.entity2PersistenceDTO((CountryEntity)query.getSingleResult());
-    }*/
-
-   
+     public CountryDTO getLeastPopulated() {
+     Query query = entityManager.createQuery("select u from CountryEntity u WHERE u.population = (SELECT MIN(v.population) from CountryEntity v)");
+     return CountryConverter.entity2PersistenceDTO((CountryEntity)query.getSingleResult());
+     }*/
 }

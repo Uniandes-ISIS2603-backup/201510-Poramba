@@ -24,13 +24,12 @@ public class LugarLogic implements ILugarLogic{
         return CiudadConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
-
     public CiudadDTO getCiudad(Long id) {
         return CiudadConverter.entity2PersistenceDTO(entityManager.find(CiudadEntity.class, id));
     }
 
     public void deleteCiudad(Long id) {
-       CiudadEntity entity = entityManager.find(CiudadEntity.class, id);
+        CiudadEntity entity = entityManager.find(CiudadEntity.class, id);
         entityManager.remove(entity);
     }
 
@@ -38,10 +37,4 @@ public class LugarLogic implements ILugarLogic{
         CiudadEntity entity = entityManager.merge(CiudadConverter.persistenceDTO2Entity(ciudad));
         CiudadConverter.entity2PersistenceDTO(entity);
     }
-
-  
-
-
 }
-
-   

@@ -6,17 +6,4 @@ flush privileges;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Create new table sd 

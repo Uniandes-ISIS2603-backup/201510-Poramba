@@ -4,6 +4,7 @@ import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.api.ICiudadLogic;
 import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.converter.*;
 import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
 import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity.*;
+
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -40,9 +41,6 @@ public class CiudadLogic implements ICiudadLogic{
         CiudadEntity entity = entityManager.merge(CiudadConverter.persistenceDTO2Entity(ciudad));
         CiudadConverter.entity2PersistenceDTO(entity);
     }
-
-  
-
 
 }
 
