@@ -11,12 +11,20 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Iterator;
+import java.util.ArrayList;
 /**
  *Clase en la que se realiza la utilizacion del appi 
  * para busuqedas
  */
 public class Busqueda 
 {
+    ArrayList<String> arreglo ;
+    
+    public Busqueda()	
+    {
+        arreglo = new ArrayList<String>();
+    }
+    
     /**
      * cLAVES NECESARIAS PARA EL USO DE FOURSQUARE, LAS DOS SON NECESARIAS
      */
@@ -37,8 +45,11 @@ public class Busqueda
      * BASE:IMAGEN + SIZE +  FINAL_IMAGEN
      */
     public final static String BASE_IMAGEN = "https://api.foursquare.com/v2/venues/";
-    public final static String FINAL_IMAGEN  = "/photos?v=20140319&client_id=RX0HQUY3SIQ4ZH1HGIUMTQFFO344YVHCVD4UUCX2UUXNCXDE&client_secret=AQUBPLCCPU4W2AXWJNEZVUBQ1D2JVGO1EZ5PW1KE0ARCIS4D&limit=500";
+    public final static String FINAL_IMAGEN  = "/photos?v=20140319&client_id=RX0HQUY3SIQ4ZH1HGIUMTQFFO344YVHCVD4UUCX2UUXNCXDE&client_secret=AQUBPLCCPU4W2AXWJNEZVUBQ1D2JVGO1EZ5PW1KE0ARCIS4D";
+    
+    
     public final static String TAMANIO  = "original";
+    public final static String   LIMITE = "&limit=";
     /**
      * Metodo que da un Objeto JSOn al realizar una consulta de busqueda cn el api FOurSquare
      * @param direc url que es la que encargada de generar la arespuesta en JSOn 
@@ -67,9 +78,10 @@ public class Busqueda
 		return null;
     }
     
-    public String darImagen(String ID)
+    public String darImagen(String ID )
 	{
-		String url="https://api.foursquare.com/v2/venues/"+ID+"/photos?v=20140319&client_id=RX0HQUY3SIQ4ZH1HGIUMTQFFO344YVHCVD4UUCX2UUXNCXDE&client_secret=AQUBPLCCPU4W2AXWJNEZVUBQ1D2JVGO1EZ5PW1KE0ARCIS4D&limit=500";
+            // URL FORMADO POR LAS PARTES BASICAS Y EL ID DE LA IMAGEN 
+		String url=BASE_IMAGEN+ID+FINAL_IMAGEN;
 		try {
 			//System.out.println(url);
 			JSONObject imagenes=darJSON(url);
@@ -81,14 +93,16 @@ public class Busqueda
 			JSONArray items=  (JSONArray) photos.get("items");
 		//System.out.println("Este es le itemdss" + items);
 			Iterator<JSONObject> iterator = items.iterator();
-			while (iterator.hasNext() ) 
+			int i = 0;
+			while (iterator.hasNext() && i < 1) 
 			{
 				JSONObject meme = iterator.next();
 //				JSONObject source = (JSONObject) meme.get("source");
 //				System.out.println("Este es el source "+source );
 				String prefijo = (String) meme.get("prefix");
 				String sufijo = (String) meme.get("suffix");
-				System.out.println( prefijo +"original" +sufijo);
+				System.out.println( prefijo +TAMANIO+sufijo);
+				i++;
 
 				//System.out.println("Estos son los venues"+meme);
 			}
@@ -101,4 +115,55 @@ public class Busqueda
 		return "";
 		
 	}
+    
+    /**
+     * Metodo que retorna un arreglo de string con el id, el nombre, la imagen,
+     * la direccion y la ciudad de lo buscado  separarado por _
+     * @param numMax numero maximo de venues
+     * @param ciudad ciudad donde pertenece evento o demas
+     * @param CriterioDebqueda que es lo que se quiere buscar 
+     * @return  un arreglo con la info necesaria
+     */
+    public ArrayList darURl(int numMax, String ciudad, String CriterioDebqueda)
+    {
+        
+            String url= BASE_URL +CriterioDebqueda +CIUDAD + ciudad+FINAL_URL_BASICO + LIMITE + numMax;
+//		{"referralId":"v-1427344009","id":"4ba3fd5ef964a520f17438e3","location":{"postalCode":"110311","address":"Cra 4 No. 22-61","state":"Bogotá D.C."
+            JSONObject AaLeer;
+            ArrayList<String>arreglo = new ArrayList<String >();
+            try {
+                    AaLeer = darJSON(url);
+                    JSONObject primero=(JSONObject) AaLeer.get("response");
+                    //System.out.println("Este es el primero" +primero);
+                    JSONArray obejtos=(JSONArray) primero.get("venues");
+                    //System.out.println("Estos son los obejtos");
+                    Iterator<JSONObject> iterator = obejtos.iterator();
+                    while (iterator.hasNext() ) 
+                    {
+                            JSONObject meme = iterator.next();
+
+                            String ID = (String) meme.get("id");
+                            System.out.println(meme + "este es eel meme");
+                            JSONObject dirc=(JSONObject) meme.get("location");
+                            String adress = (String) dirc.get("address");
+//				System.out.println("aaaaaaaaaaaaaaaaaaaaa" + adress);
+                            String state = (String) dirc.get("state");
+//				System.out.println("ssssssssssssssss" + state);
+                            darImagen(ID);
+                            String name = (String) meme.get("name");
+                            System.out.println(name + "name");
+                            String info = ID +"_"+name +"_" + darImagen(ID) + "_" + adress +"_" + dirc;
+                            arreglo.add(info);
+                    }
+            } 
+            catch (IOException e) 
+            {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+            }
+
+
+        return arreglo;
+
+    }
 }
