@@ -15,10 +15,8 @@ import co.edu.uniandes.csw.LugarGroup.lugar.logic.entity.LugarEntity;
 public class LugarConverter {
     public static LugarDTO entity2PersistenceDTO(LugarEntity entity) {
         if (entity != null) {
-            LugarDTO dto = new LugarDTO();
-            dto.setId(entity.getId());            
-            dto.setInico(entity.getInico());
-            dto.setFin(entity.getFin());
+            LugarDTO dto = new LugarDTO(entity.getId(),entity.getInico(),entity.getFin());
+          
             dto.setHotelActual(entity.getHotelActual());
             dto.setTransporteActual(entity.getTransporteActual());
             dto.setCiudad(entity.getCiudad());

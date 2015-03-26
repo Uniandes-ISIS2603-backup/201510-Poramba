@@ -72,9 +72,8 @@ public interface ILugarLogic {
     
     /**
      * Elimina todos los eventos, hotel y tranporte asociados al lugar.
-     * @return true si elimina todo, false en caso contrario. 
      */
-    public boolean cleanLugar();
+    public void cleanLugar();
     
     /**
      * Cambia el evento por la id por parametro por el nuevo Evento pasado por parametro
@@ -86,7 +85,7 @@ public interface ILugarLogic {
     /**
      * El transporte que se va a agregar al lugar
      * @param detail Transporte a agregar
-     * @return Retorna el nuevo transporte agregado
+     * @return Retorna el nuevo transporte agregado, nulo si ya exostoa uno
      */
     public transporteDTO addTransporte(transporteDTO detail);
     
@@ -142,8 +141,9 @@ public interface ILugarLogic {
     /**
      * Elimina el lugar asociado a la id
      * @param id Id del lugar a eliminar
+     * @return True si elimina el lugar, false en caso contrario
      */
-    public void deleteLugar(String id);
+    public boolean deleteLugar(String id);
     
     /**
      * Cambia el lugar actual por otro
@@ -151,5 +151,11 @@ public interface ILugarLogic {
      * @return 
      */
     public LugarDTO updateLugar(LugarDTO lugar);
-
+    
+    /**
+     *Cambia el lugar actual por el dado por parametro
+     * @param lugar Nuevo lugar actual
+     * @return El nuevi lugar, nulo so no exosten lugares.
+     */
+    public LugarDTO setLugar(LugarDTO lugar);
 }
