@@ -17,7 +17,14 @@ import java.util.Iterator;
  */
 public class Busqueda 
 {
-    private JSONObject darJSON(String direc) throws IOException {
+    /**
+     * Metodo que da un Objeto JSOn al realizar una consulta de busqueda cn el api FOurSquare
+     * @param direc url que es la que encargada de generar la arespuesta en JSOn 
+     * @return el objeto JSon que se genera de la consulta
+     * @throws IOException  en caso de que se genere algun error en el momento de la lectura  del url
+     */
+    private JSONObject darJSON(String direc) throws IOException 
+    {
 		URL url = new URL(direc);
 		HttpURLConnection request = (HttpURLConnection) url.openConnection();
 		request.connect();
