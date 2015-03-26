@@ -219,8 +219,7 @@ atrbN,
 <p>{
     <strong>nombre</strong>: '' /<em>Tipo String</em>/,
     <strong>descripcion</strong>: '' /<em>Tipo String</em>/,
-    <strong>inicio</strong>: '' /<em>Tipo String</em>/,
-    <strong>final</strong>: '' /<em>Tipo String</em>/,
+    <strong>terminacion</strong>: '' /<em>Tipo String</em>/,
     <strong>acciones</strong>: '' /<em>Tipo String</em>/
 }</p>
 <table>
