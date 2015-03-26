@@ -19,11 +19,11 @@ public interface IUsuarioLogic {
     public List<UsuarioDTO> getUsuarios();
 
 
-    public UsuarioDTO getUsuario(Long id);
+    public UsuarioDTO getUsuario(String id);
 
-    public void deleteUsuario(Long id);
+    public void deleteUsuario(String id);
 
-    public void updateUsuario(UsuarioDTO detail);
+    public void updateUsuario(UsuarioDTO detail, String id);
     
     /*public UsuarioDTO getMostPopulated();
     
