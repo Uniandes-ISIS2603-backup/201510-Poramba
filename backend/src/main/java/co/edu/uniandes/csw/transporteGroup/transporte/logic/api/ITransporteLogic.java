@@ -7,7 +7,6 @@ package co.edu.uniandes.csw.transporteGroup.transporte.logic.api;
 
 import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
 import co.edu.uniandes.csw.transporteGroup.transporte.logic.dto.transporteDTO;
-import co.edu.uniandes.csw.transporteGroup.transporte.logic.dto.transportePageDTO;
 import java.util.List;
 
 /**
@@ -32,14 +31,6 @@ public interface ITransporteLogic {
     
     public CiudadDTO getCiudadOrigen();
     
-    public CiudadDTO getCiudadDestino();
-    
-    
-    
-    
-    
-            
-        
-    
+    public CiudadDTO getCiudadDestino(); 
    
 }
