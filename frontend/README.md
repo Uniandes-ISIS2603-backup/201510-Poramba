@@ -1,5 +1,5 @@
 <h1 id="api-rest-vacas-">Api rest -Vacas:</h1>
-<p>La comunicaciÃ³n entre cliente y servidor se realiza intercambiando objetos JSON.Donde del front-end vienen como objetos son mientras del back-end vienen como objetos java. Para ello es necesario realizar un procedimiento en donde cada atributo de un objeto Java se convierte en una propiedad del objeto Json.</p>
+<p>La comunicación entre cliente y servidor se realiza intercambiando objetos JSON.Donde del front-end vienen como objetos son mientras del back-end vienen como objetos java. Para ello es necesario realizar un procedimiento en donde cada atributo de un objeto Java se convierte en una propiedad del objeto Json.</p>
 <p>Todos los servicios se generan en la URL /vacas.home. Por defecto cada entidad tiene un atributo id: las cuales les permite identificarse.</p>
 <p>{
 id:'',
@@ -336,6 +336,71 @@ atrbN,
 <td>/city/:id</td>
 <td>Borra una instancia de un Ciudad  con un identificador</td>
 <td>Objeto Json de Ciudad</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="traveler">Viajero</h2>
+<p>En la siguiente tabla se detalla los servicios REST generados para la entidad Viajero.</p>
+<h3 id="estructura-de-un-objeto-json-de-un-ciudad-">Estructura de un objeto Json de Viajero.</h3>
+<p>{
+    <strong>pasaporte</strong>: '' /<em>Tipo String</em>/,
+    <strong>nombre</strong>: '' /<em>Tipo String</em>/,
+    <strong>apellido</strong>: '' /<em>Tipo String</em>/,
+    <strong>Edad</strong>: '' /<em>Tipo Integer</em>/,
+
+}</p>
+<table>
+<thead>
+<tr>
+<th>Metodo</th>
+<th>URI</th>
+<th>ACCION</th>
+<th>PARAMETROS</th>
+<th>CUERPO</th>
+<th>RETORNO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>get</td>
+<td>/traveler</td>
+<td>obtener todos los objetos Json de Viajero</td>
+<td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima Viajero</td>
+<td>traveler</td>
+<td>UN objeto Json con coleccion de objetos y la cantidad con la que llega</td>
+</tr>
+<tr>
+<td>get</td>
+<td>/trveler/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del Viajero con un id</td>
+</tr>
+<tr>
+<td>post</td>
+<td>/traveler/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td></td>
+<td>Objeto Json a crear de Viajero</td>
+<td>un objeto Json de Viajero creado</td>
+</tr>
+<tr>
+<td>put</td>
+<td>/traveler/:id</td>
+<td>actualizar los atributos de un Viajero con un identificador determinado</td>
+<td>Objeto Json de Viajero</td>
+<td><strong>@PathParam id: </strong> identificador del registro</td>
+<td>un objeto Json con el sus atributos actualizados</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>/traveler/:id</td>
+<td>Borra una instancia de un Viajero con un identificador</td>
+<td>Objeto Json de Viajero</td>
 <td></td>
 <td></td>
 </tr>
