@@ -18,5 +18,17 @@
             <artifactId>Vacas.logic</artifactId>
             <version>0.1.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>co.edu.uniandes.csw.SportGroup</groupId>
+            <artifactId>SportClub.logic</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>
