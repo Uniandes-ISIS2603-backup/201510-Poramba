@@ -7,9 +7,8 @@
     <packaging>pom</packaging>
     <name>Vacas</name>
     <modules>
-        <module>../SportClub.service</module>
-        <module>../../../ProyectosNeatbeans/201510-Poramba/backend</module>
-        <module>../../../ProyectosNeatbeans/201510-Poramba/Service</module>
+        
+        
         <module>../Vacas.logic</module>
         <module>../VacasPoramaba.Service</module>
     </modules>
