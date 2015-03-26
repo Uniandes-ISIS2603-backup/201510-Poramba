@@ -357,9 +357,9 @@ atrbN,
 </tbody>
 </table>
 
-<h2 id="traveler">Viajero</h2>
-<p>En la siguiente tabla se detalla los servicios REST generados para la entidad Viajero.</p>
-<h3 id="estructura-de-un-objeto-json-de-un-ciudad-">Estructura de un objeto Json de Viajero.</h3>
+<h2 id="user">Usuario</h2>
+<p>En la siguiente tabla se detalla los servicios REST generados para la entidad Usuario.</p>
+<h3 id="estructura-de-un-objeto-json-de-un-usuario-">Estructura de un objeto Json de Usuario.</h3>
 <p>{
     <strong>pasaporte</strong>: '' /<em>Tipo String</em>/,
     <strong>nombre</strong>: '' /<em>Tipo String</em>/,
@@ -382,40 +382,40 @@ atrbN,
 <tr>
 <td>get</td>
 <td>/traveler</td>
-<td>obtener todos los objetos Json de Viajero</td>
-<td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima Viajero</td>
-<td>traveler</td>
+<td>obtener todos los objetos Json de Usuario</td>
+<td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima Usuario</td>
+<td>user</td>
 <td>UN objeto Json con coleccion de objetos y la cantidad con la que llega</td>
 </tr>
 <tr>
 <td>get</td>
-<td>/trveler/:id</td>
+<td>/user/:id</td>
 <td>Obtener los atributos del objeto Json con una id especifica</td>
 <td><strong>@PathParam id:</strong> identificador del registro</td>
 <td></td>
-<td>un objeto Json con el detalle del Viajero con un id</td>
+<td>un objeto Json con el detalle del Usuario con un id</td>
 </tr>
 <tr>
 <td>post</td>
-<td>/traveler/:id</td>
+<td>/user/:id</td>
 <td>Obtener los atributos del objeto Json con una id especifica</td>
 <td></td>
-<td>Objeto Json a crear de Viajero</td>
-<td>un objeto Json de Viajero creado</td>
+<td>Objeto Json a crear de Usuario</td>
+<td>un objeto Json de usuario creado</td>
 </tr>
 <tr>
 <td>put</td>
-<td>/traveler/:id</td>
-<td>actualizar los atributos de un Viajero con un identificador determinado</td>
-<td>Objeto Json de Viajero</td>
+<td>/user/:id</td>
+<td>actualizar los atributos de un Usuarui con un identificador determinado</td>
+<td>Objeto Json de usuario</td>
 <td><strong>@PathParam id: </strong> identificador del registro</td>
 <td>un objeto Json con el sus atributos actualizados</td>
 </tr>
 <tr>
 <td>delete</td>
-<td>/traveler/:id</td>
-<td>Borra una instancia de un Viajero con un identificador</td>
-<td>Objeto Json de Viajero</td>
+<td>/user/:id</td>
+<td>Borra una instancia de un Usuario con un identificador</td>
+<td>Objeto Json de Usuario</td>
 <td></td>
 <td></td>
 </tr>
