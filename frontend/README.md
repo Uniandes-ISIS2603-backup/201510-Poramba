@@ -275,6 +275,22 @@ atrbN,
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>getCiudadName</td>
+<td>/city/:id</td>
+<td>Obtener el atributo nombre del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el nombre de la Ciudad</td>
+</tr>
+<tr>
+<td>getEventName</td>
+<td>/event/:id</td>
+<td>Obtener el atributo nombre del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el nombe del Evento</td>
+</tr>
 </tbody>
 </table>
 
