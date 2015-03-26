@@ -17,10 +17,6 @@ public class CiudadDTO {
     {
         return pasaporte;
     }
-//    public void setPasaporte(String pasaporte)
-//    {
-//        this.pasaporte = pasaporte;
-//    }
     public String getId() {
         return id;
     }
@@ -40,7 +36,6 @@ public class CiudadDTO {
     public void Link(String link) {
         this.link = link;
     }
-    
     public String getLink() {
         return link;
     }
@@ -55,7 +50,4 @@ public class CiudadDTO {
     public String getDescripcion(){
         return this.descripcion;
     }
-    
-    
-    
 }

@@ -24,6 +24,7 @@ public class EventoConverter {
             dto.setMinAge(entity.getMinAge());
             dto.setMaxAge(entity.getMaxAge());            
             dto.setRules(entity.getRules());
+            dto.setCiudad(entity.getCiudad());
             /*dto.setPopulation(entity.getPopulation());*/
             return dto;
         } else {
@@ -39,6 +40,7 @@ public class EventoConverter {
             entity.setMinAge(dto.getMinAge());
             entity.setMaxAge(dto.getMaxAge());
             entity.setRules(dto.getRules());
+            entity.setCiudad(dto.getCiudad());
             return entity;
         } else {
             return null;

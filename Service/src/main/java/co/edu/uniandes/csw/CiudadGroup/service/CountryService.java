@@ -1,6 +1,8 @@
-package co.edu.uniandes.csw.SportGroup.service;
+package co.edu.uniandes.csw.CiudadGroup.service;
 
-
+import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.api.ICiudadLogic;
+import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadPageDTO;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -14,11 +16,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-@Path("/countries")
+@Path("/city")
 @Stateless
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public class CountryService {
+public class CityService {
 
     @Inject
     protected ICountryLogic countryLogic;

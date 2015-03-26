@@ -17,10 +17,14 @@ public interface ICiudadLogic {
     public CiudadDTO createCiudad(CiudadDTO detail);
 
     public List<CiudadDTO> getCiudades();
+    
+    public void updateCiudad(CiudadDTO detail, String id);
 
+    public CiudadDTO getCiudad(String id);
 
-    public CiudadDTO getCiudad(Long id);
-
-    public void deleteCiudad(Long id);
+    public void deleteCiudad(String  id);
+    
+    public void updateCiudad(CiudadDTO detail);
+    
 
 }

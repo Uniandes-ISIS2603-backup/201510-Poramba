@@ -1,45 +1,91 @@
 package co.edu.uniandes.csw.CiudadGroup.ciudad.logic.ejb;
 
 import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.api.ICiudadLogic;
-import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.converter.*;
 import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
-import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity.*;
 
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 
 public class CiudadLogic implements ICiudadLogic{
+    
+    List<CiudadDTO> ciudades;
 
     @PersistenceContext(unitName = "CiudadClassPU")
     protected EntityManager entityManager;
 
-    public CiudadDTO createCiudad(CiudadDTO ciudad) {
-        CiudadEntity entity = CiudadConverter.persistenceDTO2Entity(ciudad);
-        entityManager.persist(entity);
-        return CiudadConverter.entity2PersistenceDTO(entity);
+//    public CiudadDTO createCiudad(CiudadDTO ciudad) {
+//        CiudadEntity entity = CiudadConverter.persistenceDTO2Entity(ciudad);
+//        entityManager.persist(entity);
+//        return CiudadConverter.entity2PersistenceDTO(entity);
+//    }
+//
+//    public List<CiudadDTO> getCiudades() {
+//        Query q = entityManager.createQuery("select u from CiudadEntity u");
+//        return CiudadConverter.entity2PersistenceDTOList(q.getResultList());
+//    }
+//
+//
+//    public CiudadDTO getCiudad(String id) {
+//        return CiudadConverter.entity2PersistenceDTO(entityManager.find(CiudadEntity.class, id));
+//    }
+//
+//    public void deleteCiudad(String id) {
+//       CiudadEntity entity = entityManager.find(CiudadEntity.class, id);
+//        entityManager.remove(entity);
+//    }
+//
+//    public void updateCiudad(CiudadDTO ciudad) {
+//        CiudadEntity entity = entityManager.merge(CiudadConverter.persistenceDTO2Entity(ciudad));
+//        CiudadConverter.entity2PersistenceDTO(entity);
+//    }
+    
+    
+    
+    public CiudadDTO createCiudad(CiudadDTO detail) {
+        ciudades.add(detail);
+        return detail;
     }
 
     public List<CiudadDTO> getCiudades() {
-        Query q = entityManager.createQuery("select u from CiudadEntity u");
-        return CiudadConverter.entity2PersistenceDTOList(q.getResultList());
+        return ciudades;
     }
 
-
-    public CiudadDTO getCiudad(Long id) {
-        return CiudadConverter.entity2PersistenceDTO(entityManager.find(CiudadEntity.class, id));
+    public CiudadDTO getCiudad(String id) {
+        CiudadDTO respuesta = null;
+        int act = ciudades.size();
+        for (int i = 0; i < act; i++) {
+            if (ciudades.get(i).getId().equals(id)) {
+                respuesta = ciudades.get(i);
+            }
+            break;
+        }
+        return respuesta;
     }
 
-    public void deleteCiudad(Long id) {
-       CiudadEntity entity = entityManager.find(CiudadEntity.class, id);
-        entityManager.remove(entity);
+    public void deleteCiudad(String id) {
+        CiudadDTO trans = getCiudad(id);
+        if (trans != null) {
+            ciudades.remove(trans);
+        }
     }
 
-    public void updateCiudad(CiudadDTO ciudad) {
-        CiudadEntity entity = entityManager.merge(CiudadConverter.persistenceDTO2Entity(ciudad));
-        CiudadConverter.entity2PersistenceDTO(entity);
+    public void updateCiudad(CiudadDTO detail, String id) {
+        CiudadDTO ciud = getCiudad(id);
+        if (ciud != null) {
+            boolean ya = false;
+            int i = 0;
+            while (!ya) {
+                if (ciudades.get(i) == ciud) {
+                    ya = true;
+                } else {
+                    i++;
+                }
+            }
+            ciudades.set(i, detail);
+            ciudades.remove(ciud);
+        }
     }
 
 }
