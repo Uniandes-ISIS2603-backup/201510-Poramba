@@ -18,6 +18,8 @@ atrbN,
     records: [] //collecciÃ³n con los datos solicitados. cada objeto tiene la estructura de la entidad.
 }</p>
 <h2 id="api-de-vacas">Api de Vacas</h2>
+
+
 <h2 id="hotel">Hotel</h2>
 <p>En la siguiente tabla se detalla los servicios REST generados para la entidad Hotel.</p>
 <h3 id="estructura-de-un-objeto-json-de-un-hotel-">Estructura de un objeto Json de un hotel.</h3>
@@ -80,8 +82,49 @@ atrbN,
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>createhotel</td>
+<td>/hotel/:id</td>
+<td>Crea un evento con un identificador determinado</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con los atributos creados</td>
+</tr>
+<tr>
+<td>getHoteles</td>
+<td>/hotel</td>
+<td>obtener todos los objetos Json de Hotel</td>
+<td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima Hoteles</td>
+<td>Hotel</td>
+<td>UN objeto Json con coleccion de objetos y la cantidad con la que llega</td>
+</tr>
+<tr>
+<td>updateHotel</td>
+<td>/hotel/</td>
+<td>actualizar los atributos de un Hotel con un identificador determinado</td>
+<td>Objeto Json de Hotel</td>
+<td><strong>@PathParam id: </strong> identificador del registro</td>
+<td>un objeto Json con el sus atributos actualizados</td>
+</tr>
+<tr>
+<td>getHotel</td>
+<td>/hotel/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del Hotel con un id</td>
+</tr>
+<tr>
+<td>deleteHotel</td>
+<td>/hotel/:id</td>
+<td>Borra una instancia de un Hotel con un identificador</td>
+<td>Objeto Json de Hotel</td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
+
 <h2 id="evento">Evento</h2>
 <p>En la siguiente tabla se detalla los servicios REST generados para la entidad evento.</p>
 <h3 id="estructura-de-un-objeto-json-de-un-evento-">Estructura de un objeto Json de un evento.</h3>
@@ -106,8 +149,8 @@ atrbN,
 <tbody>
 <tr>
 <td>get</td>
-<td>/hotel</td>
-<td>obtener todos los objetos Json de hotel</td>
+<td>/event</td>
+<td>obtener todos los objetos Json de evento</td>
 <td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima eventos</td>
 <td>event</td>
 <td>UN objeto Json con coleccion de objetos y la cantidad con la que llega</td>
@@ -143,6 +186,62 @@ atrbN,
 <td>Objeto Json de evento</td>
 <td></td>
 <td></td>
+</tr>
+<tr>
+<td>createEvento</td>
+<td>/event/:id</td>
+<td>Crea un evento con un identificador determinado</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con los atributos creados</td>
+</tr>
+<tr>
+<td>getEventos</td>
+<td>/event</td>
+<td>obtener todos los objetos Json de Evento</td>
+<td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima Evento</td>
+<td>Evento</td>
+<td>UN objeto Json con coleccion de objetos y la cantidad con la que llega</td>
+</tr>
+<tr>
+<td>updateEvento</td>
+<td>/event/</td>
+<td>actualizar los atributos de un Evento con un identificador determinado</td>
+<td>Objeto Json de Evento</td>
+<td><strong>@PathParam id: </strong> identificador del registro</td>
+<td>un objeto Json con el sus atributos actualizados</td>
+</tr>
+<tr>
+<td>getEvento</td>
+<td>/event/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del Evento con un id</td>
+</tr>
+<tr>
+<td>deleteEvento</td>
+<td>/event/:id</td>
+<td>Borra una instancia de un Evento con un identificador</td>
+<td>Objeto Json de Evento</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>getCiudad</td>
+<td>/cuty/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle de la ciudad con un id<</td>
+</tr>
+<tr>
+<td>setCiudad</td>
+<td>/city/:id</td>
+<td>Cambia la ciudad actual por uno dado por parametro</td>
+<td>Objeto Json de Ciudad</td>
+<td><strong>@PathParam id: </strong> identificador del registro</td>
+<td>un objeto Json con los atributos actualizados</td>
 </tr>
 </tbody>
 </table>
@@ -290,6 +389,87 @@ atrbN,
 <td></td>
 <td>un objeto Json con el nombe del Evento</td>
 </tr>
+<tr>
+<td>createItinerario</td>
+<td>/itinerary/:id</td>
+<td>Crea un itinerario con un identificador determinado</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con los atributos creados</td>
+</tr>
+<tr>
+<td>getItinerarios</td>
+<td>/itinerary</td>
+<td>obtener todos los objetos Json de Itinerario</td>
+<td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima Itinerario</td>
+<td>itinerario</td>
+<td>UN objeto Json con coleccion de objetos y la cantidad con la que llega</td>
+</tr>
+<tr>
+<td>updateItinerario</td>
+<td>/itinerary/</td>
+<td>actualizar los atributos de un Itinerario con un identificador determinado</td>
+<td>Objeto Json de Itinerario</td>
+<td><strong>@PathParam id: </strong> identificador del registro</td>
+<td>un objeto Json con el sus atributos actualizados</td>
+</tr>
+<tr>
+<td>getItinerario</td>
+<td>/itinerary/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del Itinerario con un id</td>
+</tr>
+<tr>
+<td>deleteItinerario</td>
+<td>/itinerary/:id</td>
+<td>Borra una instancia de un Itineario con un identificador</td>
+<td>Objeto Json de Itinerario</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>addLugar</td>
+<td>/lugar/:id</td>
+<td>Agrega un Lugar a el Itinerario con un identificador determinado</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del lugar con un id</td>
+</tr>
+<tr>
+<td>getLugares</td>
+<td>/lugar</td>
+<td>obtener todos los objetos Json de Lugares</td>
+<td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima Lugares</td>
+<td>lugar</td>
+<td>UN objeto Json con coleccion de objetos y la cantidad con la que llega</td>
+</tr>
+<tr>
+<td>getLugar</td>
+<td>/lugar/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del lugar con un id</td>
+</tr>
+<tr>
+<td>deleteLugar</td>
+<td>/lugar/:id</td>
+<td>Borra una instancia de un Lugar con un identificador</td>
+<td>Objeto Json de Lugar</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>clean</td>
+<td>/lugar/</td>
+<td>Elimian todos los lugares asociados con el itinerario</td>
+<td>Objeto Json de Lugar</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 </tbody>
 </table>
 
@@ -350,6 +530,46 @@ atrbN,
 <td>delete</td>
 <td>/city/:id</td>
 <td>Borra una instancia de un Ciudad  con un identificador</td>
+<td>Objeto Json de Ciudad</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>createCiudad</td>
+<td>/city/:id</td>
+<td>Crea una ciudad con un identificador determinado</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con los atributos creados</td>
+</tr>
+<tr>
+<td>getCiudades</td>
+<td>/city</td>
+<td>obtener todos los objetos Json de Ciudad</td>
+<td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima Ciudad</td>
+<td>ciudad</td>
+<td>UN objeto Json con coleccion de objetos y la cantidad con la que llega</td>
+</tr>
+<tr>
+<td>updateCiudad</td>
+<td>/city/</td>
+<td>actualizar los atributos de una Ciudad con un identificador determinado</td>
+<td>Objeto Json de Ciudad</td>
+<td><strong>@PathParam id: </strong> identificador del registro</td>
+<td>un objeto Json con el sus atributos actualizados</td>
+</tr>
+<tr>
+<td>getCiudad</td>
+<td>/city/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del Ciudad con un id</td>
+</tr>
+<tr>
+<td>deleteCiudad</td>
+<td>/city/:id</td>
+<td>Borra una instancia de una Ciudad con un identificador</td>
 <td>Objeto Json de Ciudad</td>
 <td></td>
 <td></td>
