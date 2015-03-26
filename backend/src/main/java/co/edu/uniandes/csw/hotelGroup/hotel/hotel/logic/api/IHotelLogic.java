@@ -46,6 +46,6 @@ public interface IHotelLogic {
      * @id identificador del hotel que se le desea cambiar la informacion
      * @throws Exception en caso de que el hotel que se quiere actualizar no exista
      */
-    public void updateHotel(HotelDTO detail, String id) throws Exception;
+    public void updateHotel(HotelDTO detail, String id) ;
     
 }
