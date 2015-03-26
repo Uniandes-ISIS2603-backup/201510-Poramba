@@ -1,8 +1,8 @@
 package co.edu.uniandes.csw.Vacas.service;
 
 
-import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.api.ICiudadLogic;
-import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.api.ICiudadLogic;
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;

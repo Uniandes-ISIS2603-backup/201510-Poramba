@@ -2,7 +2,7 @@ package co.edu.uniandes.csw.Vacas.service;
 
 
 
-import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
 import co.edu.uniandes.csw.LugarGroup.lugar.logic.dto.LugarDTO;
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.api.IitinerarioLogic;
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.dto.itinerarioDTO;
@@ -24,7 +24,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author estudiante
  */
-@Path("/intinerary")
+@Path("/itinearay")
 @Stateless
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
@@ -69,51 +69,39 @@ public class ItinerarioService
     }
     
     @GET
-    @Path("(getLugares)")
+    @Path("{getLugares}")
     public List<LugarDTO> getLugares()
      {
                 return countryLogic.getLugares();
      }
     
     @GET
-    @Path("(getLugar)/(id)")
+    @Path("{getLugar}/{id}")
     public LugarDTO getLugar (@PathParam("id") String id)
      {
              return countryLogic.getLugar(id);
      }
     
     @DELETE
-    @Path("(deleteLugar)/{id}")
+    @Path("{deleteLugar}/{id}")
     public void deleteLugar(@PathParam("id") String id) 
     {
         countryLogic.deleteLugar(id);
     }
     
      @PUT
-     @Path("(updateLugar)/(id)")
+     @Path("{updateLugar}/{id}")
     public void updateLugar( LugarDTO lugar,@PathParam("id") String id)
     {
         countryLogic.updateLugar(id,lugar);
     }
     
-      @PUT
-     @Path("(clean)")
-    public void celan( )
+    @PUT
+    @Path("{clean}")
+    public void clean( )
     {
         countryLogic.clean();
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
    
 }
