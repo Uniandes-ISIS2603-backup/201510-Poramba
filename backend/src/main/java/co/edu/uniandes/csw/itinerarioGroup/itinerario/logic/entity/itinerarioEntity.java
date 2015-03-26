@@ -1,5 +1,7 @@
 package co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.entity;
 
+import co.edu.uniandes.csw.LugarGroup.lugar.logic.dto.LugarDTO;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,6 +17,18 @@ public class itinerarioEntity {
 	private String terminacion;
 	private String acciones;
 	private String id;
+        private List<LugarDTO> lugares;
+
+    public List<LugarDTO> getLugares() 
+    {
+        return lugares;
+    }
+
+    public void setLugares(List<LugarDTO> lugares)
+    {
+        this.lugares = lugares;
+    }
+        
 	public String getNombe() {
 		return nombe;
 	}

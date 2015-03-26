@@ -21,30 +21,6 @@ public class EventoLogic implements IEventoLogic {
     @PersistenceContext(unitName = "EventoClassPU")
     protected EntityManager entityManager;
 
-//    public EventoDTO createEvento(EventoDTO evento) {
-//        EventoEntity entity =EventoConverter.persistenceDTO2Entity(evento);
-//        entityManager.persist(entity);
-//        return EventoConverter.entity2PersistenceDTO(entity);
-//    }
-//
-//    public List<EventoDTO> getEventos() {
-//        Query q = entityManager.createQuery("select u from EventoEntity u");
-//        return EventoConverter.entity2PersistenceDTOList(q.getResultList());
-//    }
-//
-//    public EventoDTO getEvento(Long id) {
-//        return EventoConverter.entity2PersistenceDTO(entityManager.find(EventoEntity.class, id));
-//    }
-//
-//    public void deleteEvento(Long id) {
-//       EventoEntity entity = entityManager.find(EventoEntity.class, id);
-//        entityManager.remove(entity);
-//    }
-//
-//    public void updateEvento(EventoDTO evento) {
-//        EventoEntity entity = entityManager.merge(EventoConverter.persistenceDTO2Entity(evento));
-//        EventoConverter.entity2PersistenceDTO(entity);
-//    }
     
     public void setCiudad(CiudadDTO ciudad) {
         this.ciudad = ciudad;
@@ -98,4 +74,9 @@ public class EventoLogic implements IEventoLogic {
             eventos.remove(event);
         }
     }
+
+   
+    
+
+  
 }

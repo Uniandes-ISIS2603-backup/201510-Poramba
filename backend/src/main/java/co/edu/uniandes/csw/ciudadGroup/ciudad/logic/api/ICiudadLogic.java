@@ -24,7 +24,7 @@ public interface ICiudadLogic {
 
     public void deleteCiudad(String  id);
     
-    public void updateCiudad(CiudadDTO detail);
+    public void updateCiudad(CiudadDTO detail, String id);
     
 
 }

@@ -137,7 +137,7 @@ public class LugarDTO {
     }
     
     
-    public boolean agregarEvento(EventoDTO evento)
+    public boolean addEvento(EventoDTO evento)
     {
         for (int i = 0; i < eventos.size(); i++) 
         {
@@ -153,7 +153,7 @@ public class LugarDTO {
         return true;
     }
     
-    public boolean eliminarEvento(String id)
+    public boolean deleteEvento(String id)
     {
         for (int i = 0; i < eventos.size(); i++) 
         {

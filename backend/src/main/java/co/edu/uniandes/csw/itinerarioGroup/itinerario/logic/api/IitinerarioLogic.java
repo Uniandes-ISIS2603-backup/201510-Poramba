@@ -6,6 +6,7 @@
 package co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.api;
 
 
+import co.edu.uniandes.csw.LugarGroup.lugar.logic.dto.LugarDTO;
 import java.util.List;
 
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.dto.itinerarioDTO;
@@ -37,7 +38,7 @@ public interface IitinerarioLogic
      * @param maxRecords numero maximo de respuesta
      * @return Un objeto JSON con los itinerarios
      */
-    public itinerarioPageDTO getItinerarios(Integer page, Integer maxRecords);
+    //public itinerarioPageDTO getItinerarios(Integer page, Integer maxRecords);
 
     
     /**
@@ -60,6 +61,46 @@ public interface IitinerarioLogic
      */
     public void updateItinerario(itinerarioDTO detail);
     
+    /**
+     * Agrega un lugar al itinerario
+     * @param lugar El lugar a agregar
+     * @return El lugar agregado, nu lo si el lugar ya existia
+     */
+    public LugarDTO addLugar(LugarDTO lugar);
+    
+    /**
+     * Retrona una lista con todos los lugares
+     * @return Lista con todos los lugares
+     */
+    public  List<LugarDTO> getLugares();
+    
+    /**
+     * Retorna el lugar con el id dado por parametro
+     * @param id Id del lugar buscado
+     * @return El lugar con el id dado por parametro, nulo si no existe.
+     */
+    public LugarDTO getLugar(String id);
+    
+    /**
+     * Elimina el lugar con el id dado por paramentro
+     * @param id El id del lugar a eliminar
+     * @return  true si elimna, false en caso contrario
+     */
+    public boolean deleteLugar(String id);
+    
+    /**
+     * Reemplaza el lugar con el id dado por parametro por otor llugar dao po paramettro
+     * @param idACambiar Id del lugar a cambiar
+     * @param nuevo el lugar a agregar.
+     */
+    public void updateLugar(String idACambiar,LugarDTO nuevo );
+    
+ 
+    
+    /**
+     * Elimian todos los lugares asociados con el itinerario
+     */
+    public void  clean();
     
    
 }

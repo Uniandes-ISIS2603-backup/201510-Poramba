@@ -103,7 +103,7 @@ public class LugarLogic implements ILugarLogic{
     public EventoDTO addEvento(EventoDTO detail) 
     {
        
-       if(actual.agregarEvento(detail))
+       if(actual.addEvento(detail))
        {
            return detail;
        }
@@ -121,7 +121,7 @@ public class LugarLogic implements ILugarLogic{
 
     public boolean deleteEvento(String id) 
     {
-     return actual.eliminarEvento(id);
+     return actual.deleteEvento(id);
        }
 
     public void cleanLugar()

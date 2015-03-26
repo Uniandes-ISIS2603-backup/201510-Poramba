@@ -15,33 +15,6 @@ public class CiudadLogic implements ICiudadLogic{
     @PersistenceContext(unitName = "CiudadClassPU")
     protected EntityManager entityManager;
 
-//    public CiudadDTO createCiudad(CiudadDTO ciudad) {
-//        CiudadEntity entity = CiudadConverter.persistenceDTO2Entity(ciudad);
-//        entityManager.persist(entity);
-//        return CiudadConverter.entity2PersistenceDTO(entity);
-//    }
-//
-//    public List<CiudadDTO> getCiudades() {
-//        Query q = entityManager.createQuery("select u from CiudadEntity u");
-//        return CiudadConverter.entity2PersistenceDTOList(q.getResultList());
-//    }
-//
-//
-//    public CiudadDTO getCiudad(String id) {
-//        return CiudadConverter.entity2PersistenceDTO(entityManager.find(CiudadEntity.class, id));
-//    }
-//
-//    public void deleteCiudad(String id) {
-//       CiudadEntity entity = entityManager.find(CiudadEntity.class, id);
-//        entityManager.remove(entity);
-//    }
-//
-//    public void updateCiudad(CiudadDTO ciudad) {
-//        CiudadEntity entity = entityManager.merge(CiudadConverter.persistenceDTO2Entity(ciudad));
-//        CiudadConverter.entity2PersistenceDTO(entity);
-//    }
-    
-    
     
     public CiudadDTO createCiudad(CiudadDTO detail) {
         ciudades.add(detail);
@@ -87,6 +60,8 @@ public class CiudadLogic implements ICiudadLogic{
             ciudades.remove(ciud);
         }
     }
+
+    
 
 }
 

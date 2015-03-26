@@ -19,11 +19,11 @@ public interface IEventoLogic {
 
     public List<EventoDTO> getEventos();
 
-    public EventoDTO getEvento(Long id);
+    public EventoDTO getEvento(String id);
 
-    public void deleteEvento(Long id);
+    public void deleteEvento(String id);
 
-    public void updateEvento(EventoDTO detail);
+    public void updateEvento(EventoDTO detail,String id);
 
     public void setCiudad(CiudadDTO ciudad);   
 
