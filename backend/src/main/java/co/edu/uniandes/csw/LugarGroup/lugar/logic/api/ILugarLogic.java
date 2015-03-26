@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.LugarGroup.itinerario.logic.api;
+package co.edu.uniandes.csw.LugarGroup.lugar.logic.api;
 import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
 import co.edu.uniandes.csw.LugarGroup.lugar.logic.dto.LugarDTO;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;

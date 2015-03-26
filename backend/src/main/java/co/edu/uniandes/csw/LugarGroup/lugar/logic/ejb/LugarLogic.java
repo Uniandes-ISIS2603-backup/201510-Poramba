@@ -2,7 +2,7 @@ package co.edu.uniandes.csw.LugarGroup.lugar.logic.ejb;
 
 
 import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
-import co.edu.uniandes.csw.LugarGroup.itinerario.logic.api.ILugarLogic;
+import co.edu.uniandes.csw.LugarGroup.lugar.logic.api.ILugarLogic;
 import co.edu.uniandes.csw.LugarGroup.lugar.logic.dto.LugarDTO;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelDTO;
