@@ -309,6 +309,77 @@ atrbN,
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>createTransporte</td>
+<td>/transporte/:id</td>
+<td>Crea un transporte con un identificador determinado</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con los atributos creados</td>
+</tr>
+<tr>
+<td>getTransportes</td>
+<td>/transporte</td>
+<td>obtener todos los objetos Json de Transporte</td>
+<td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima Transporte</td>
+<td>transporte</td>
+<td>UN objeto Json con coleccion de objetos y la cantidad con la que llega</td>
+</tr>
+<tr>
+<td>updateTransporte</td>
+<td>/transporte/</td>
+<td>actualizar los atributos de un Transporte con un identificador determinado</td>
+<td>Objeto Json de Transporte</td>
+<td><strong>@PathParam id: </strong> identificador del registro</td>
+<td>un objeto Json con el sus atributos actualizados</td>
+</tr>
+<tr>
+<td>getTransporte</td>
+<td>/transporte/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del Itinerario con un id</td>
+</tr>
+<tr>
+<td>deleteTransporte</td>
+<td>/transporte/:id</td>
+<td>Borra una instancia de un Transporte con un identificador</td>
+<td>Objeto Json de Transporte</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>getCiudadOrigen</td>
+<td>/city/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle de la ciudad origen con un id<</td>
+</tr>
+<tr>
+<td>setCiudadOrigen</td>
+<td>/city/:id</td>
+<td>Cambia la ciudad origen actual por uno dado por parametro</td>
+<td>Objeto Json de Ciudad</td>
+<td><strong>@PathParam id: </strong> identificador del registro</td>
+<td>un objeto Json con los atributos actualizados</td>
+</tr>
+<td>getCiudadDestino</td>
+<td>/city/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle de la ciudad destino con un id<</td>
+</tr>
+<tr>
+<td>setCiudadDestino</td>
+<td>/city/:id</td>
+<td>Cambia la ciudad destino actual por uno dado por parametro</td>
+<td>Objeto Json de Ciudad</td>
+<td><strong>@PathParam id: </strong> identificador del registro</td>
+<td>un objeto Json con los atributos actualizados</td>
+</tr>
 </tbody>
 </table>
 
@@ -634,6 +705,47 @@ atrbN,
 <tr>
 <td>delete</td>
 <td>/user/:id</td>
+<td>Borra una instancia de un Usuario con un identificador</td>
+<td>Objeto Json de Usuario</td>
+<td></td>
+<td></td>
+</tr>
+</tr>
+<tr>
+<td>createUsuario</td>
+<td>/usuario/:id</td>
+<td>Crea un usuario con un identificador determinado</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con los atributos creados</td>
+</tr>
+<tr>
+<td>getUsuarios</td>
+<td>/usuario</td>
+<td>obtener todos los objetos Json de Usuario</td>
+<td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima Usuario</td>
+<td>usuario</td>
+<td>UN objeto Json con coleccion de objetos y la cantidad con la que llega</td>
+</tr>
+<tr>
+<td>updateUsuario</td>
+<td>/usuario/</td>
+<td>actualizar los atributos de un Usuario con un identificador determinado</td>
+<td>Objeto Json de Usuario</td>
+<td><strong>@PathParam id: </strong> identificador del registro</td>
+<td>un objeto Json con el sus atributos actualizados</td>
+</tr>
+<tr>
+<td>getUsuario</td>
+<td>/usuario/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del Usuario con un id</td>
+</tr>
+<tr>
+<td>deleteUsuario</td>
+<td>/usuario/:id</td>
 <td>Borra una instancia de un Usuario con un identificador</td>
 <td>Objeto Json de Usuario</td>
 <td></td>
