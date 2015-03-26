@@ -487,5 +487,181 @@ atrbN,
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>getCiudad</td>
+<td>/city/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle de la ciudad con un id</td>
+</tr>
+<tr>
+<td>addCiudad</td>
+<td>/city/:id</td>
+<td>Agrega una ciudad a el Lugar con un identificador determinado</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>deleteCiudad</td>
+<td>/city/:id</td>
+<td>Elimina una ciudad a el Lugar con un identificador determinado</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>true si la elimina, false en caso contrario</td>
+</tr>
+<tr>
+<td>updateCiudad</td>
+<td>/city/:id</td>
+<td>Reemplaza una ciudad a el Lugar con un identificador determinado</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle de la ciudad con un id</td>
+</tr>
+<tr>
+<td>addEvento</td>
+<td>/event/:id</td>
+<td>Agrega un Evento a el Lugar con un identificador determinado</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del evento con un id</td>
+</tr>
+<tr>
+<td>getEvento</td>
+<td>/event/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del evento con un id<</td>
+</tr>
+<tr>
+<td>getEventos</td>
+<td>/event/</td>
+<td>obtener todos los objetos Json de evento</td>
+<td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima Evento</td>
+<td>event</td>
+<td>UN objeto Json con coleccion de objetos y la cantidad con la que llega<</td>
+</tr>
+<tr>
+<td>deleteEvento</td>
+<td>/event/:id</td>
+<td>Elimina un evento del lugar asociado al id dado por parametro</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>true si la elimina, false en caso contrario</td>
+</tr>
+<tr>
+<td>cleanLugar</td>
+<td>/lugar/:id</td>
+<td>Elimina todos los eventos, hotel y tranporte asociados al lugar</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>updateEvento</td>
+<td>/event/:id</td>
+<td>Cambia el evento por la id por parametro por el nuevo Evento pasado por parametro</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del nuevo evento con un id</td>
+</tr>
+<tr>
+<td>addTransporte</td>
+<td>/transport/:id</td>
+<td>Agrega un Transporte a el Lugar con un identificador determinado</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del transporte con un id</td>
+</tr>
+<tr>
+<td>updateTransporte</td>
+<td>/transport/:id</td>
+<td>Cambia el transporte por la id por parametro por el nuevo transporte pasado por parametro</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>deleteTransporte</td>
+<td>/transport/:id</td>
+<td>Elimina un transporte del lugar asociado al id dado por parametro</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>true si la elimina, false en caso contrario</td>
+</tr>
+<tr>
+<td>getTransporte</td>
+<td>/transport/</td>
+<td>obtener todos los objetos Json de transporte</td>
+<td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima Evento</td>
+<td>transport</td>
+<td>UN objeto Json con coleccion de objetos y la cantidad con la que llega<</td>
+</tr>
+<tr>
+<td>addHotel</td>
+<td>/hotel/:id</td>
+<td>Agrega un Hotel a el Lugar con un identificador determinado</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del hotel con un id</td>
+</tr>
+<tr>
+<td>deleteHotel</td>
+<td>/hotel/:id</td>
+<td>Elimina un hotel del lugar asociado al id dado por parametro</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>true si la elimina, false en caso contrario</td>
+</tr>
+<tr>
+<td>getHotel</td>
+<td>/hotel/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del hotel con un id<</td>
+</tr>
+<tr>
+<td>setHotel</td>
+<td>/hotel/:id</td>
+<td>Cambia el hotelactual por uno dado por parametro</td>
+<td>Objeto Json de Hotel</td>
+<td><strong>@PathParam id: </strong> identificador del registro</td>
+<td>un objeto Json con los atributos actualizados</td>
+</tr>
+<tr>
+<td>getLugar</td>
+<td>/lugar/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del lugar con un id<</td>
+</tr>
+<tr>
+<td>deleteLugar</td>
+<td>/lugar/:id</td>
+<td>Elimina un lugar asociado al id dado por parametro</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>true si la elimina, false en caso contrario</td>
+</tr>
+<tr>
+<td>updateLugar</td>
+<td>/lugar/:id</td>
+<td>Cambia el lugar por la id por parametro por el nuevo lugar pasado por parametro</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del lugar con un id</td>
+</tr>
+<tr>
+<td>setLugar</td>
+<td>/lugar/:id</td>
+<td>Cambia el lugar actual por el dado por parametro</td>
+<td>Objeto Json de lugar</td>
+<td><strong>@PathParam id: </strong> identificador del registro</td>
+<td>un objeto Json con los atributos actualizados</td>
+</tr>
 </tbody>
 </table>
