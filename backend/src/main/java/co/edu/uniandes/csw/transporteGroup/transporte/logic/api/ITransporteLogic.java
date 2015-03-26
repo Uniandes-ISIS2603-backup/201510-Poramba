@@ -24,15 +24,18 @@ public interface ITransporteLogic {
 
     public void deletetransporte(String id);
 
-    public void updatetransporte(transporteDTO detail);
+    public void updatetransporte(transporteDTO detail, String id);
+    
+    public void setCiudadOrigen(CiudadDTO origen);
+    
+    public void setCiudadDestino(CiudadDTO destino);
     
     public CiudadDTO getCiudadOrigen();
     
     public CiudadDTO getCiudadDestino();
     
-    public void updateCiudadOrigen(CiudadDTO origen);
     
-    public void updateCiudadDestino(CiudadDTO destino);
+    
     
     
             
