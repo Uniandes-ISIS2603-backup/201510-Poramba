@@ -4,6 +4,7 @@ import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelDTO;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.api.IHotelLogic;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.converter.HotelConverter;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.entity.HotelEntity;
+import java.util.AbstractList;
 
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -17,7 +18,7 @@ public class HotelLogic implements IHotelLogic {
 
         /**
      * Crea un nuevo hotel y lo agrega a la base de datos.
-     * @param detail hotel nuevo.
+     * @param hotel hotel nuevo.
      * @return El nuevo hotel creado
      */
     public HotelDTO createHotel(HotelDTO hotel) {
