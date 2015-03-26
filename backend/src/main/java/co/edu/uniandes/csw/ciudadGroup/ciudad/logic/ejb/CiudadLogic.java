@@ -28,11 +28,11 @@ public class CiudadLogic implements ICiudadLogic{
     }
 
 
-    public CiudadDTO getCiudad(Long id) {
+    public CiudadDTO getCiudad(String id) {
         return CiudadConverter.entity2PersistenceDTO(entityManager.find(CiudadEntity.class, id));
     }
 
-    public void deleteCiudad(Long id) {
+    public void deleteCiudad(String id) {
        CiudadEntity entity = entityManager.find(CiudadEntity.class, id);
         entityManager.remove(entity);
     }
