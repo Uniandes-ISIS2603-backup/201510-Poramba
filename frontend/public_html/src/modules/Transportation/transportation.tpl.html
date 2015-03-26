@@ -10,7 +10,25 @@
                         <h2 class="wow animated fadeInDown"><img src="src/assets/img/airplane.png" alt="VACAS"></span></h2>
                         <p class="lead animated fadeIn">
                            Los viajes en los mejores horario y con los mejores precios estan acá!
-                        </p>
+                           <form name="busquedaForm" role="form">
+                                                   <!-- Buscar --->
+                                                <h3>Buscar: </h3> <br><h5>Tipo de transporte:</h5><div class="form-group">
+				<input type=text list=transportation ng-model="currentRecord.transport" required>
+                                <datalist id=transportation >
+                                    <option> Bus
+                                    <option> Carro Particular
+                                    <option> Taxi
+                                    <option> Barco
+                                    <option> Tren
+                                    <option> Avion
+                                </datalist>
+                                <h5>Ciudad Origen:</h5><input id="oriEBusqueda" type="text" class="form-control" placeholder="aqui va la ciudad de origen">
+                                <h5>Ciudad Destino:</h5><input id="desEBusqueda" type="text" class="form-control" placeholder="aqui va la ciudad de destino">
+                                 </div>
+                      
+                          <!-- Remplazar el # por donde quieran que sea el boton -->
+                        <a href="#" class="btn btn-lg btn-theme-bg">Buscar!</a>
+                         </form>
                     </div>
                 </div>
             </div>
