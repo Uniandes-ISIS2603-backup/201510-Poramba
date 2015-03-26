@@ -33,54 +33,27 @@
                 </div>
             </div>
         </section>
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#country-navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">Transporte</a>
-				</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="country-navbar">
-					<button class="btn btn-default navbar-btn" ng-hide="transportationCtrl.editMode" ng-click="transportationCtrl.createRecord()"><span class="glyphicon glyphicon-plus"></span> Crear</button>
-					<button class="btn btn-default navbar-btn" ng-hide="transportationCtrl.editMode" ng-click="transportationCtrl.fetchRecords()"><span class="glyphicon glyphicon-refresh"></span> Actualizar</button>
-					<button class="btn btn-default navbar-btn" ng-show="transportationCtrl.editMode" ng-click="transportationCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
-					<button class="btn btn-default navbar-btn" ng-show="transportationCtrl.editMode" ng-click="transportationCtrl.fetchRecords()"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
-				</div>
-			</div>
-		</nav>
-	</div>
-	<div ng-hide="transportationCtrl.editMode">
-		<table class="table table-striped table-bordered">
-			<thead>
-				<tr>
-					<th>Ciudad Origen</th>
-                                        <th>Ciudad Destino</th> 
-                                        <th>Distancia (KM)</th>
-                                        <th>Medio de Transporte</th>
-                                        <th>Opciones</th>
-                                 
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="record in records">
-					<td>{{record.origin}}</td>
-					<td>{{record.destiny}}</td>
-                                        <td>{{'se lo damos'}}</td>
-                                        <td>{{record.transport}}</td>
-					<td>
-						<button class="btn btn-default btn-sm" ng-click="transportationCtrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
-						<button class="btn btn-default btn-sm" ng-click="transportationCtrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Delete</button>
-					   
-                                        </td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+				 <!-- Navegacion en modulos -->
+                <div class="collapse navbar-collapse" id="country-navbar"><br>
+                    <center><button class="btn btn-lg btn-theme" ng-hide="transportationCtrl.editMode" ng-click="transportationCtrl.createRecord()"><i class="fa fa-plus-circle"></i> Crear</button>
+                    <button class="btn btn-lg btn-theme" ng-show="transportationCtrl.editMode" ng-click="transportationCtrl.saveRecord()"><i class="fa fa-floppy-o"></i> Guardar</button>
+                    <button class="btn btn-lg btn-theme" ng-show="transportationCtrl.editMode" ng-click="transportationCtrl.fetchRecords()"><i class="fa fa-exclamation-circle"></i> Cancelar</button></center>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--Elementos-->
+    <div ng-hide="transportationCtrl.editMode">
+        <div ng-repeat="record in records">
+            <div class="col-md-3 margin20">
+                    <div class="team-wrap">
+                        <img src="{{record.img}}" class="img-responsive" alt="">
+                        <h4>Origen: {{record.origin}}  Destino: {{record.destiny}}</h4>
+                        <span>Medio de transporte: {{record.transport}}</span>                     
+                    </div>
+                </div>                                  
+        </div>
+    </div><!--Termina elementos-->
 	<div ng-show="transportationCtrl.editMode">
 		<form name="countryForm" role="form">
 			<input id="name" class="form-control" type="hidden" ng-model="currentRecord.id"/>
@@ -120,6 +93,10 @@
                                     <option> Avion
                                 </datalist>
                         </div>
+                                   <div class="form-group">
+                <label for="img">Imagen</label>
+                <input id="img" class="form-control" type="text" ng-model="currentRecord.img"/>
+            </div>
 		</form>
 	</div>
     
