@@ -17,6 +17,9 @@ import java.util.Iterator;
  */
 public class Busqueda 
 {
+    /**
+     * cLAVES NECESARIAS PARA EL USO DE FOURSQUARE, LAS DOS SON NECESARIAS
+     */
     public final static  String ID_cliente = "RX0HQUY3SIQ4ZH1HGIUMTQFFO344YVHCVD4UUCX2UUXNCXDE";
     public final static String ID_SECRET = "AQUBPLCCPU4W2AXWJNEZVUBQ1D2JVGO1EZ5PW1KE0ARCIS4D";
     
@@ -28,8 +31,14 @@ public class Busqueda
     public final static String FINAL_URL_BASICO = "&v=20140806&m=foursquare";
     public final static String CIUDAD = "&near=";
     
-    
-    
+     /**
+     * pARTES BASICAS DEL URL DE LA IMAGEN (FOTOS), inicio, tamanio y final
+     * la estructura basica es
+     * BASE:IMAGEN + SIZE +  FINAL_IMAGEN
+     */
+    public final static String BASE_IMAGEN = "https://api.foursquare.com/v2/venues/";
+    public final static String FINAL_IMAGEN  = "/photos?v=20140319&client_id=RX0HQUY3SIQ4ZH1HGIUMTQFFO344YVHCVD4UUCX2UUXNCXDE&client_secret=AQUBPLCCPU4W2AXWJNEZVUBQ1D2JVGO1EZ5PW1KE0ARCIS4D&limit=500";
+    public final static String TAMANIO  = "original";
     /**
      * Metodo que da un Objeto JSOn al realizar una consulta de busqueda cn el api FOurSquare
      * @param direc url que es la que encargada de generar la arespuesta en JSOn 
@@ -51,7 +60,8 @@ public class Busqueda
 			return jsonObject;
 		}
 
-		catch (org.json.simple.parser.ParseException e) {
+		catch (org.json.simple.parser.ParseException e) 
+                {
 			e.printStackTrace();
 		}
 		return null;
