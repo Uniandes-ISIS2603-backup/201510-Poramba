@@ -1,8 +1,6 @@
 package co.edu.uniandes.csw.SportGroup.service;
 
-import co.edu.uniandes.csw.SportGroup.country.logic.api.ICountryLogic;
-import co.edu.uniandes.csw.SportGroup.country.logic.dto.CountryDTO;
-import co.edu.uniandes.csw.SportGroup.country.logic.dto.CountryPageDTO;
+
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;

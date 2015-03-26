@@ -406,3 +406,71 @@ atrbN,
 </tr>
 </tbody>
 </table>
+
+<h2 id="lugar">Lugar</h2>
+<p>En la siguiente tabla se detalla los servicios REST generados para la entidad Lugar.</p>
+<h3 id="estructura-de-un-objeto-json-de-un-ciudad-">Estructura de un objeto Json de Lugar.</h3>
+<p>{
+    <strong>inicio</strong>: '' /<em>Tipo Date</em>/,
+    <strong>fin</strong>: '' /<em>Tipo Date</em>/,
+    <strong>hotel</strong>: '' /<em>Tipo HotelDTO</em>/,
+    <strong>transporte</strong>: '' /<em>Tipo TransporteDTO</em>/,
+    <strong>eventos</strong>: '' /<em>Tipo List EventoDTO</em>/,
+    <strong>ciudad</strong>: '' /<em>Tipo CiudadDTO</em>/,
+
+
+}</p>
+<table>
+<thead>
+<tr>
+<th>Metodo</th>
+<th>URI</th>
+<th>ACCION</th>
+<th>PARAMETROS</th>
+<th>CUERPO</th>
+<th>RETORNO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>get</td>
+<td>/lugar</td>
+<td>obtener todos los objetos Json de Lugar</td>
+<td><strong>@queryParamPage</strong>  pagina a consultar<strong>@maxEvent:</strong> cantidad maxima Lugar</td>
+<td>lugar</td>
+<td>UN objeto Json con coleccion de objetos y la cantidad con la que llega</td>
+</tr>
+<tr>
+<td>get</td>
+<td>/lugar/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td><strong>@PathParam id:</strong> identificador del registro</td>
+<td></td>
+<td>un objeto Json con el detalle del Lugar con un id</td>
+</tr>
+<tr>
+<td>post</td>
+<td>/lugar/:id</td>
+<td>Obtener los atributos del objeto Json con una id especifica</td>
+<td></td>
+<td>Objeto Json a crear de Lugar</td>
+<td>un objeto Json de Lugar creado</td>
+</tr>
+<tr>
+<td>put</td>
+<td>/lugar/:id</td>
+<td>actualizar los atributos de un Lugar con un identificador determinado</td>
+<td>Objeto Json de Lugar</td>
+<td><strong>@PathParam id: </strong> identificador del registro</td>
+<td>un objeto Json con el sus atributos actualizados</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>/lugar/:id</td>
+<td>Borra una instancia de un Lugar con un identificador</td>
+<td>Objeto Json de Lugar</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
