@@ -8,6 +8,7 @@ package co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.api;
 
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelDTO;
 import java.util.List;
+import static org.eclipse.persistence.jpa.rs.util.JPARSLogger.exception;
 
 /**
  *
@@ -42,7 +43,9 @@ public interface IHotelLogic {
     /**
      * Actualiza un hotel con la información que entra por parametro
      * @param detail información del hotel
+     * @id identificador del hotel que se le desea cambiar la informacion
+     * @throws Exception en caso de que el hotel que se quiere actualizar no exista
      */
-    public void updateHotel(HotelDTO detail);
+    public void updateHotel(HotelDTO detail, String id) throws Exception;
     
 }
