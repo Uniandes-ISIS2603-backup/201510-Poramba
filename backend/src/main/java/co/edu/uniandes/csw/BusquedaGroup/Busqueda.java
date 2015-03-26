@@ -6,9 +6,10 @@
 package co.edu.uniandes.csw.BusquedaGroup;
 
 /**
- *
- * @author estudiante
+ *Clase en la que se realiza la utilizacion del appi 
+ * para busuqedas
  */
-public class Busqueda {
+public class Busqueda 
+{
     
 }
