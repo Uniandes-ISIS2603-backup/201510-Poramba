@@ -34,7 +34,8 @@
                         <h4>Ciudad: {{record.ciudad}}  Evento: {{record.event}}</h4>
                         <span>Inicia en: {{record.inicio}}   Termina en: {{record.final}}</span>  
                         <p>  Descripcion:  {{record.descripcion}}
-                        </p><p>Reglas: {{record.rules}}</p>
+                        </p><p>Reglas: {{record.rules}}</p><br>
+                        <button class="btn btn-lg btn-theme"  ng-click="eventCtrl.editRecord(record)"><i class="fa fa-pencil"></i> Editar</button>
                     </div>
                 </div>                                  
         </div>

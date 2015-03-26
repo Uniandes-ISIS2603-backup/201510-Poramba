@@ -41,11 +41,12 @@
         <div ng-repeat="record in records">
             <div class="col-md-3 margin20">
                     <div class="team-wrap">
-                        <img src="{{record.img}}" class="img-responsive" alt="">
+                         <img src="{{record.img}}" class="img-responsive" alt="">
                         <h4>{{record.name}}</h4>
                         <span><a href="{{record.link}}">Link</a></span>
                         <p>  Descripcion:  {{record.desc}}
-                        </p>
+                        </p><br>
+                        <button class="btn btn-lg btn-theme" ng-click="AGREGAR A ITINERARIO"><i class="fa fa-calendar-o"></i> Agregar a intinerario</button>
                         
                     </div>
                 </div>                                  
