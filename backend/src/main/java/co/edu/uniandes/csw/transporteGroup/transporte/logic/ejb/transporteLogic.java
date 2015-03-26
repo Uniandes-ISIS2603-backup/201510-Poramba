@@ -2,25 +2,21 @@ package co.edu.uniandes.csw.transporteGroup.transporte.logic.ejb;
 
 import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
 import co.edu.uniandes.csw.transporteGroup.transporte.logic.api.ITransporteLogic;
-import co.edu.uniandes.csw.transporteGroup.transporte.logic.converter.transporteConverter;
 import co.edu.uniandes.csw.transporteGroup.transporte.logic.dto.transporteDTO;
-import co.edu.uniandes.csw.transporteGroup.transporte.logic.entity.transporteEntity;
 import java.util.ArrayList;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 public class transporteLogic implements ITransporteLogic {
-    
+
     List<transporteDTO> transportes;
     CiudadDTO origen;
     CiudadDTO destino;
-    
-    public transporteLogic ()
-    {
+
+    public transporteLogic() {
         transportes = new ArrayList<transporteDTO>();
     }
 
@@ -35,13 +31,11 @@ public class transporteLogic implements ITransporteLogic {
 ////        entityManager.persist(entity);
 ////        return transporteConverter.entity2PersistenceDTO(entity);
 //    }
-
 //    public List<transporteDTO> getTransportes() {
 //        return transportes;
 ////        Query q = entityManager.createQuery("select u from transporteEntity u");
 ////        return transporteConverter.entity2PersistenceDTOList(q.getResultList());
 //    }
-
 //    public transporteDTO getTransporte(String id) {
 //        transporteDTO respuesta = null;
 //        int act = transportes.size();
@@ -52,7 +46,6 @@ public class transporteLogic implements ITransporteLogic {
 //        return respuesta;
 ////        return transporteConverter.entity2PersistenceDTO(entityManager.find(transporteEntity.class, id));
 //    }
-
 //    public void deleteTransporte(String id) {
 //        transporteDTO trans = getTransporte(id);
 //        if( trans != null)transportes.remove(trans);
@@ -60,7 +53,6 @@ public class transporteLogic implements ITransporteLogic {
 ////        transporteEntity entity = entityManager.find(transporteEntity.class, id);
 ////        entityManager.remove(entity);
 //    }
-
 //    public void updateTransporte(transporteDTO transporte, String id) {
 //        transporteDTO trans = getTransporte(id);
 //        if(trans != null)
@@ -76,26 +68,24 @@ public class transporteLogic implements ITransporteLogic {
 //            transportes.remove(trans);
 //        }
 //    }
-        public void setCiudadOrigen(CiudadDTO origen)
-        {
-            this.origen = origen;
-        }
-        public void setCiudadDestino(CiudadDTO destino)
-        {
-            this.destino = destino;
-        }
-        public CiudadDTO getCiudadOrigen()
-        {
-            return origen;
-        }
-        public CiudadDTO getCiudadDestino()
-        {
-            return destino;
-        }
+    public void setCiudadOrigen(CiudadDTO origen) {
+        this.origen = origen;
+    }
+
+    public void setCiudadDestino(CiudadDTO destino) {
+        this.destino = destino;
+    }
+
+    public CiudadDTO getCiudadOrigen() {
+        return origen;
+    }
+
+    public CiudadDTO getCiudadDestino() {
+        return destino;
+    }
 
 //        transporteEntity entity = entityManager.merge(transporteConverter.persistenceDTO2Entity(transporte));
 //        transporteConverter.entity2PersistenceDTO(entity);
-
     public transporteDTO createtransporte(transporteDTO detail) {
         transportes.add(detail);
         return detail;
@@ -106,39 +96,39 @@ public class transporteLogic implements ITransporteLogic {
     }
 
     public transporteDTO gettransporte(String id) {
-               transporteDTO respuesta = null;
+        transporteDTO respuesta = null;
         int act = transportes.size();
-        for(int i = 0; i <act; i++)
-        {
-            if(transportes.get(i).getId().equals(id)) respuesta = transportes.get(i); break; 
+        for (int i = 0; i < act; i++) {
+            if (transportes.get(i).getId().equals(id)) {
+                respuesta = transportes.get(i);
+            }
+            break;
         }
         return respuesta;
     }
 
     public void deletetransporte(String id) {
         transporteDTO trans = gettransporte(id);
-        if( trans != null)transportes.remove(trans);
+        if (trans != null) {
+            transportes.remove(trans);
+        }
     }
 
     public void updatetransporte(transporteDTO detail, String id) {
-                transporteDTO trans = gettransporte(id);
-        if(trans != null)
-        {
+        transporteDTO trans = gettransporte(id);
+        if (trans != null) {
             boolean ya = false;
             int i = 0;
-            while(!ya)
-            {
-                if(transportes.get(i) == trans)ya = true;
-                else i++;
+            while (!ya) {
+                if (transportes.get(i) == trans) {
+                    ya = true;
+                } else {
+                    i++;
+                }
             }
             transportes.set(i, detail);
             transportes.remove(trans);
         }
     }
-
-
-
-
-    
 
 }
