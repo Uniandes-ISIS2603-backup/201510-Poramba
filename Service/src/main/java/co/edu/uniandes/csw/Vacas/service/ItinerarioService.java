@@ -62,11 +62,56 @@ public class ItinerarioService
     }
     
     @PUT
-    @Path("{agregarCiudad}")
-    public LugarDTO updateItinerario( LugarDTO ciudad) 
+    @Path("{addLugar}")
+    public LugarDTO addLugar( LugarDTO ciudad) 
     {
         return countryLogic.addLugar(ciudad);
     }
+    
+    @GET
+    @Path("(getLugares)")
+    public List<LugarDTO> getLugares()
+     {
+                return countryLogic.getLugares();
+     }
+    
+    @GET
+    @Path("(getLugar)/(id)")
+    public LugarDTO getLugar (@PathParam("id") String id)
+     {
+             return countryLogic.getLugar(id);
+     }
+    
+    @DELETE
+    @Path("(deleteLugar)/{id}")
+    public void deleteLugar(@PathParam("id") String id) 
+    {
+        countryLogic.deleteLugar(id);
+    }
+    
+     @PUT
+     @Path("(updateLugar)/(id)")
+    public void updateLugar( LugarDTO lugar,@PathParam("id") String id)
+    {
+        countryLogic.updateLugar(id,lugar);
+    }
+    
+      @PUT
+     @Path("(clean)")
+    public void celan( )
+    {
+        countryLogic.clean();
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 

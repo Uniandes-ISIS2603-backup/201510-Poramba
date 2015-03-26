@@ -55,7 +55,9 @@ public class HotelService
     }
 
     @PUT
-    public void updateHotel( HotelDTO hotel,@PathParam("id") String id) {
+     @Path("{id}")
+    public 
+        void updateHotel( HotelDTO hotel,@PathParam("id") String id) {
         countryLogic.updateHotel(hotel,id);
     }
 
