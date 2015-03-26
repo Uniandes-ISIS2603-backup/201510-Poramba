@@ -26,11 +26,11 @@ public class HotelLogic implements IHotelLogic {
         return HotelConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
-    public HotelDTO getHotel(Long id) {
+    public HotelDTO getHotel(String id) {
         return HotelConverter.entity2PersistenceDTO(entityManager.find(HotelEntity.class, id));
     }
 
-    public void deleteHotel(Long id) {
+    public void deleteHotel(String id) {
         HotelEntity entity = entityManager.find(HotelEntity.class, id);
         entityManager.remove(entity);
     }
@@ -39,14 +39,6 @@ public class HotelLogic implements IHotelLogic {
         HotelEntity entity = entityManager.merge(HotelConverter.persistenceDTO2Entity(hotel));
         HotelConverter.entity2PersistenceDTO(entity);
     }
-
-    /*public CountryDTO getMostPopulated() {
-     Query query = entityManager.createQuery("select u from CountryEntity u WHERE u.population = (SELECT MAX(v.population) from CountryEntity v)");
-     return CountryConverter.entity2PersistenceDTO((CountryEntity)query.getSingleResult());
-     }
-
-     public CountryDTO getLeastPopulated() {
-     Query query = entityManager.createQuery("select u from CountryEntity u WHERE u.population = (SELECT MIN(v.population) from CountryEntity v)");
-     return CountryConverter.entity2PersistenceDTO((CountryEntity)query.getSingleResult());
-     }*/
+    
 }
+
