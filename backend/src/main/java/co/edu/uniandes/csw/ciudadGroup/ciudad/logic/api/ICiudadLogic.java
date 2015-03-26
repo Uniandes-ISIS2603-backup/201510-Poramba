@@ -18,9 +18,11 @@ public interface ICiudadLogic {
 
     public List<CiudadDTO> getCiudades();
 
-
     public CiudadDTO getCiudad(String id);
 
     public void deleteCiudad(String  id);
+    
+    public void updateCiudad(CiudadDTO detail);
+    
 
 }
