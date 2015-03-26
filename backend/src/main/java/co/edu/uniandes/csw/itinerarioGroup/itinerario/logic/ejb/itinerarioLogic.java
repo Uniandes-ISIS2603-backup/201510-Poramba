@@ -9,7 +9,6 @@ import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.converter.*;
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.dto.itinerarioDTO;
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.entity.*;
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.api.IitinerarioLogic;
-import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.dto.itinerarioPageDTO;
 
 public class itinerarioLogic implements IitinerarioLogic {
 

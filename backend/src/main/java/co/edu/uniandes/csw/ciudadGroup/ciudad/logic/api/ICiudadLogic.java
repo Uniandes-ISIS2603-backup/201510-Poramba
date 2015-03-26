@@ -17,7 +17,8 @@ public interface ICiudadLogic {
     public CiudadDTO createCiudad(CiudadDTO detail);
 
     public List<CiudadDTO> getCiudades();
-
+    
+    public void updateCiudad(CiudadDTO detail, String id);
 
     public CiudadDTO getCiudad(String id);
 
