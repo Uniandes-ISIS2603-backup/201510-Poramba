@@ -15,7 +15,8 @@ import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.dto.itinerarioPageDT
  *
  * @author Vacas
  */
-public interface IitinerarioLogic {
+public interface IitinerarioLogic
+{
 
     /**
      * Crea un intinerario apartir del dato obtenido por parametro
@@ -59,8 +60,6 @@ public interface IitinerarioLogic {
      */
     public void updateItinerario(itinerarioDTO detail);
     
-    
-    public 
     
    
 }
