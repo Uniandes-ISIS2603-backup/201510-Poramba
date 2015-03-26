@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.CiudadGroup.ciudad.logic.api;
+package co.edu.uniandes.csw.ciudadGroup.ciudad.logic.api;
 
-import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
 import java.util.List;
 
 /**
@@ -24,7 +24,7 @@ public interface ICiudadLogic {
 
     public void deleteCiudad(String  id);
     
-    public void updateCiudad(CiudadDTO detail, String id);
+    
     
 
 }

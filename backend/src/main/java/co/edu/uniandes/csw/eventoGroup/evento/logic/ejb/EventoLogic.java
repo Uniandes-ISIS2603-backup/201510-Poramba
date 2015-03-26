@@ -1,6 +1,6 @@
 package co.edu.uniandes.csw.eventoGroup.evento.logic.ejb;
 
-import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.api.IEventoLogic;
 import java.util.ArrayList;

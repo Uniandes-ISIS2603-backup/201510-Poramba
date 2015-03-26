@@ -1,6 +1,6 @@
 package co.edu.uniandes.csw.LugarGroup.lugar.logic.entity;
 
-import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelDTO;
 import co.edu.uniandes.csw.transporteGroup.transporte.logic.dto.transporteDTO;

@@ -85,9 +85,9 @@ public class HotelLogic implements IHotelLogic {
      * Actualiza un hotel con la información que entra por parametro
      * @param detail información del hotel
      */
-    public void updateHotel(HotelDTO hotel, String id)throws Exception {
+    public void updateHotel(HotelDTO hotel, String id)  {
         HotelDTO hote = getHotel(id);
-        if(hote == null)throw new Exception("No existe el hotel que desea actualizar");
+        if(hote == null);
       
         else 
         {
@@ -101,8 +101,7 @@ public class HotelLogic implements IHotelLogic {
             hoteles.set(i, hotel);
             hoteles.remove(hote);
         }
-//        HotelEntity entity = entityManager.merge(HotelConverter.persistenceDTO2Entity(hotel));
-//        HotelConverter.entity2PersistenceDTO(entity);
+
     }
     
 }

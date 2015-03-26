@@ -5,7 +5,7 @@
  */
 package co.edu.uniandes.csw.eventoGroup.evento.logic.api;
 
-import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;
 import java.util.List;
 

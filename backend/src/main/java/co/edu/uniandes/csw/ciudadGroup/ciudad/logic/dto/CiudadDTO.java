@@ -1,4 +1,4 @@
-package co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto;
+package co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto;
 
 
 import javax.xml.bind.annotation.XmlRootElement;

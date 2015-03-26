@@ -1,7 +1,7 @@
-package co.edu.uniandes.csw.CiudadGroup.ciudad.logic.ejb;
+package co.edu.uniandes.csw.ciudadGroup.ciudad.logic.ejb;
 
-import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.api.ICiudadLogic;
-import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.api.ICiudadLogic;
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
 
 import java.util.List;
 import javax.persistence.EntityManager;

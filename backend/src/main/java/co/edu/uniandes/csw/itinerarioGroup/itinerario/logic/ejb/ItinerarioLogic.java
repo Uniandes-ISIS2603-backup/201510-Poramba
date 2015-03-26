@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.api.IitinerarioLogic;
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.dto.itinerarioDTO;
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.dto.itinerarioPageDTO;
-import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.entity.itinerarioEntity_;
+import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.entity.itinerarioEntity;
 import java.util.ArrayList;
 
 public class ItinerarioLogic implements IitinerarioLogic {

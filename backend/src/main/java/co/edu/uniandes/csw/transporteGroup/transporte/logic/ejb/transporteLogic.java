@@ -1,6 +1,6 @@
 package co.edu.uniandes.csw.transporteGroup.transporte.logic.ejb;
 
-import co.edu.uniandes.csw.CiudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
 import co.edu.uniandes.csw.transporteGroup.transporte.logic.api.ITransporteLogic;
 import co.edu.uniandes.csw.transporteGroup.transporte.logic.dto.transporteDTO;
 import java.util.ArrayList;
