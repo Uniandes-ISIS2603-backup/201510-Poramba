@@ -19,8 +19,8 @@ public interface ICiudadLogic {
     public List<CiudadDTO> getCiudades();
 
 
-    public CiudadDTO getCiudad(Long id);
+    public CiudadDTO getCiudad(String id);
 
-    public void deleteCiudad(Long id);
+    public void deleteCiudad(String  id);
 
 }
