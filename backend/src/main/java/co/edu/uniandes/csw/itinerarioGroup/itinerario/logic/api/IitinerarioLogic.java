@@ -29,16 +29,38 @@ public interface IitinerarioLogic {
      * @return Lista con los itinerarios existentes
      */
     public List<itinerarioDTO> getItinerarios();
-
+    
+    /**
+     * Retorna todos los itinerarios paginados
+     * @param page Pagina de la cual se desea buscar
+     * @param maxRecords numero maximo de respuesta
+     * @return Un objeto JSON con los itinerarios
+     */
     public itinerarioPageDTO getItinerarios(Integer page, Integer maxRecords);
 
-    public itinerarioDTO getItinerario(Long id);
+    
+    /**
+     * Retrina el itinerario con la id dada por parametro
+     * @param id Id del itinrario a buscar
+     * @return  El itineario buscado
+     */
+    public itinerarioDTO getItinerario(String id);
 
-    public void deleteItinerario(Long id);
-
+    /**
+     * Elimina el itinerario con la id buscada
+     * @param id ID del itinerario a buscar
+     * @return  true si se elimina el itinerario, false en caso contrario.
+     */
+    public boolean deleteItinerario(String id);
+    
+    /**
+     * Cambia el itinerario por uno dado por parametro.
+     * @param detail Nuevo itinerario a cambiar
+     */
     public void updateItinerario(itinerarioDTO detail);
     
     
+    public 
     
    
 }
