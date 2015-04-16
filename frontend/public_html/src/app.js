@@ -24,7 +24,7 @@
                 templateUrl: 'src/modules/Map/map.tpl.html'
             }).otherwise('/')
              $routeProvider.when('/Buscador',{
-                templateUrl: 'src/modules/Buscador/tpl.html'                
+                templateUrl: 'src/modules/Buscador/Buscador.tpl.html'                
             });
         }]);
 
@@ -77,6 +77,13 @@
     var mapModule = angular.module('mapModule', ['CrudModule', 'MockModule']);
     mapModule.constant('map.context', 'maps');
     mapModule.config(['map.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
+            urlsProvider.registerUrl(context);
+        }]);
+    
+     //configuración modulo Buscador
+    var BuscadorModule = angular.module('BuscadorModule', ['CrudModule', 'MockModule']);
+    BuscadorModule.constant('Buscador.context', 'Buscadors');
+    BuscadorModule.config(['Buscador.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
             urlsProvider.registerUrl(context);
         }]);
 })();
