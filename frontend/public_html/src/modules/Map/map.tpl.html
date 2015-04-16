@@ -1,0 +1,47 @@
+<div ng-controller="mapCtrl as mapCtrl">
+    <div id="header">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+
+                <section class="intro-text">
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 text-center">
+                                <h2 class="wow animated fadeInDown"><img src="src/assets/img/map.png" alt="VACAS"></span></h2>
+                                <p class="lead animated fadeIn">
+                                    Navega a traves de los lugares más interesantes de Colombia y el mundo!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>            			 <!-- Navegacion en modulos -->
+            </div>
+        </nav>
+    </div>
+    <!--Elementos-->
+    <div ng-hide="mapCtrl.editMode">
+        <div ng-repeat="record in records">
+            <div class="col-md-3 margin20">
+                <div class="team-wrap">
+                    <img src="{{record.img}}" class="img-responsive" alt="">
+                    <h4>Nombre: {{record.nombe}}  Apellidos: {{record.apellido}}</h4>
+                    <span>Pasaporte: {{record.pasaporte}}</span>  
+                    <p>  Edad:  {{record.edad}}
+                    </p>
+                </div>
+            </div>                                  
+        </div>
+    </div><!--Termina elementos-->
+    <script src="http://maps.google.com/maps/api/js?sensor=false&callback=iniciar"></script>
+    <div id="map" style="width:500px;height:250px;">
+        <script>
+                                    function iniciar() {
+                                    var mapOptions = {
+                                    center: new google.maps.LatLng(4.60, - 74.08),
+                                            zoom: 10,
+                                            mapTypeId: google.maps.MapTypeId.ROADMAP};
+                                            var map = new google.maps.Map(document.getElementById("map"), mapOptions); }
+        </script>
+    </div>
+</div>
