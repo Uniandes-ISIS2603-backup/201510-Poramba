@@ -1,26 +1,26 @@
 <div ng-controller="itineraryCtrl as itineraryCtrl">
-	<div id="header">
-		<nav class="navbar navbar-default" role="navigation">
-			<div class="container-fluid">
-                            
-    <section class="intro-text">
-            <div class="container ">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 text-center">
-                        <h2 class="wow animated fadeInDown"><img src="src/assets/img/calendar.png" alt="VACAS"></span></h2>
-                        <p class="lead animated fadeIn">
-                           Organiza tu viaje, no esperes para probar nuestra funcionalidad estrella!
-                        </p>
+    <div id="header">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+
+                <section class="intro-text">
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 text-center">
+                                <h2 class="wow animated fadeInDown"><img src="src/assets/img/calendar.png" alt="VACAS"></span></h2>
+                                <p class="lead animated fadeIn">
+                                    Organiza tu viaje, no esperes para probar nuestra funcionalidad estrella!
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-				<!-- Brand and toggle get grouped for better mobile display -->
-						 <!-- Navegacion en modulos -->
+                </section>
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <!-- Navegacion en modulos -->
                 <div class="collapse navbar-collapse" id="country-navbar"><br>
                     <center><button class="btn btn-lg btn-theme" ng-hide="itineraryCtrl.editMode" ng-click="itineraryCtrl.createRecord()"><i class="fa fa-plus-circle"></i> Crear</button>
-                    <button class="btn btn-lg btn-theme" ng-show="itineraryCtrl.editMode" ng-click="itineraryCtrl.saveRecord()"><i class="fa fa-floppy-o"></i> Guardar</button>
-                    <button class="btn btn-lg btn-theme" ng-show="itineraryCtrl.editMode" ng-click="itineraryCtrl.fetchRecords()"><i class="fa fa-exclamation-circle"></i> Cancelar</button></center>
+                        <button class="btn btn-lg btn-theme" ng-show="itineraryCtrl.editMode" ng-click="itineraryCtrl.saveRecord()"><i class="fa fa-floppy-o"></i> Guardar</button>
+                        <button class="btn btn-lg btn-theme" ng-show="itineraryCtrl.editMode" ng-click="itineraryCtrl.fetchRecords()"><i class="fa fa-exclamation-circle"></i> Cancelar</button></center>
                 </div>
             </div>
         </nav>
@@ -29,53 +29,53 @@
     <div ng-hide="itineraryCtrl.editMode">
         <div ng-repeat="record in records">
             <div class="col-md-3 margin20">
-                    <div class="team-wrap">
-                        <h1 class="heading">{{record.nombe}}</h1>
-                        <h4>Ciudad: {{record.ciudad}}  Evento: {{record.event}}</h4>
-                        <span>Inicia en: {{record.inicio}}   Termina en: {{record.final}}</span>  
-                        <p>  Descripcion:  {{record.descripcion}}
-                        </p><p>Reglas: {{record.rules}}</p><br>
-                        <button class="btn btn-lg btn-theme"  ng-click="eventCtrl.editRecord(record)"><i class="fa fa-pencil"></i> Editar</button>
-                    </div>
-                </div>                                  
+                <div class="team-wrap">
+                    <h1 class="heading">{{record.nombe}}</h1>
+                    <h4>Ciudad: {{record.ciudad}}  Evento: {{record.event}}</h4>
+                    <span>Inicia en: {{record.inicio}}   Termina en: {{record.final}}</span>  
+                    <p>  Descripcion:  {{record.descripcion}}
+                    </p><p>Reglas: {{record.rules}}</p><br>
+                    <button class="btn btn-lg btn-theme"  ng-click="eventCtrl.editRecord(record)"><i class="fa fa-pencil"></i> Editar</button>
+                </div>
+            </div>                                  
         </div>
     </div><!--Termina elementos-->
-	<div ng-show="itineraryCtrl.editMode">
-		<form name="countryForm" role="form">
-			<div class="form-group">
-				<label for="name">Nombre</label>
-				<input id="name" class="form-control" type="text" ng-model="currentRecord.name"/>
-			</div>
-                         <div class="form-group">
-				<label for="Descripcion">Descripcion</label>
-				<input id="Descripcion" class="form-control" type="text" ng-model="currentRecord.descripcion"/>
-			</div>
-                        <div class="form-group">
-				<label for="name">Inicio</label>
-				<input id="inicio" class="form-control" type="date" ng-model="currentRecord.inicio"/>
-			</div>
-                        <div class="form-group">
-				<label for="name">Final</label>
-				<input id="final" class="form-control" type="date" ng-model="currentRecord.final"/>
-			</div>
-                         
-                        <div class="form-group">
-				<label for="rules">Rules</label>
-				<input id="rules" class="form-control" type="text" ng-model="currentRecord.rules"/>
-			</div>
-                        
-                          <div class="form-group">
+    <div ng-show="itineraryCtrl.editMode">
+        <form name="countryForm" role="form">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input id="name" class="form-control" type="text" ng-model="currentRecord.name"/>
+            </div>
+            <div class="form-group">
+                <label for="Descripcion">Descripcion</label>
+                <input id="Descripcion" class="form-control" type="text" ng-model="currentRecord.descripcion"/>
+            </div>
+            <div class="form-group">
+                <label for="name">Inicio</label>
+                <input id="inicio" class="form-control" type="date" ng-model="currentRecord.inicio"/>
+            </div>
+            <div class="form-group">
+                <label for="name">Final</label>
+                <input id="final" class="form-control" type="date" ng-model="currentRecord.final"/>
+            </div>
+
+            <div class="form-group">
+                <label for="rules">Rules</label>
+                <input id="rules" class="form-control" type="text" ng-model="currentRecord.rules"/>
+            </div>
+
+            <div class="form-group">
                 <label for="ciudad">Ciudad</label>
                 <select id="ciudad" class="form-control" ng-options="ciudad.id as ciudad.name for ciudad in ciudadRecords" ng-model="currentRecord.ciudad"></select>
-                            </div>
-                        
-                         <div class="form-group">
+            </div>
+
+            <div class="form-group">
                 <label for="eventos">Eventos</label>
                 <select id="eventos" class="form-control" ng-options="event.id as event.name for ciudad in eventRecords" ng-model="currentRecord.event"></select>
-                            </div>
-		</form>
-            
-	</div>
-    
-    
+            </div>
+        </form>
+
+    </div>
+
+
 </div>

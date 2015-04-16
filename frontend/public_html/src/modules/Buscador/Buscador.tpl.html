@@ -1,4 +1,4 @@
-<div ng-controller="travelerCtrl as travelerCtrl">
+<div ng-controller="BuscadorCtrl as BuscadorCtrl">
     <div id="header">
         <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
@@ -8,7 +8,7 @@
                     <div class="container ">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 text-center">
-                                <h2 class="wow animated fadeInDown"><img src="src/assets/img/traveler.png" alt="VACAS"></span></h2>
+                                <h2 class="wow animated fadeInDown"><img src="src/assets/img/buscador.png" alt="VACAS"></span></h2>
                                 <p class="lead animated fadeIn">
                                     Nuestros viajeros, conoce a otras personas que compartan tus intereses!
                                 </p>
@@ -18,15 +18,15 @@
                 </section>
                 <!-- Navegacion en modulos -->
                 <div class="collapse navbar-collapse" id="country-navbar"><br>
-                    <center><button class="btn btn-lg btn-theme" ng-hide="travelerCtrl.editMode" ng-click="travelerCtrl.createRecord()"><i class="fa fa-plus-circle"></i> Crear</button>
-                        <button class="btn btn-lg btn-theme" ng-show="travelerCtrl.editMode" ng-click="travelerCtrl.saveRecord()"><i class="fa fa-floppy-o"></i> Guardar</button>
-                        <button class="btn btn-lg btn-theme" ng-show="travelerCtrl.editMode" ng-click="travelerCtrl.fetchRecords()"><i class="fa fa-exclamation-circle"></i> Cancelar</button></center>
+                    <center><button class="btn btn-lg btn-theme" ng-hide="BuscadorCtrl.editMode" ng-click="BuscadorCtrl.createRecord()"><i class="fa fa-plus-circle"></i> Crear</button>
+                        <button class="btn btn-lg btn-theme" ng-show="BuscadorCtrl.editMode" ng-click="BuscadorCtrl.saveRecord()"><i class="fa fa-floppy-o"></i> Guardar</button>
+                        <button class="btn btn-lg btn-theme" ng-show="BuscadorCtrl.editMode" ng-click="BuscadorCtrl.fetchRecords()"><i class="fa fa-exclamation-circle"></i> Cancelar</button></center>
                 </div>
             </div>
         </nav>
     </div>
     <!--Elementos-->
-    <div ng-hide="travelerCtrl.editMode">
+    <div ng-hide="BuscadorCtrl.editMode">
         <div ng-repeat="record in records">
             <div class="col-md-3 margin20">
                 <div class="team-wrap">
@@ -39,7 +39,7 @@
             </div>                                  
         </div>
     </div><!--Termina elementos-->
-    <div ng-show="travelerCtrl.editMode">
+    <div ng-show="BuscadorCtrl.editMode">
         <form name="countryForm" role="form">
             <input id="name" class="form-control" type="hidden" ng-model="currentRecord.id" required/>
             <div class="form-group">

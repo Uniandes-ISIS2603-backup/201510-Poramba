@@ -37,7 +37,7 @@
         </nav>
     </div>
     <!--Elementos-->
-    <div ng-hide="cityCtrl.editMode">
+    <div ng-show="cityCtrl.darRecords">
         <div ng-repeat="record in records">
             <div class="col-md-3 margin20">
                     <div class="team-wrap">
@@ -46,8 +46,8 @@
                         <span><a href="{{record.link}}">Link</a></span>
                         <p>  Descripcion:  {{record.desc}}
                         </p><br>
-                        <button class="btn btn-lg btn-theme" ng-click="AGREGAR A ITINERARIO"><i class="fa fa-calendar-o"></i> Agregar a intinerario</button>
-                        
+                        <button class="btn btn-lg btn-theme" ng-click=""><i class="fa fa-calendar-o"></i> Agregar a intinerario</button>
+                        <button ng-click="cityCtrl.darOpinion(record)" class="btn btn-lg btn-theme"><i class="fa fa-thumbs-o-up"></i>Opina!</button>
                     </div>
                 </div>                                  
         </div>
@@ -70,6 +70,28 @@
                 <label for="img">Imagen</label>
                 <input id="img" class="form-control" type="text" ng-model="currentRecord.img"/>
             </div>
+            <input id="name" class="form-control" type="hidden" ng-model="currentRecord.estrellas"/>
+            <input id="name" class="form-control" type="hidden" ng-model="currentRecord.opinion"/>
         </form>
+    </div>
+    
+    <div ng-show="cityCtrl.darOpinion">
+            <h1>Danos tu opinion sobre {{record.name}}:</h1>
+            <form name="conutryForm" role="form" class="form-group">
+                <h3>De 1 a 5 califica esta ciudad</h3>
+              <select id="estrellas" class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+                <h3>Sugerencias? Quedaste disconforme con algo o fue el mejor paseo de tu vida? escribelo aqui!</h3>
+                <div class="col-sm-10">
+                     <input id="opinion" class="form-control" type="text" id="formGroupInputLarge" placeholder="Tu opinion aqui">
+                </div>
+                     <button class="btn btn-lg btn-theme" ng-show="cityCtrl.darOpinion" ng-click="cityCtrl.saveRecord()"><i class="fa fa-floppy-o"></i> Guardar</button>
+                    <button class="btn btn-lg btn-theme" ng-show="cityCtrl.darOpinion" ng-click="cityCtrl.fetchRecords()"><i class="fa fa-exclamation-circle"></i> Cancelar</button>
+            </form>
     </div>
     </div>
