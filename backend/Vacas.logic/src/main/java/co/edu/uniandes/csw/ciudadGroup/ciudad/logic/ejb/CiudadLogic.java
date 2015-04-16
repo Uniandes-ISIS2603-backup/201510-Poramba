@@ -12,7 +12,7 @@ public class CiudadLogic implements ICiudadLogic{
     
     List<CiudadDTO> ciudades;
 
-    @PersistenceContext(unitName = "CiudadClassPU")
+    @PersistenceContext(unitName = "VacasClassPU")
     protected EntityManager entityManager;
 
     

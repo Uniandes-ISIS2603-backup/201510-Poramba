@@ -17,7 +17,7 @@ import javax.persistence.Query;
 
 public class LugarLogic implements ILugarLogic{
 
-    @PersistenceContext(unitName = "LugarLogicClassPU")
+    @PersistenceContext(unitName = "VacasClassPU")
     protected EntityManager entityManager;
     /**
      * Lista con los lugares actuales

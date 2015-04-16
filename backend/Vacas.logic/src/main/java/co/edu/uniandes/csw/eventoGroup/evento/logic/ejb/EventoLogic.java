@@ -18,7 +18,7 @@ public class EventoLogic implements IEventoLogic {
         eventos = new ArrayList<EventoDTO>();
     }
 
-    @PersistenceContext(unitName = "EventoClassPU")
+    @PersistenceContext(unitName = "VacasClassPU")
     protected EntityManager entityManager;
 
     

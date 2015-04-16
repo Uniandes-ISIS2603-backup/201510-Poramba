@@ -20,7 +20,7 @@ public class transporteLogic implements ITransporteLogic {
         transportes = new ArrayList<transporteDTO>();
     }
 
-    @PersistenceContext(unitName = "TransporteClassPU")
+    @PersistenceContext(unitName = "VacasClassPU")
     protected EntityManager entityManager;
 
 //    public transporteDTO createTransporte(transporteDTO transporte) {
