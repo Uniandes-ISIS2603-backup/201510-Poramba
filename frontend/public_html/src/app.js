@@ -1,6 +1,7 @@
 (function () {
 
-    var mainApp = angular.module('mainApp', ['ngRoute', 'hotelModule', 'eventModule', 'travelerModule', 'transportationModule', 'itineraryModule', 'cityModule', 'mapModule']);
+    var mainApp = angular.module('mainApp', ['ngRoute', 'hotelModule', 'eventModule', 'travelerModule', 'transportationModule', 'itineraryModule', 
+        'cityModule', 'mapModule','BuscadorModule']);
 
     mainApp.config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/hotel', {
@@ -21,7 +22,9 @@
             }).otherwise('/');
             $routeProvider.when('/map', {
                 templateUrl: 'src/modules/Map/map.tpl.html'
-            }).otherwise('/');
+            }).otherwise('/Buscador',{
+                templateUrl: 'src/modules/Buscador/Buscador.tpl.html'                
+            });
         }]);
 
     //Configuración módulo hotel
