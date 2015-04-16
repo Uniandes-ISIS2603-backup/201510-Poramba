@@ -22,8 +22,9 @@
             }).otherwise('/');
             $routeProvider.when('/map', {
                 templateUrl: 'src/modules/Map/map.tpl.html'
-            }).otherwise('/Buscador',{
-                templateUrl: 'src/modules/Buscador/Buscador.tpl.html'                
+            }).otherwise('/')
+             $routeProvider.when('/Buscador',{
+                templateUrl: 'src/modules/Buscador/tpl.html'                
             });
         }]);
 

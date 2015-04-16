@@ -1,6 +1,6 @@
 (function () {
-    var BuscascadorModule = angular.module('BuscascadorModule');
-    BuscascadorModule.service('BuscascadorService', ['CRUDBase', 'Buscascador.context', function (CRUDBase, context) {
+    var Buscador = angular.module('Buscador');
+    Buscador.service('BuscadorService', ['CRUDBase', 'Buscador.context', function (CRUDBase, context) {
             this.url = context;
             CRUDBase.extendService(this);
         }]);
