@@ -4,11 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
+
 public class CiudadEntity {
 
-    @Id
-    @GeneratedValue(generator = "Ciudad")
+
     private String id;
     private String nombre;
     private String descripcion;

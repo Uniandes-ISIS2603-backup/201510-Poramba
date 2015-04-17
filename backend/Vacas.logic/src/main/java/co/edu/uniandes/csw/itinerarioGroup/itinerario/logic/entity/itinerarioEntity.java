@@ -17,16 +17,16 @@ public class itinerarioEntity {
 	private String terminacion;
 	private String acciones;
 	private String id;
-        private List<LugarDTO> lugares;
+        private List<String> nombreLugares;
 
-    public List<LugarDTO> getLugares() 
+    public List<String> getLugares() 
     {
-        return lugares;
+        return nombreLugares;
     }
 
-    public void setLugares(List<LugarDTO> lugares)
+    public void setLugares(List<String> lugares)
     {
-        this.lugares = lugares;
+        this.nombreLugares = lugares;
     }
         
 	public String getNombe() {

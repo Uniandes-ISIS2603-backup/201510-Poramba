@@ -4,11 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
+
 public class EventoEntity {
 
-    @Id
-    @GeneratedValue(generator = "Evento")
     private String id;
     private String nombre;
     private Integer minage;

@@ -21,13 +21,13 @@ public class LugarEntity {
     private Date inico;
     private Date fin;
     
-    private HotelDTO hotelActual;
+    private String hotelActual;
     
-    private transporteDTO transporteActual;
+    private String transporteActual;
     
-    private List<EventoDTO> eventos;
+    private List<String> eventos;
     
-    private CiudadDTO ciudad;
+    private String ciudad;
 
     /**
      * @return the id
@@ -74,56 +74,56 @@ public class LugarEntity {
     /**
      * @return the hotelActual
      */
-    public HotelDTO getHotelActual() {
+    public String getNombreHotelActual() {
         return hotelActual;
     }
 
     /**
      * @param hotelActual the hotelActual to set
      */
-    public void setHotelActual(HotelDTO hotelActual) {
+    public void setNombreHotelActual(String hotelActual) {
         this.hotelActual = hotelActual;
     }
 
     /**
      * @return the transporteActual
      */
-    public transporteDTO getTransporteActual() {
+    public String getNombreTransporteActual() {
         return transporteActual;
     }
 
     /**
      * @param transporteActual the transporteActual to set
      */
-    public void setTransporteActual(transporteDTO transporteActual) {
+    public void setNombreTransporteActual(String transporteActual) {
         this.transporteActual = transporteActual;
     }
 
     /**
      * @return the eventos
      */
-    public List<EventoDTO> getEventos() {
+    public List<String> getEventos() {
         return eventos;
     }
 
     /**
      * @param eventos the eventos to set
      */
-    public void setEventos(List<EventoDTO> eventos) {
+    public void setEventos(List<String> eventos) {
         this.eventos = eventos;
     }
 
     /**
      * @return the ciudad
      */
-    public CiudadDTO getCiudad() {
+    public String getNombreCiudad() {
         return ciudad;
     }
 
     /**
      * @param ciudad the ciudad to set
      */
-    public void setCiudad(CiudadDTO ciudad) {
+    public void setNombreCiudadActual(String ciudad) {
         this.ciudad = ciudad;
     }
  
