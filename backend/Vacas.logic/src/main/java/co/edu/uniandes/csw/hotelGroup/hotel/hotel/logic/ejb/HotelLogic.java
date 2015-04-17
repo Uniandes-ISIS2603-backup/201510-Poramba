@@ -16,7 +16,7 @@ public class HotelLogic implements IHotelLogic {
     
     private List<HotelDTO> hoteles;
 
-    @PersistenceContext(unitName = "HotelClassPU")
+    @PersistenceContext(unitName = "VacasClassPU")
     protected EntityManager entityManager;
     public HotelLogic()
     {

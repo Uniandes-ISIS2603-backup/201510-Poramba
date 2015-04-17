@@ -14,7 +14,7 @@ public class UsuarioLogic implements IUsuarioLogic{
     
     List<UsuarioDTO> usuarios;
 
-    @PersistenceContext(unitName = "UsuarioClassPU")
+    @PersistenceContext(unitName = "VacasClassPU")
     protected EntityManager entityManager;
     public UsuarioLogic()
     {

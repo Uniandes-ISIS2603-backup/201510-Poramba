@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class ItinerarioLogic implements IitinerarioLogic {
 
-    @PersistenceContext(unitName = "ItinerarioClassPU")
+    @PersistenceContext(unitName = "VacasClassPU")
     protected EntityManager entityManager;
     
     public List<itinerarioDTO> itinerarios;
