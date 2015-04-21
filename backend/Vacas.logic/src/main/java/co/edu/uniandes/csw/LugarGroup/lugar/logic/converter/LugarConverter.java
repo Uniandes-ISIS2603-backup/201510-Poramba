@@ -17,9 +17,9 @@ public class LugarConverter {
         if (entity != null) {
             LugarDTO dto = new LugarDTO(entity.getId(),entity.getInico(),entity.getFin());
           
-            dto.setHotelActual(entity.getHotelActual());
-            dto.setTransporteActual(entity.getTransporteActual());
-            dto.setCiudad(entity.getCiudad());
+            dto.setHotelActual(entity.getNombreHotelActual());
+            dto.setTransporteActual(entity.getNombreTransporteActual());
+            dto.setCiudad(entity.getNombreCiudad());
            
             return dto;
         }
@@ -32,9 +32,9 @@ public class LugarConverter {
             entity.setId(dto.getId());            
             entity.setInico(dto.getInico());
             entity.setFin(dto.getFin());
-            entity.setHotelActual(dto.getHotelActual());
-            entity.setTransporteActual(dto.getTransporteActual());
-            entity.setCiudad(dto.getCiudad());
+            entity.setNombreHotelActual(dto.getHotelActual());
+            entity.setNombreTransporteActual(dto.getTransporteActual());
+            entity.setNombreCiudadActual(dto.getCiudad());
             return entity;
         } else {
             return null;

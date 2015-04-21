@@ -81,8 +81,8 @@ public class LugarEntity {
     /**
      * @param hotelActual the hotelActual to set
      */
-    public void setNombreHotelActual(String hotelActual) {
-        this.hotelActual = hotelActual;
+    public void setNombreHotelActual(HotelDTO hotelActual) {
+        this.hotelActual = hotelActual.getId();
     }
 
     /**
@@ -95,8 +95,8 @@ public class LugarEntity {
     /**
      * @param transporteActual the transporteActual to set
      */
-    public void setNombreTransporteActual(String transporteActual) {
-        this.transporteActual = transporteActual;
+    public void setNombreTransporteActual(transporteDTO transporteActual) {
+        this.transporteActual = transporteActual.getId();
     }
 
     /**
@@ -123,8 +123,9 @@ public class LugarEntity {
     /**
      * @param ciudad the ciudad to set
      */
-    public void setNombreCiudadActual(String ciudad) {
-        this.ciudad = ciudad;
+    public void setNombreCiudadActual(CiudadDTO ciudad) {
+        
+        this.ciudad = ciudad.getId();
     }
  
 

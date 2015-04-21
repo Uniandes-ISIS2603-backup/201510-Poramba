@@ -90,8 +90,10 @@ public class LugarDTO {
     /**
      * @param hotelActual the hotelActual to set
      */
-    public void setHotelActual(HotelDTO hotelActual) {
-        this.hotelActual = hotelActual;
+    public void setHotelActual(String hotelActual) {
+        
+        //hacer qu apratir del Idse vuvla un hotel
+        
     }
 
     /**
@@ -104,8 +106,8 @@ public class LugarDTO {
     /**
      * @param transporteActual the transporteActual to set
      */
-    public void setTransporteActual(transporteDTO transporteActual) {
-        this.transporteActual = transporteActual;
+    public void setTransporteActual(String transporteActual) {
+        //TODO
     }
 
     /**
@@ -132,24 +134,23 @@ public class LugarDTO {
     /**
      * @param ciudad the ciudad to set
      */
-    public void setCiudad(CiudadDTO ciudad) {
-        this.ciudad = ciudad;
+    public void setCiudad(String ciudad) {
+        //TODO
     }
     
     
-    public boolean addEvento(EventoDTO evento)
+    public boolean addEvento(String evento)
     {
         for (int i = 0; i < eventos.size(); i++) 
         {
             EventoDTO actual = eventos.get(i);
-            if(actual.getId().equals(evento.getId()))
+            if(actual.getId().equals(evento))
                     {
                          return false;
                     }
            
         }
-        
-        eventos.add(evento);
+       //TODO
         return true;
     }
     

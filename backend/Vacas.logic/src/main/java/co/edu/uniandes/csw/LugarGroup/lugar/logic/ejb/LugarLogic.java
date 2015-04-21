@@ -77,7 +77,7 @@ public class LugarLogic implements ILugarLogic{
         
         if(aRetonrar)
         {
-            actual.setCiudad(detail);
+            actual.setCiudad(detail.getId());
             return detail;
         }
         return null;
@@ -96,14 +96,14 @@ public class LugarLogic implements ILugarLogic{
 
     public CiudadDTO updateCiudad(CiudadDTO ciudad) 
     {
-        actual.setCiudad(ciudad);
+        actual.setCiudad(ciudad.getId());
         return ciudad;
     }
 
     public EventoDTO addEvento(EventoDTO detail) 
     {
        
-       if(actual.addEvento(detail))
+       if(actual.addEvento(detail.getId()))
        {
            return detail;
        }
@@ -143,7 +143,7 @@ public class LugarLogic implements ILugarLogic{
     {
        if( actual.getTransporteActual()==null)
        {
-           actual.setTransporteActual(detail);
+           actual.setTransporteActual(detail.getId());
            return detail;
        }
        return null;
@@ -151,7 +151,7 @@ public class LugarLogic implements ILugarLogic{
 
     public void updateTransporte(transporteDTO detail)
     {
-      actual.setTransporteActual(detail);
+      actual.setTransporteActual(detail.getId());
      }
 
     public boolean deleteTRanporte()
@@ -174,7 +174,7 @@ public class LugarLogic implements ILugarLogic{
     {
      if(actual.getHotelActual()==null)
      {
-         actual.setHotelActual(detail);
+         actual.setHotelActual(detail.getId());
          return detail;
      }
      return null;
@@ -199,7 +199,7 @@ public class LugarLogic implements ILugarLogic{
     public HotelDTO setHotel(HotelDTO hotel) 
     {
         
-         actual.setHotelActual(hotel);
+         actual.setHotelActual(hotel.getId());
          return hotel;
       }
 
