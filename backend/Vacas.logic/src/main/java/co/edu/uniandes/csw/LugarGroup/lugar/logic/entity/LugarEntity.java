@@ -4,21 +4,27 @@ import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelDTO;
 import co.edu.uniandes.csw.transporteGroup.transporte.logic.dto.transporteDTO;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import static javax.persistence.TemporalType.DATE;
 
 @Entity
-public class LugarEntity {
+public class LugarEntity implements  Serializable {
 
     @Id
     @GeneratedValue(generator = "Lugar")
     
     private String id;
 
+    @Temporal(DATE)
     private Date inico;
+    @Temporal(DATE)
     private Date fin;
     
     private String hotelActual;
