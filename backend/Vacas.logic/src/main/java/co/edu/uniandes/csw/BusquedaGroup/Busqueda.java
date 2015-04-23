@@ -19,6 +19,7 @@ import java.util.ArrayList;
 public class Busqueda 
 {
     ArrayList<String> arreglo ;
+       
     
     public Busqueda()	
     {
@@ -26,15 +27,27 @@ public class Busqueda
     }
     
     /**
-     * cLAVES NECESARIAS PARA EL USO DE FOURSQUARE, LAS DOS SON NECESARIAS
+     * esta es el url para ver las cate y sub categorias del appi
+     * https://api.foursquare.com/v2/venues/categories?client_id=RX0HQUY3SIQ4ZH1HGIUMTQFFO344YVHCVD4UUCX2UUXNCXDE&client_secret=AQUBPLCCPU4W2AXWJNEZVUBQ1D2JVGO1EZ5PW1KE0ARCIS4D&v=20140815
      */
-    public final static  String ID_cliente = "RX0HQUY3SIQ4ZH1HGIUMTQFFO344YVHCVD4UUCX2UUXNCXDE";
-    public final static String ID_SECRET = "AQUBPLCCPU4W2AXWJNEZVUBQ1D2JVGO1EZ5PW1KE0ARCIS4D";
+    /**
+     * cLAVES NECESARIAS PARA EL USO DE FOURSQUARE, LAS DOS SON NECESARIAS
+     */ 
+    
+    public final static  String ID_cliente = "client_id=RX0HQUY3SIQ4ZH1HGIUMTQFFO344YVHCVD4UUCX2UUXNCXDE";
+    public final static String ID_SECRET = "&client_secret=AQUBPLCCPU4W2AXWJNEZVUBQ1D2JVGO1EZ5PW1KE0ARCIS4D";
     
     /**
      * eSTAS SON LAS PARTES BASICAS DEL URL PARA GENERAR LA INFO CORRESPONDIENTE A UNA CONSULTA EL
      * &QUERY ES QUE SE QUIERE BUSCAR
      */
+    //https://api.foursquare.com/v2/venues/40afe980f964a5203bf31ee3?client_id=RX0HQUY3SIQ4ZH1HGIUMTQFFO344YVHCVD4UUCX2UUXNCXDE&client_secret=AQUBPLCCPU4W2AXWJNEZVUBQ1D2JVGO1EZ5PW1KE0ARCIS4D&v=20140815&ll=40.7,-74
+    public final static String BASE_URL_GENERAL_VENUES = "https://api.foursquare.com/v2/venues/";
+    
+    public final static String BASE_URL_EVENTO= "/events?";
+    public final static String BASE_URL_TIPS = "/tips?";
+    public final static String BASE_URL_HOURS = "/hours?";
+    
     public final static String  BASE_URL = "https://api.foursquare.com/v2/venues/search?client_id=RX0HQUY3SIQ4ZH1HGIUMTQFFO344YVHCVD4UUCX2UUXNCXDE&client_secret=AQUBPLCCPU4W2AXWJNEZVUBQ1D2JVGO1EZ5PW1KE0ARCIS4D&query=";
     public final static String FINAL_URL_BASICO = "&v=20140806&m=foursquare";
     public final static String CIUDAD = "&near=";
@@ -199,20 +212,64 @@ public class Busqueda
         return arreglo;
 
     }
-    
+    public ArrayList <String> darCategoriasBusqueda()
+    {
+         
+        return null;
+    }
     public ArrayList darInfoHotel()
     {
         return null;
     }
     
-    public ArrayList darInfoEventos()
+    /*
+    *Metodo que retorna  el nombre, el id del evento y el url  en un determinado 
+    *( infomacion  BASICA ) de un evento especificamente de un lugar, ciudad    
+    */
+    
+    public ArrayList darInfoEventos(String venueId )
     {
-        return null;
+        String url= BASE_URL_GENERAL_VENUES+ venueId+ BASE_URL_EVENTO+ID_cliente
+                +ID_SECRET+FINAL_URL_BASICO + LIMITE + "100";
+//		{"referralId":"v-1427344009","id":"4ba3fd5ef964a520f17438e3","location":{"postalCode":"110311","address":"Cra 4 No. 22-61","state":"Bogotá D.C."
+            JSONObject AaLeer;
+            ArrayList<String>arreglo = new ArrayList<String >();
+            try {
+                    AaLeer = darJSON(url);
+                    JSONObject primero=(JSONObject) AaLeer.get("response");
+                    //System.out.println("Este es el primero" +primero);
+                    JSONObject eventos=(JSONObject) AaLeer.get("events");
+                    JSONArray obejtos=(JSONArray) eventos.get("items");
+                    //System.out.println("Estos son los obejtos");
+                    Iterator<JSONObject> iterator = obejtos.iterator();
+                    while (iterator.hasNext() ) 
+                    {
+                            JSONObject event = iterator.next();
+
+                            //id del evento por si se quiere mas informacion
+                            String ID = (String) event.get("id");
+                             //event's name
+                            String name = (String)event.get("name");
+                                                        //timezone
+                            String timezone = (String) event.get("timeZone");
+                            //url del evento
+                            String urlP = (String)event.get("url");
+                            //url de la imagen del evento categoria                     
+                            darImagen(ID);
+                           
+                            String info = ID +"_"+name +"_" + darImagen(ID) + "_" + timezone +"_" + urlP;
+                            arreglo.add(info);
+                    }
+            } 
+            catch (IOException e) 
+            {
+                    // TODO Auto-generated catch block
+                System.out.println(e.getMessage());
+                return null;
+            }
+        return arreglo;
     }
-    public ArrayList darInfoCiudad()
-    {
-        return null;
-    }
+    
     public ArrayList darInfoTransporte()
     {
         return null;
