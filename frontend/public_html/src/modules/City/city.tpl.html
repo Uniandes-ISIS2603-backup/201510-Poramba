@@ -75,9 +75,9 @@
         </form>
     </div>
     
-    <div ng-show="cityCtrl.darOpinion" and ng-hide="cityCtrl.editMode" and ng-hide="cityCtrl.darRecords">
+    <div ng-show="cityCtrl.darOpini">
             <h1>Danos tu opinion sobre {{record.name}}:</h1>
-            <form name="conutryForm" role="form" class="form-group">
+            <form name="conutryForm" role="form" class="form-group" ng-model="currentRecord.estrellas">
                 <h3>De 1 a 5 califica esta ciudad</h3>
               <select id="estrellas" class="form-control">
                 <option>1</option>
@@ -88,7 +88,7 @@
               </select>
                 <h3>Sugerencias? Quedaste disconforme con algo o fue el mejor paseo de tu vida? escribelo aqui!</h3>
                 <div class="col-sm-10">
-                     <input id="opinion" class="form-control" type="text" id="formGroupInputLarge" placeholder="Tu opinion aqui">
+                     <input id="opinion" class="form-control" type="text" id="formGroupInputLarge" placeholder="Tu opinion aqui" ng-model="currentRecord.opinion">
                 </div>
                      <button class="btn btn-lg btn-theme" ng-show="cityCtrl.darOpinion" ng-click="cityCtrl.saveRecord()"><i class="fa fa-floppy-o"></i> Guardar</button>
                     <button class="btn btn-lg btn-theme" ng-show="cityCtrl.darOpinion" ng-click="cityCtrl.fetchRecords()"><i class="fa fa-exclamation-circle"></i> Cancelar</button>
