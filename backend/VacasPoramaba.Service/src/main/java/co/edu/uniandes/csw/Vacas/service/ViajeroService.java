@@ -1,8 +1,8 @@
 package co.edu.uniandes.csw.Vacas.service;
 
 
-import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.api.ICiudadLogic;
-import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.usuarioGroup.usuario.logic.api.IUsuarioLogic;
+import co.edu.uniandes.csw.usuarioGroup.usuario.logic.dto.UsuarioDTO;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -29,34 +29,34 @@ public class ViajeroService
 {
 
     @Inject
-    protected ICiudadLogic countryLogic;
+    protected IUsuarioLogic usarioLogic;
 
     @POST
-    public CiudadDTO createCiudad(CiudadDTO ciudad) {
-        return countryLogic.createCiudad(ciudad);
+    public UsuarioDTO createUsuario(UsuarioDTO cad) {
+        return usarioLogic.createUsuario(cad);
     }
 
     @DELETE
     @Path("{id}")
-    public void deleteCiudad(@PathParam("id") String id) {
-        countryLogic.deleteCiudad(id);
+    public void deleteUsuario(@PathParam("id") String id) {
+        usarioLogic.deleteUsuario(id);
     }
 
     @GET
-    public List<CiudadDTO> getCountries() {
-        return countryLogic.getCiudades();
+    public List<UsuarioDTO> getUsuarios() {
+        return usarioLogic.getUsuarios();
     }
 
     @GET
     @Path("{id}")
-    public CiudadDTO getCiudad(@PathParam("id") String id) {
-        return countryLogic.getCiudad(id);
+    public UsuarioDTO getUsuario(@PathParam("id") String id) {
+        return usarioLogic.getUsuario(id);
     }
 
     @PUT
     @Path("{id}")
-    public void updateCiudad( CiudadDTO ciudad,@PathParam("id") String id) {
-        countryLogic.updateCiudad(ciudad,id);
+    public void updateUsuario( UsuarioDTO usuario,@PathParam("id") String id) {
+        usarioLogic.updateUsuario(usuario, id);
     }
 
    
