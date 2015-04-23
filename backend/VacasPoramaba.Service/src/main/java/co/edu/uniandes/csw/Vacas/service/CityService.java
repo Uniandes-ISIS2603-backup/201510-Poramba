@@ -36,6 +36,13 @@ public class CityService
         return countryLogic.createCiudad(ciudad);
     }
 
+     @POST
+       @Path("/city/conectado")
+     
+      public String sirve() {
+       return "Si sirve";
+    }
+      
     @DELETE
     @Path("{id}")
     public void deleteCiudad(@PathParam("id") String id) {
