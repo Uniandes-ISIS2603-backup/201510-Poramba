@@ -39,6 +39,39 @@ public class Busqueda
     public final static String FINAL_URL_BASICO = "&v=20140806&m=foursquare";
     public final static String CIUDAD = "&near=";
     
+    
+    /**
+     *COnstantes de tipos de eventos 
+     */
+    public final static String E_AQUARIO = "4fceea171983d5d06c3e9823";
+    public final static String E_GALERIA = "4bf58dd8d48988d1e2931735";
+    public final static String E_BOLOS = "4bf58dd8d48988d1e4931735";
+    public final static String E_CASINO = "52e81612bcbc57f1066b79e7";
+    public final static String E_CIRCO = "4bf58dd8d48988d17c941735";
+    /*THEATHERS */
+    public final static String THEATHER = "4bf58dd8d48988d137941735";
+    public final static String MOVIE_THEATHER = "4bf58dd8d48988d17f941735";
+    public final static String MULTIPLEX = "4bf58dd8d48988d180941735";
+    public final static String OPERA_HPUSE ="4bf58dd8d48988d136941735";
+    /*MUSEUMS*/
+    public final static String MUSEUM_ARTE = "4bf58dd8d48988d18f941735";
+    public final static String MUSEUM_HISTORIA = "4bf58dd8d48988d190941735";
+    /*MUSIC CLUBS*/
+    public final static String CLUB_ROCK = "4bf58dd8d48988d1e9931735";
+    public final static String JAZZ_CLUB = "4bf58dd8d48988d1e7931735";
+    /*ESTADUMS*/
+    public final static String  BASEBALL_STADIUM = "4bf58dd8d48988d18c941735";
+    public final static String BASKETBAL_STADIUM = "4bf58dd8d48988d18b941735";
+    public final static String FOOTBALL_STADIUM = "4bf58dd8d48988d189941735";
+    public final static String SOCCER_STADIUM = "4bf58dd8d48988d188941735";
+    /*PARQUES*/
+    public final static String THEME_PARK_RIDE = "5109983191d435c0d71c2bb1";
+    public final static String WATER_PARK = "4bf58dd8d48988d193941735";
+    public final static String ZOO = "4bf58dd8d48988d17b941735";
+    
+    
+    
+    
      /**
      * pARTES BASICAS DEL URL DE LA IMAGEN (FOTOS), inicio, tamanio y final
      * la estructura basica es
