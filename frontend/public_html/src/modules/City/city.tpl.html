@@ -37,7 +37,7 @@
         </nav>
     </div>
     <!--Elementos-->
-    <div ng-show="cityCtrl.darRecords">
+    <div ng-show="cityCtrl.darRecords" and ng-hide="cityCtrl.editMode" and ng-hide="cityCtrl.darOpinion">
         <div ng-repeat="record in records">
             <div class="col-md-3 margin20">
                     <div class="team-wrap">
@@ -52,7 +52,7 @@
                 </div>                                  
         </div>
     </div><!--Termina elementos-->
-    <div ng-show="cityCtrl.editMode">
+    <div ng-show="cityCtrl.editMode" and ng-hide="cityCtrl.darOpinion" and ng-hide="cityCtrl.darRecords">
         <form name="countryForm" role="form">
             <div class="form-group">
                 <label for="name">Nombre</label>
@@ -75,7 +75,7 @@
         </form>
     </div>
     
-    <div ng-show="cityCtrl.darOpinion">
+    <div ng-show="cityCtrl.darOpinion" and ng-hide="cityCtrl.editMode" and ng-hide="cityCtrl.darRecords">
             <h1>Danos tu opinion sobre {{record.name}}:</h1>
             <form name="conutryForm" role="form" class="form-group">
                 <h3>De 1 a 5 califica esta ciudad</h3>
