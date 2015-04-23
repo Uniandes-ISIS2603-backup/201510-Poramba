@@ -2,6 +2,7 @@ package co.edu.uniandes.csw.ciudadGroup.ciudad.logic.ejb;
 
 import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.api.ICiudadLogic;
 import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
+import java.util.ArrayList;
 
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -15,7 +16,10 @@ public class CiudadLogic implements ICiudadLogic{
     @PersistenceContext(unitName = "VacasClassPU")
     protected EntityManager entityManager;
 
-    
+    public CiudadLogic()
+    {
+        ciudades=new ArrayList<CiudadDTO>();
+    }
     public CiudadDTO createCiudad(CiudadDTO detail) {
         ciudades.add(detail);
         return detail;
