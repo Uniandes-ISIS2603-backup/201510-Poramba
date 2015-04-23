@@ -87,19 +87,18 @@ public class HotelLogic implements IHotelLogic {
      */
     public void updateHotel(HotelDTO hotel, String id)  {
         HotelDTO hote = getHotel(id);
-        if(hote == null);
-      
+        if(hote == null);      
         else 
         {
             int i = 0; 
             boolean ya = false;
-            while(!ya)
+            while(!ya && i < hoteles.size())
             {
                 if(hote == hoteles.get(i)) ya = true;
-                else i++;
+           
+                i++;
             }
             hoteles.set(i, hotel);
-            hoteles.remove(hote);
         }
 
     }

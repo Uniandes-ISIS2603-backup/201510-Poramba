@@ -51,25 +51,31 @@ public class UsuarioLogic implements IUsuarioLogic{
 //        return UsuarioConverter.entity2PersistenceDTO(entityManager.find(UsuarioEntity.class, id));
     }
 
-    public void deleteUsuario(String id) {
-        usuarios.remove(getUsuario(id));
+    public void deleteUsuario(String id)
+    {
+        UsuarioDTO act = getUsuario(id);
+        if(act!=null )
+        {            
+        usuarios.remove(act);
+        }
 //       UsuarioEntity entity = entityManager.find(UsuarioEntity.class, id);
 //        entityManager.remove(entity);
     }
 
-    public void updateUsuario(UsuarioDTO usuario, String id) {
-                        UsuarioDTO trans = getUsuario(id);
+    public void updateUsuario(UsuarioDTO usuario, String id) 
+    {
+        UsuarioDTO trans = getUsuario(id);
         if(trans != null)
         {
             boolean ya = false;
             int i = 0;
-            while(!ya)
+            while(!ya &&  i < usuarios.size())
             {
                 if(usuarios.get(i) == trans)ya = true;
-                else i++;
+               
+                i++;
             }
             usuarios.set(i, usuario);
-            usuarios.remove(trans);
         }
 //        UsuarioEntity entity = entityManager.merge(UsuarioConverter.persistenceDTO2Entity(usuario));
 //        UsuarioConverter.entity2PersistenceDTO(entity);

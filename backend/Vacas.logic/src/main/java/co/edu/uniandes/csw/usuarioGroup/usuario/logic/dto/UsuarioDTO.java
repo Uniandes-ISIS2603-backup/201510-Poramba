@@ -4,6 +4,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class UsuarioDTO {
+    
     private String id;
 
     private String pasaporte;
