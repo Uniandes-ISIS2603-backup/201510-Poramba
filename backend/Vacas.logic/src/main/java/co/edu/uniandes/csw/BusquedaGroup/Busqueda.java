@@ -166,4 +166,22 @@ public class Busqueda
         return arreglo;
 
     }
+    
+    public ArrayList darInfoHotel()
+    {
+        return null;
+    }
+    
+    public ArrayList darInfoEventos()
+    {
+        return null;
+    }
+    public ArrayList darInfoCiudad()
+    {
+        return null;
+    }
+    public ArrayList darInfoTransporte()
+    {
+        return null;
+    }
 }
