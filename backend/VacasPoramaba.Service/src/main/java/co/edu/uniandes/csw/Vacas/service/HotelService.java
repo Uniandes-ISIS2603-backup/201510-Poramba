@@ -1,7 +1,5 @@
 package co.edu.uniandes.csw.Vacas.service;
 
-
-
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.api.IHotelLogic;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelDTO;
 import java.util.List;
@@ -26,8 +24,7 @@ import javax.ws.rs.core.MediaType;
 @Stateless
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public class HotelService 
-{
+public class HotelService {
 
     @Inject
     protected IHotelLogic countryLogic;
@@ -55,11 +52,10 @@ public class HotelService
     }
 
     @PUT
-     @Path("{id}")
-    public 
-        void updateHotel( HotelDTO hotel,@PathParam("id") String id) {
-        countryLogic.updateHotel(hotel,id);
+    @Path("{id}")
+    public
+            void updateHotel(HotelDTO hotel, @PathParam("id") String id) {
+        countryLogic.updateHotel(hotel, id);
     }
 
-   
 }

@@ -54,6 +54,7 @@ public class ViajeroService
     }
 
     @PUT
+    @Path("{id}")
     public void updateCiudad( CiudadDTO ciudad,@PathParam("id") String id) {
         countryLogic.updateCiudad(ciudad,id);
     }

@@ -36,9 +36,8 @@ public class CityService
         return countryLogic.createCiudad(ciudad);
     }
 
-     @POST
+     @GET
        @Path("/city/conectado")
-     
       public String sirve() {
        return "Si sirve";
     }

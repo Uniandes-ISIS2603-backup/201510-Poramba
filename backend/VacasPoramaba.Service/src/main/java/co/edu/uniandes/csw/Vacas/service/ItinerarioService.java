@@ -24,7 +24,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author estudiante
  */
-@Path("/itinearay")
+@Path("/itinerary")
 @Stateless
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
@@ -62,35 +62,36 @@ public class ItinerarioService
     }
     
     @PUT
-    @Path("{addLugar}")
+    @Path("/addLugar")
     public LugarDTO addLugar( LugarDTO ciudad) 
     {
         return countryLogic.addLugar(ciudad);
     }
     
     @GET
-    @Path("{getLugares}")
+    @Path("/getLugares")
     public List<LugarDTO> getLugares()
      {
                 return countryLogic.getLugares();
      }
     
     @GET
-    @Path("{getLugar}/{id}")
+    @Path("getLugar/{id}")
+    
     public LugarDTO getLugar (@PathParam("id") String id)
      {
              return countryLogic.getLugar(id);
      }
     
     @DELETE
-    @Path("{deleteLugar}/{id}")
+    @Path("deleteLugar/{id}")
     public void deleteLugar(@PathParam("id") String id) 
     {
         countryLogic.deleteLugar(id);
     }
     
      @PUT
-     @Path("{updateLugar}/{id}")
+     @Path("updateLugar/{id}")
     public void updateLugar( LugarDTO lugar,@PathParam("id") String id)
     {
         countryLogic.updateLugar(id,lugar);
