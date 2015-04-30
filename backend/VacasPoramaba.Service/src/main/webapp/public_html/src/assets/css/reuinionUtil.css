@@ -1,0 +1,153 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/03/2015, 09:24:41 PM
+    Author     : estudiante
+*/
+
+/*********top bar************/
+#header-top{
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eee;
+}
+
+.top-bar{
+    min-height: 45px;
+    line-height: 45px;
+}
+.top-bar a{
+    margin-right: 10px;
+    font-size: 13px;
+    color:#888;
+}
+.top-bar a i{
+    margin-right: 5px;
+}
+.top-bar .sample-1right a i{
+
+    margin-right: 5px;
+    color: #999;
+    width: 20px;
+    height: 25px;
+    display: inline-block;
+    background-color: transparent;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 3px;
+
+}
+.top-social{
+    margin: 0;
+    padding:0;
+}
+.top-social li{
+    padding: 0px;
+}
+.top-social li a{
+    font-size: 14px;
+    color:#888;
+    margin: 0px;
+    display: block;
+}
+.top-social li a i{
+    width:28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    margin: 0px;
+    background-color: transparent;
+    color:#777;
+    border: 1px solid #999;
+    border-radius:2px;
+    -webkit-border-radius: 2px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+}
+
+.top-social li a i:hover{
+    color:#fff;
+    background-color: #252525;
+    border-color: #252525;
+}
+/* Mega MENU */
+
+.yamm-content{
+    padding: 25px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.dropdown-menu .divider{
+    background-color:#222; 
+}
+.yamm-content h3.heading{
+border-bottom: none;
+margin: 0 0 5px;
+color: #000;
+font-size: 12px;
+font-weight: 600;
+text-transform: uppercase;
+}
+.yamm-content h3:before{
+    content: "";
+    display:none;
+}
+
+.yamm-content .mega-vertical-nav{
+    margin-bottom: 30px;
+}
+.yamm-content .mega-vertical-nav li a{
+padding: 8px 0px;
+transition: all 0.3s ease-in;
+color: #777;
+font-size: 12px;
+font-weight: 600;
+text-transform: uppercase;
+border-bottom: 0px;
+}
+.nav.mega-vertical-nav li a:hover{
+    background-color:transparent;
+    color:#0088cc;
+}
+@media(max-width:1024px){
+
+    .nav.mega-vertical-nav li a:hover{
+        background-color:transparent;
+        color:#0088cc;
+        padding: 8px 0px;
+    }
+    .yamm-content .mega-vertical-nav li a{
+        font-size: 11px;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-family: 'Raleway', sans-serif;
+    }
+}
+.mega-contact p{
+    margin: 0;
+}
+.mega-contact i{
+    color:#0088cc;
+    margin-right: 10px;
+}
+/*navbar search form***/
+.dropdown-form{
+    padding: 10px 15px;
+    min-width: 213px;
+}
+.dropdown-form .form-control{
+    height: 31px;
+}
+
+
+#header-top.dark-header-top{
+    background-color: #1a1c25;
+}
+#header-top.dark-header-top .top-bar a i{
+    color:#fff;   
+}
+#header-top.dark-header-top .top-bar ul li{
+    color:#fff;
+}
