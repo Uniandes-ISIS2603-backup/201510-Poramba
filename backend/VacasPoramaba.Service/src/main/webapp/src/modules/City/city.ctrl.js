@@ -1,4 +1,4 @@
-(function () {
+(function (angular) {
     var app = angular.module('cityModule');
 
 	app.controller('cityCtrl', ['$scope', 'CRUDUtils', 'city.context', function ($scope, CRUDUtils, context) {
@@ -11,4 +11,4 @@
 		}]);                                  
             
             
-})();
+})(window.angular);
