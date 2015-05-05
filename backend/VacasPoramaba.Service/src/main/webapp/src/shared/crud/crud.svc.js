@@ -1,44 +1,32 @@
 (function () {
     var crud = angular.module('CrudModule');
-
     crud.factory('CRUDUtils', ['Restangular', function (RestAngular) {
             function CRUD($scope) {
-                
-                
                 $scope.currentRecord = {};
                 $scope.records = [];
-                
-                
                 this.editMode = false;
                 this.darOpini = false;
                 this.darRecords = true;
-                
                 var self = this;
                 this.api = RestAngular.all(this.url);
-               
-                
                 this.createRecord = function () {
                     this.editMode = true;
                     this.darRecords = false;
                     this.darOpini = false;
                     $scope.currentRecord = {};
-
                 };
-                
                 this.editRecord = function (record) {
                     $scope.currentRecord = RestAngular.copy(record);
                     this.editMode = true;
                     this.darRecords = false;
                     this.darOpini = false;
                 };
-                
                 this.darOpinion = function (record) {
                     $scope.currentRecord = RestAngular.copy(record);
                     this.darOpini = true;
                     this.darRecords = false;
                     this.editMode = false;
                 };
-                
                 this.fetchRecords = function () {
                     this.api.getList().then(function (data) {
                         $scope.records = data;
@@ -48,7 +36,6 @@
                         self.darRecords = true;
                     });
                 };
-     
                 this.saveRecord = function () {
                     if ($scope.currentRecord.id) {
                         $scope.currentRecord.put().then(function () {
@@ -65,7 +52,6 @@
                         self.fetchRecords();
                     });
                 };
-
             }
             ;
             return {
