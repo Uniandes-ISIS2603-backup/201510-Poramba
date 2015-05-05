@@ -7,12 +7,7 @@
                         
 			this.fetchRecords();
                         
-                        
-                        this.ana = function()
-                        {
-                           // <---- $location.path('/event').replace();-->
-                            alert ('anama');
-                        };
+                       
                          this.inicializarNombre = function(){
                                 $scope.currentRecord.name = 'Pestana casino park';
                             };
