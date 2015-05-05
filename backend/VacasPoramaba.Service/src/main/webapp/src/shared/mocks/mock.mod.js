@@ -54,7 +54,6 @@
                     return [200, null, {}];
                 });
             }
-
             function skipUrl(entity_url) {
                 var fullUrl = baseUrl + '/' + entity_url;
                 var url_regexp = new RegExp(fullUrl + '/([0-9]+)');
