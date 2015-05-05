@@ -3,9 +3,7 @@
 	app.controller('hotelCtrl', ['$scope', 'CRUDUtils', 'hotel.context', '$location', function ($scope, CRUDUtils, context) {
 			this.url = context;
 			CRUDUtils.extendCtrl(this, $scope);
-			//this.fetchRecords();
-                        //{
-                        //};
+			//this.fetchRecords();{};
                          this.inicializarNombre = function(){
                                 $scope.currentRecord.name = 'Pestana casino park';
                             };
