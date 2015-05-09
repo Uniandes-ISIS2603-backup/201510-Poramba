@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package co.edu.uniandes.csw.Vacas.service;
 
 import co.edu.uniandes.csw.Vacas.service.CityService;
@@ -42,7 +43,7 @@ import org.openqa.selenium.support.ui.Select;
  * @author Angel
  */
 //Anotacion de Junit para indicar el orden de ejecucion
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+/*@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(Arquillian.class)
 public class CityServiceTest {
 
@@ -237,3 +238,4 @@ public class CityServiceTest {
         assertTrue(success);
     }
 }
+*/
