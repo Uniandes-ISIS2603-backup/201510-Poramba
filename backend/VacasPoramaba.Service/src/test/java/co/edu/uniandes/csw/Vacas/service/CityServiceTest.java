@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package co.edu.uniandes.csw.Vacas.service;
 
 import co.edu.uniandes.csw.Vacas.service.CityService;
@@ -43,7 +42,7 @@ import org.openqa.selenium.support.ui.Select;
  * @author Angel
  */
 //Anotacion de Junit para indicar el orden de ejecucion
-/*@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(Arquillian.class)
 public class CityServiceTest {
 
@@ -118,23 +117,27 @@ public class CityServiceTest {
 
     @Test
     @RunAsClient
-    public void t1createCountry() throws InterruptedException {
+    public void t1createCity() throws InterruptedException {
         Thread.sleep(1500);
         boolean success = false;
-        driver.findElement(By.partialLinkText("Country")).click();
+        driver.findElement(By.partialLinkText("Ciudades")).click();
         Thread.sleep(3000);
         driver.findElement(By.id("createBtn")).click();
         Thread.sleep(2000);
         driver.findElement(By.id("name")).clear();
-        driver.findElement(By.id("name")).sendKeys("Colombia");
-        driver.findElement(By.id("population")).clear();
-        driver.findElement(By.id("population")).sendKeys("80000000");
+        driver.findElement(By.id("name")).sendKeys("Bogota");
+        driver.findElement(By.id("desc")).clear();
+        driver.findElement(By.id("desc")).sendKeys("Distrito Capital");
+        driver.findElement(By.id("link")).clear();
+        driver.findElement(By.id("link")).sendKeys("http://www.bogota.gov.co/");
+        driver.findElement(By.id("img")).clear();
+        driver.findElement(By.id("img")).sendKeys("Imágen de Bogota");
         driver.findElement(By.id("saveBtn")).click();
         Thread.sleep(2000);
         List<WebElement> rows = driver.findElements(By.xpath("//table[contains(@id,'recordList')]/tbody/tr"));
         for (WebElement webElement : rows) {
             List<WebElement> elems = webElement.findElements(By.xpath("td"));
-            if (elems.get(0).getText().equals("Colombia") && elems.get(1).getText().equals("80000000")) {
+            if (elems.get(0).getText().equals("Bogota") && elems.get(1).getText().equals("Distrito Capital") && elems.get(2).getText().equals("http://www.bogota.gov.co/") && elems.get(3).getText().equals("Imágen de Bogota") ) {
                 success = true;
             }
         }
@@ -145,6 +148,7 @@ public class CityServiceTest {
     @Test
     @RunAsClient
     public void t2createSport() throws Exception {
+        Thread.sleep(2000);
         boolean success = false;
         driver.findElement(By.partialLinkText("Sport")).click();
         Thread.sleep(3000);
@@ -165,7 +169,7 @@ public class CityServiceTest {
         List<WebElement> rows = driver.findElements(By.xpath("//table[contains(@id,'recordList')]/tbody/tr"));
         for (WebElement webElement : rows) {
             List<WebElement> elems = webElement.findElements(By.xpath("td"));
-            if (elems.get(0).getText().equals("Futbol") && elems.get(5).getText().equals("Colombia")) {
+            if (elems.get(0).getText().equals("Colombia") && elems.get(1).getText().equals("80000000")) {
                 success = true;
             }
         }
@@ -238,4 +242,3 @@ public class CityServiceTest {
         assertTrue(success);
     }
 }
-*/
