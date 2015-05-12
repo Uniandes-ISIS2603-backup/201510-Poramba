@@ -123,11 +123,11 @@ public class Busqueda
 		catch (IOException e) 
                 {
                     Logger.getLogger(e.toString());
-                  throw new RuntimeException("error en el metodo dar objetoJson lecura" + e);
+                    throw e;
 		} 
                 catch (ParseException e) {
                     Logger.getLogger(e.toString());
-                    throw new RuntimeException("error en el metodo dar objetoJson persistencia"+e);
+                   throw new RuntimeException("error en el metodo dar objetoJson persistencia"+e);
         }
     }
     
@@ -273,6 +273,7 @@ public class Busqueda
             {
                 // TODO Auto-generated catch block
                 Logger.getLogger(e.toString());
+                
                throw new RuntimeException("Excepcion e el metodo dar infoEventos" + e);
             }
         return resultado;

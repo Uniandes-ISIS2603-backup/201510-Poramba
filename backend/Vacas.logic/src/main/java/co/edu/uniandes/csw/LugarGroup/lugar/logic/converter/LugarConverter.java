@@ -13,7 +13,7 @@ import co.edu.uniandes.csw.LugarGroup.lugar.logic.entity.LugarEntity;
 
 
 public class LugarConverter {
-    
+   
     private LugarConverter()
     {
         
