@@ -2,6 +2,8 @@
  * Paquete de clase busqueda
  */
 package co.edu.uniandes.csw.BusquedaGroup;
+import com.sun.messaging.jmq.util.log.Logger;
+import static com.sun.xml.ws.spi.db.BindingContextFactory.LOGGER;
 import  org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -13,6 +15,7 @@ import java.net.URL;
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 /**
  *Clase en la que se realiza la utilizacion del appi 
  * para busuqedas
@@ -120,9 +123,9 @@ public class Busqueda
 
 		catch (org.json.simple.parser.ParseException e) 
                 {
-			e.printStackTrace();
-                        return null;
+                  LOGGER.info(e.getMessage());
 		}
+                return null;
     }
     
     public String darImagen(String ID )
@@ -157,8 +160,8 @@ public class Busqueda
 		
 			
 		} catch (IOException e) {
-			e.printStackTrace();
-                        return respuesta;
+                    LOGGER.info(e.getMessage());
+
 		}
 		return respuesta;
 		
@@ -206,8 +209,7 @@ public class Busqueda
             } 
             catch (IOException e) 
             {
-                    e.printStackTrace();
-                    return resultadoImagen;
+               LOGGER.info(e.getMessage());
             }
         return resultadoImagen;
     }
@@ -263,11 +265,10 @@ public class Busqueda
                             resultado.add(info);
                     }
             } 
-            catch (IOException e) 
+            catch (Exception e) 
             {
-                    // TODO Auto-generated catch block
-               e.printStackTrace();
-               return resultado;
+                // TODO Auto-generated catch block
+               LOGGER.info(e.getMessage());
             }
         return resultado;
     }
