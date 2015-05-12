@@ -13,6 +13,11 @@ import co.edu.uniandes.csw.LugarGroup.lugar.logic.entity.LugarEntity;
 
 
 public class LugarConverter {
+    
+    private LugarConverter()
+    {
+        
+    }
     public static LugarDTO entity2PersistenceDTO(LugarEntity entity) {
         if (entity != null) {
             LugarDTO dto = new LugarDTO(entity.getId(),entity.getInico(),entity.getFin());
