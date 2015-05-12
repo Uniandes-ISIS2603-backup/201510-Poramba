@@ -23,12 +23,8 @@
                     scope.currentRecord = {};
                     scope.records = [];
 
-                    //Variables de paginacion
-//                    scope.maxSize = 5;
-//                    scope.itemsPerPage = 5;
-//                    scope.totalItems = 0;
-//                    scope.currentPage = 1;
-
+                     //Variables de paginacion
+                    
                     //Variables para el controlador
                     ctrl.editMode = false;
 
