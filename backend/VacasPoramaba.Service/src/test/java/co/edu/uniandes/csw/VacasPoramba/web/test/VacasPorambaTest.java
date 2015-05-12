@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-package co.edu.uniandes.csw.Vacas.service;
+package co.edu.uniandes.csw.VacasPoramba.web.test;
 
 import co.edu.uniandes.csw.Vacas.service.CityService;
+import co.edu.uniandes.csw.Vacas.service.HotelService;
+import co.edu.uniandes.csw.Vacas.service.ItinerarioService;
+import co.edu.uniandes.csw.Vacas.service.LugarService;
+import co.edu.uniandes.csw.Vacas.service.ViajeroService;
 import java.io.File;
 import java.net.URL;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;
 import org.jboss.arquillian.junit.Arquillian;
@@ -32,20 +34,20 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
+import org.openqa.jetty.html.Select;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
 
 /**
  *
  * @author Angel
  */
 //Anotacion de Junit para indicar el orden de ejecucion
-/*@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(Arquillian.class)
-public class CityServiceTest {
+public class VacasPorambaTest {
 
     public static String baseUrl;
     public static String URLRESOURCES = "src/main/webapp";
@@ -65,7 +67,7 @@ public class CityServiceTest {
                 // Nombre del Proyecto "VacasProbamba.service" seguido de ".war". Debe ser el mismo nombre del proyecto web que contiene los javascript y los  servicios Rest
                 .create(WebArchive.class, "VacasPoramba.service.war")
                 // Se agrega la dependencia a la lï¿½gica con el nombre groupid:artefactid:version (GAV)
-                .addAsLibraries(resolver.artifact("co.edu.uniandes.csw.Vacas:Vacas.logic:0.0.1")
+                .addAsLibraries(resolver.artifact("co.edu.uniandes.csw.VacasPoramba:Vacas.logic:0.0.1")
                         .resolveAsFiles())
                 // Se agregan los compilados de los paquetes que se van a probar
                 .addPackage(CityService.class.getPackage())
@@ -118,23 +120,26 @@ public class CityServiceTest {
 
     @Test
     @RunAsClient
-    public void t1createCountry() throws InterruptedException {
+    public void t1createCity() throws InterruptedException {
         Thread.sleep(1500);
         boolean success = false;
-        driver.findElement(By.partialLinkText("Country")).click();
+        driver.findElement(By.partialLinkText("CIUDADES")).click();
         Thread.sleep(3000);
         driver.findElement(By.id("createBtn")).click();
         Thread.sleep(2000);
         driver.findElement(By.id("name")).clear();
-        driver.findElement(By.id("name")).sendKeys("Colombia");
-        driver.findElement(By.id("population")).clear();
-        driver.findElement(By.id("population")).sendKeys("80000000");
+        driver.findElement(By.id("name")).sendKeys("Bogota");
+        driver.findElement(By.id("desc")).clear();
+        driver.findElement(By.id("desc")).sendKeys("Distrito Capital");
+        driver.findElement(By.id("link")).clear();
+        driver.findElement(By.id("link")).sendKeys("http://www.bogota.gov.co/");
+        driver.findElement(By.id("img")).clear();
+        driver.findElement(By.id("img")).sendKeys("Imágen de Bogota");
         driver.findElement(By.id("saveBtn")).click();
-        Thread.sleep(2000);
         List<WebElement> rows = driver.findElements(By.xpath("//table[contains(@id,'recordList')]/tbody/tr"));
         for (WebElement webElement : rows) {
             List<WebElement> elems = webElement.findElements(By.xpath("td"));
-            if (elems.get(0).getText().equals("Colombia") && elems.get(1).getText().equals("80000000")) {
+            if (elems.get(0).getText().equals("Bogota") && elems.get(1).getText().equals("Distrito Capital") && elems.get(2).getText().equals("http://www.bogota.gov.co/") && elems.get(3).getText().equals("Imágen de Bogota")) {
                 success = true;
             }
         }
@@ -144,98 +149,105 @@ public class CityServiceTest {
 
     @Test
     @RunAsClient
-    public void t2createSport() throws Exception {
+    public void t2createEvent() throws InterruptedException {
+        Thread.sleep(1500);
         boolean success = false;
-        driver.findElement(By.partialLinkText("Sport")).click();
+        driver.findElement(By.partialLinkText("EVENTOS")).click();
         Thread.sleep(3000);
         driver.findElement(By.id("createBtn")).click();
         Thread.sleep(2000);
         driver.findElement(By.id("name")).clear();
-        driver.findElement(By.id("name")).sendKeys("Futbol");
+        driver.findElement(By.id("name")).sendKeys("Rock al Parque");
         driver.findElement(By.id("minAge")).clear();
-        driver.findElement(By.id("minAge")).sendKeys("3");
+        driver.findElement(By.id("minAge")).sendKeys("18");
         driver.findElement(By.id("maxAge")).clear();
-        driver.findElement(By.id("maxAge")).sendKeys("90");
+        driver.findElement(By.id("maxAge")).sendKeys("80");
         driver.findElement(By.id("rules")).clear();
-        driver.findElement(By.id("rules")).sendKeys("No rules");
-        Select contries = new Select(driver.findElement(By.id("country")));
-        contries.selectByVisibleText("Colombia");
+        driver.findElement(By.id("rules")).sendKeys("No violencia");
+        driver.findElement(By.id("img")).clear();
+        driver.findElement(By.id("img")).sendKeys("Sin imagen");
         driver.findElement(By.id("saveBtn")).click();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         List<WebElement> rows = driver.findElements(By.xpath("//table[contains(@id,'recordList')]/tbody/tr"));
         for (WebElement webElement : rows) {
             List<WebElement> elems = webElement.findElements(By.xpath("td"));
-            if (elems.get(0).getText().equals("Futbol") && elems.get(5).getText().equals("Colombia")) {
+            if (elems.get(0).getText().equals("Rock al Parque") && elems.get(1).getText().equals("18") && elems.get(2).getText().equals("80") && elems.get(3).getText().equals("No violencia") && elems.get(4).getText().equals("Sin imagen")) {
                 success = true;
             }
         }
         assertTrue(success);
         Thread.sleep(1000);
     }
-
+    
     @Test
     @RunAsClient
-    public void t3deleteSport() throws Exception {
-        boolean success = false;
-        driver.findElement(By.partialLinkText("Sport")).click();
-        Thread.sleep(3000);
-        List<WebElement> rows = driver.findElements(By.xpath("//table[contains(@id,'recordList')]/tbody/tr"));
-        for (WebElement webElement : rows) {
-            List<WebElement> elems = webElement.findElements(By.xpath("td"));
-            if (elems.get(0).getText().equals("Futbol") && elems.get(5).getText().equals("Colombia")) {
-                List<WebElement> buttons = elems.get(6).findElements(By.xpath("button"));
-                buttons.get(1).click();
-                success = true;
-                break;
-            }
-        }
-        Thread.sleep(3000);
-        //Se busca el objeto que fue eliminado, si se encuentra hay error al eliminar
-        rows = driver.findElements(By.xpath("//table[contains(@id,'recordList')]/tbody/tr"));
-        if (rows.size() > 0) {
-            for (WebElement webElement : rows) {
-                List<WebElement> elems = webElement.findElements(By.xpath("td"));
-                if (elems.get(0).getText().equals("Futbol") && elems.get(5).getText().equals("Colombia")) {
-                    success = false;
-                    break;
-                }
-            }
-        }
-
-        Thread.sleep(1000);
-        assertTrue(success);
-    }
-
-    @Test
-    @RunAsClient
-    public void t4deleteCountry() throws Exception {
-        boolean success = false;
-        driver.findElement(By.partialLinkText("Country")).click();
+    public void t3createItinerary() throws InterruptedException {
         Thread.sleep(1500);
+        boolean success = false;
+        driver.findElement(By.partialLinkText("ITINERARIOS")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("createBtn")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.id("name")).clear();
+        driver.findElement(By.id("name")).sendKeys("Itinerairo 1");
+        driver.findElement(By.id("Descripcion")).clear();
+        driver.findElement(By.id("Descripcion")).sendKeys("Primer viaje");
+        driver.findElement(By.id("inicio")).clear();
+        driver.findElement(By.id("inicio")).sendKeys("06/05/1015");
+        driver.findElement(By.id("final")).clear();
+        driver.findElement(By.id("final")).sendKeys("24/05/1015");
+        driver.findElement(By.id("rules")).clear();
+        driver.findElement(By.id("rules")).sendKeys("No violencia");        
+        org.openqa.selenium.support.ui.Select ciudades = new org.openqa.selenium.support.ui.Select(driver.findElement(By.id("ciudad")));
+        ciudades.selectByVisibleText("Bogota");
+        org.openqa.selenium.support.ui.Select eventos = new org.openqa.selenium.support.ui.Select(driver.findElement(By.id("eventos")));
+        eventos.selectByVisibleText("Rock al Parque");
+        driver.findElement(By.id("saveBtn")).click();
+        Thread.sleep(2000);
         List<WebElement> rows = driver.findElements(By.xpath("//table[contains(@id,'recordList')]/tbody/tr"));
         for (WebElement webElement : rows) {
             List<WebElement> elems = webElement.findElements(By.xpath("td"));
-            if (elems.get(0).getText().equals("Colombia") && elems.get(1).getText().equals("80000000")) {
-                List<WebElement> buttons = elems.get(2).findElements(By.xpath("button"));
-                buttons.get(1).click();
+            if (elems.get(0).getText().equals("Itinerario 1") && elems.get(1).getText().equals("Primer viaje") && elems.get(2).getText().equals("06/05/1015") && elems.get(3).getText().equals("06/05/1015") && elems.get(4).getText().equals("Bogota") && elems.get(4).getText().equals("Rock al parque")) {
                 success = true;
-                break;
             }
         }
-        Thread.sleep(2000);
-        //Se busca el objeto que fue eliminado, si se encuentra hay error al eliminar
-        rows = driver.findElements(By.xpath("//table[contains(@id,'recordList')]/tbody/tr"));
-        if (rows.size() > 0) {
-            for (WebElement webElement : rows) {
-                List<WebElement> elems = webElement.findElements(By.xpath("td"));
-                if (elems.get(0).getText().equals("Colombia") && elems.get(1).getText().equals("80000000")) {
-                    success = false;
-                    break;
-                }
-            }
-        }
-        Thread.sleep(2000);
         assertTrue(success);
+        Thread.sleep(1000);
+    }
+    
+    @Test
+    @RunAsClient
+    public void t4createTransportation() throws InterruptedException {
+        Thread.sleep(1500);
+        boolean success = false;
+        driver.findElement(By.partialLinkText("TRSNSPORTE")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("createBtn")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.id("name")).clear();
+        driver.findElement(By.id("name")).sendKeys("Itinerairo 1");
+        driver.findElement(By.id("Descripcion")).clear();
+        driver.findElement(By.id("Descripcion")).sendKeys("Primer viaje");
+        driver.findElement(By.id("inicio")).clear();
+        driver.findElement(By.id("inicio")).sendKeys("06/05/1015");
+        driver.findElement(By.id("final")).clear();
+        driver.findElement(By.id("final")).sendKeys("24/05/1015");
+        driver.findElement(By.id("rules")).clear();
+        driver.findElement(By.id("rules")).sendKeys("No violencia");        
+        org.openqa.selenium.support.ui.Select ciudades = new org.openqa.selenium.support.ui.Select(driver.findElement(By.id("ciudad")));
+        ciudades.selectByVisibleText("Bogota");
+        org.openqa.selenium.support.ui.Select eventos = new org.openqa.selenium.support.ui.Select(driver.findElement(By.id("eventos")));
+        eventos.selectByVisibleText("Rock al Parque");
+        driver.findElement(By.id("saveBtn")).click();
+        Thread.sleep(2000);
+        List<WebElement> rows = driver.findElements(By.xpath("//table[contains(@id,'recordList')]/tbody/tr"));
+        for (WebElement webElement : rows) {
+            List<WebElement> elems = webElement.findElements(By.xpath("td"));
+            if (elems.get(0).getText().equals("Itinerario 1") && elems.get(1).getText().equals("Primer viaje") && elems.get(2).getText().equals("06/05/1015") && elems.get(3).getText().equals("06/05/1015") && elems.get(4).getText().equals("Bogota") && elems.get(4).getText().equals("Rock al parque")) {
+                success = true;
+            }
+        }
+        assertTrue(success);
+        Thread.sleep(1000);
     }
 }
-*/

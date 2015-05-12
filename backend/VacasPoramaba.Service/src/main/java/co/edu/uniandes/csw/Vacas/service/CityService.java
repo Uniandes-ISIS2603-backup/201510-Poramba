@@ -19,7 +19,7 @@ import javax.ws.rs.core.MediaType;
 
 /**
  *
- * @author estudiante
+ * @author Luis Angel Cervantes Cortes
  */
 @Path("/cities")
 @Stateless

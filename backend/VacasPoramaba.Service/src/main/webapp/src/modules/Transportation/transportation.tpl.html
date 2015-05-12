@@ -33,9 +33,9 @@
         </section>
 				 <!-- Navegacion en modulos -->
                 <div class="collapse navbar-collapse" id="country-navbar"><br>
-                    <center><button class="btn btn-lg btn-theme" ng-hide="transportationCtrl.editMode" ng-click="transportationCtrl.createRecord()"><i class="fa fa-plus-circle"></i> Crear</button>
-                    <button class="btn btn-lg btn-theme" ng-show="transportationCtrl.editMode" ng-click="transportationCtrl.saveRecord()"><i class="fa fa-floppy-o"></i> Guardar</button>
-                    <button class="btn btn-lg btn-theme" ng-show="transportationCtrl.editMode" ng-click="transportationCtrl.fetchRecords()"><i class="fa fa-exclamation-circle"></i> Cancelar</button></center>
+                    <center><button id="createBtn" class="btn btn-lg btn-theme" ng-hide="transportationCtrl.editMode" ng-click="transportationCtrl.createRecord()"><i class="fa fa-plus-circle"></i> Crear</button>
+                    <button id="saveBtn" class="btn btn-lg btn-theme" ng-show="transportationCtrl.editMode" ng-click="transportationCtrl.saveRecord()"><i class="fa fa-floppy-o"></i> Guardar</button>
+                    <button id="cancelBtn" class="btn btn-lg btn-theme" ng-show="transportationCtrl.editMode" ng-click="transportationCtrl.fetchRecords()"><i class="fa fa-exclamation-circle"></i> Cancelar</button></center>
                 </div>
             </div>
         </nav>
