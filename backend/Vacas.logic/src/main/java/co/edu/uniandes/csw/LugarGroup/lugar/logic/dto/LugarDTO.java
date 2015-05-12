@@ -26,17 +26,13 @@ public class LugarDTO {
     
     private CiudadDTO ciudad;
 
-    public LugarDTO(String id, Date inico, Date fin) 
+    public LugarDTO(String i, Date ini, Date fn) 
     {
-        this.id = id;
-        this.inico = inico;
-        this.fin = fin;
+        this.id = i;
+        this.inico = ini;
+        this.fin = fn;
         eventos= new ArrayList<EventoDTO>();
     }
-
-    
-    
-
     
     /**
      * @return the id
@@ -44,49 +40,42 @@ public class LugarDTO {
     public String getId() {
         return id;
     }
-
     /**
      * @param id the id to set
      */
     public void setId(String id) {
         this.id = id;
     }
-
     /**
      * @return the inico
      */
     public Date getInico() {
         return inico;
     }
-
     /**
      * @param inico the inico to set
      */
     public void setInico(Date inico) {
         this.inico = inico;
     }
-
     /**
      * @return the fin
      */
     public Date getFin() {
         return fin;
     }
-
     /**
      * @param fin the fin to set
      */
     public void setFin(Date fin) {
         this.fin = fin;
     }
-
     /**
      * @return the hotelActual
      */
     public HotelDTO getHotelActual() {
         return hotelActual;
     }
-
     /**
      * @param hotelActual the hotelActual to set
      */
@@ -95,50 +84,42 @@ public class LugarDTO {
         //hacer qu apratir del Idse vuvla un hotel
         
     }
-
     /**
      * @return the transporteActual
      */
     public transporteDTO getTransporteActual() {
         return transporteActual;
     }
-
     /**
      * @param transporteActual the transporteActual to set
      */
     public void setTransporteActual(String transporteActual) {
         //TODO
     }
-
     /**
      * @return the eventos
      */
     public List<EventoDTO> getEventos() {
         return eventos;
     }
-
     /**
      * @param eventos the eventos to set
      */
     public void setEventos(List<EventoDTO> eventos) {
         this.eventos = eventos;
     }
-
     /**
      * @return the ciudad
      */
     public CiudadDTO getCiudad() {
         return ciudad;
     }
-
     /**
      * @param ciudad the ciudad to set
      */
     public void setCiudad(String ciudad) {
         //TODO
     }
-    
-    
     public boolean addEvento(String evento)
     {
         for (int i = 0; i < eventos.size(); i++) 
@@ -150,10 +131,8 @@ public class LugarDTO {
                     }
            
         }
-       //TODO
         return true;
     }
-    
     public boolean deleteEvento(String id)
     {
         for (int i = 0; i < eventos.size(); i++) 
@@ -164,13 +143,9 @@ public class LugarDTO {
                 eventos.remove(i);
                  return true;
              }
-              
         }
-        
         return false;
-        
     }
-    
     public EventoDTO getEvento(String id)
     {
         for (int i = 0; i < eventos.size(); i++) 
@@ -179,14 +154,9 @@ public class LugarDTO {
             if(actual.getId().equals(id))
             {
                return actual;
-                
-                 
             }
-              
         }
-        
         return null;
-        
     }
     /**
      * Retorna un evento por su posicion 
@@ -204,25 +174,15 @@ public class LugarDTO {
             {
                 aRetornar=i;
                return aRetornar;
-                
-                 
             }
-              
         }
          return aRetornar;
     }
-        
-    
     public void clean()
     {
-     
         hotelActual = null;
         transporteActual = null;
         eventos = null;
         ciudad = null;
     }
-        
-    
-   
-    
 }
