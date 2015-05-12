@@ -2,7 +2,6 @@
  * Paquete de clase busqueda
  */
 package co.edu.uniandes.csw.BusquedaGroup;
-//import static com.sun.xml.ws.spi.db.BindingContextFactory.LOGGER;
 import  org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -124,11 +123,11 @@ public class Busqueda
 		catch (IOException e) 
                 {
                     Logger.getLogger(e.toString());
-                  throw new RuntimeException(e);
+                  throw new RuntimeException("error en el metodo dar objetoJson lecura" + e);
 		} 
                 catch (ParseException e) {
                     Logger.getLogger(e.toString());
-                    throw new RuntimeException(e);
+                    throw new RuntimeException("error en el metodo dar objetoJson persistencia"+e);
         }
     }
     
@@ -165,7 +164,7 @@ public class Busqueda
 			
 		} catch (Exception e) {
                     Logger.getLogger(e.toString());
-                    throw new RuntimeException(e);
+                    throw new RuntimeException("error en el metodo dar imagen "+e);
 		}
 		return respuesta;
 		
@@ -214,7 +213,7 @@ public class Busqueda
             catch (Exception e) 
             {
                 Logger.getLogger(e.toString());
-               throw new RuntimeException(e);
+               throw new RuntimeException("error en el metodo dar url del objeto "+e);
             }
         return resultadoImagen;
     }
@@ -246,8 +245,8 @@ public class Busqueda
             try {
                     AaLeer = darJSON(url);
                     JSONObject primero=(JSONObject) AaLeer.get("response");
-                    //Este es el primero" +primero
-                    JSONObject eventos=(JSONObject) AaLeer.get("events");
+                    //Este es el primero" +primero aca cambie aLer por primero depronto hay error
+                    JSONObject eventos=(JSONObject) primero.get("events");
                     JSONArray obejtos=(JSONArray) eventos.get("items");
                     //Estos son los obejtos
                     Iterator<JSONObject> iterator = obejtos.iterator();
@@ -274,7 +273,7 @@ public class Busqueda
             {
                 // TODO Auto-generated catch block
                 Logger.getLogger(e.toString());
-               throw new RuntimeException(e);
+               throw new RuntimeException("Excepcion e el metodo dar infoEventos" + e);
             }
         return resultado;
     }
