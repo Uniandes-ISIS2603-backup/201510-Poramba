@@ -121,8 +121,8 @@ public class Busqueda
 		catch (org.json.simple.parser.ParseException e) 
                 {
 			e.printStackTrace();
+                        return null;
 		}
-		return null;
     }
     
     public String darImagen(String ID )
@@ -158,6 +158,7 @@ public class Busqueda
 			
 		} catch (IOException e) {
 			e.printStackTrace();
+                        return respuesta;
 		}
 		return respuesta;
 		
@@ -206,11 +207,9 @@ public class Busqueda
             catch (IOException e) 
             {
                     e.printStackTrace();
+                    return resultadoImagen;
             }
-
-
         return resultadoImagen;
-
     }
     public List <String> darCategoriasBusqueda()
     {
@@ -268,6 +267,7 @@ public class Busqueda
             {
                     // TODO Auto-generated catch block
                e.printStackTrace();
+               return resultado;
             }
         return resultado;
     }
