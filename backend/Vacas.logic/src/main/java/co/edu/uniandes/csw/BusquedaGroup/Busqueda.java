@@ -12,13 +12,14 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.ArrayList;
+import java.util.List;
 /**
  *Clase en la que se realiza la utilizacion del appi 
  * para busuqedas
  */
 public class Busqueda 
 {
-    ArrayList<String> arreglo ;
+    List <String> arreglo ;
        
     
     public Busqueda()	
@@ -98,7 +99,7 @@ public class Busqueda
     public final static String   LIMITE = "&limit=";
     /**
      * Metodo que da un Objeto JSOn al realizar una consulta de busqueda cn el api FOurSquare
-     * @param direc url que es la que encargada de generar la arespuesta en JSOn 
+     * @param  direc url que es la que encargada de generar la arespuesta en JSOn 
      * @return el objeto JSon que se genera de la consulta
      * @throws IOException  en caso de que se genere algun error en el momento de la lectura  del url
      */
@@ -126,39 +127,39 @@ public class Busqueda
     
     public String darImagen(String ID )
 	{
+            String respuesta = "";
             // URL FORMADO POR LAS PARTES BASICAS Y EL ID DE LA IMAGEN 
 		String url=BASE_IMAGEN+ID+FINAL_IMAGEN;
 		try {
-			//System.out.println(url);
+			//url
 			JSONObject imagenes=darJSON(url);
-			//System.out.println("Este es el objeto "+ imagenes);
+			//Este es el objeto 
 			JSONObject response= (JSONObject) imagenes.get("response");
-			//System.out.println("Este es el response "+ response);
+			//Este es el response 
 			JSONObject photos= (JSONObject) response.get("photos");
-			//System.out.println("Este es el photos "+ photos);
+			//Este es el photos 
 			JSONArray items=  (JSONArray) photos.get("items");
-		//System.out.println("Este es le itemdss" + items);
+		        //Este es le itemdss 
 			Iterator<JSONObject> iterator = items.iterator();
 			int i = 0;
 			while (iterator.hasNext() && i < 1) 
 			{
 				JSONObject meme = iterator.next();
-//				JSONObject source = (JSONObject) meme.get("source");
-//				System.out.println("Este es el source "+source );
+                             //	Este es el source 
 				String prefijo = (String) meme.get("prefix");
 				String sufijo = (String) meme.get("suffix");
-				System.out.println( prefijo +TAMANIO+sufijo);
+				//prefijo +TAMANIO+sufijo
+                                respuesta = url + prefijo + sufijo;
 				i++;
 
-				//System.out.println("Estos son los venues"+meme);
+				//Estos son los venues meme
 			}
 		
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "";
+		return respuesta;
 		
 	}
     
@@ -170,56 +171,58 @@ public class Busqueda
      * @param CriterioDebqueda que es lo que se quiere buscar 
      * @return  un arreglo con la info necesaria
      */
-    public ArrayList darURl(int numMax, String ciudad, String CriterioDebqueda)
+    public List<String> darURl(int numMax, String ciudad, String CriterioDebqueda)
     {
         
             String url= BASE_URL +CriterioDebqueda +CIUDAD + ciudad+FINAL_URL_BASICO + LIMITE + numMax;
 //		{"referralId":"v-1427344009","id":"4ba3fd5ef964a520f17438e3","location":{"postalCode":"110311","address":"Cra 4 No. 22-61","state":"Bogotá D.C."
             JSONObject AaLeer;
-            ArrayList<String>arreglo = new ArrayList<String >();
+            List<String>resultadoImagen = new ArrayList<String >();
             try {
                     AaLeer = darJSON(url);
                     JSONObject primero=(JSONObject) AaLeer.get("response");
-                    //System.out.println("Este es el primero" +primero);
+                    //Este es el primero primero
                     JSONArray obejtos=(JSONArray) primero.get("venues");
-                    //System.out.println("Estos son los obejtos");
+                    //Estos son los obejtos
                     Iterator<JSONObject> iterator = obejtos.iterator();
                     while (iterator.hasNext() ) 
                     {
                             JSONObject meme = iterator.next();
 
                             String ID = (String) meme.get("id");
-                            System.out.println(meme + "este es eel meme");
+                            // meme + "este es eel meme"
                             JSONObject dirc=(JSONObject) meme.get("location");
                             String adress = (String) dirc.get("address");
-//				System.out.println("aaaaaaaaaaaaaaaaaaaaa" + adress);
-                            String state = (String) dirc.get("state");
-//				System.out.println("ssssssssssssssss" + state);
+                            
+                           // jkaskdnankdfmvsovm String state (String) dirc.get("state")
+                            
                             darImagen(ID);
                             String name = (String) meme.get("name");
-                            System.out.println(name + "name");
+                            //name + "name"
                             String info = ID +"_"+name +"_" + darImagen(ID) + "_" + adress +"_" + dirc;
-                            arreglo.add(info);
+                            resultadoImagen.add(info);
                     }
             } 
             catch (IOException e) 
             {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
             }
 
 
-        return arreglo;
+        return resultadoImagen;
 
     }
-    public ArrayList <String> darCategoriasBusqueda()
+    public List <String> darCategoriasBusqueda()
     {
+         List<String> categoriasRespuesta = new ArrayList<String>();
          
-        return null;
+        return categoriasRespuesta;
     }
-    public ArrayList darInfoHotel()
+    public List darInfoHotel()
     {
-        return null;
+         List<String> categoriasRespuesta = new ArrayList<String>();
+         
+        return categoriasRespuesta;
     }
     
     /*
@@ -227,20 +230,20 @@ public class Busqueda
     *( infomacion  BASICA ) de un evento especificamente de un lugar, ciudad    
     */
     
-    public ArrayList darInfoEventos(String venueId )
+    public List<String> darInfoEventos(String venueId )
     {
         String url= BASE_URL_GENERAL_VENUES+ venueId+ BASE_URL_EVENTO+ID_cliente
                 +ID_SECRET+FINAL_URL_BASICO + LIMITE + "100";
 //		{"referralId":"v-1427344009","id":"4ba3fd5ef964a520f17438e3","location":{"postalCode":"110311","address":"Cra 4 No. 22-61","state":"Bogotá D.C."
             JSONObject AaLeer;
-            ArrayList<String>arreglo = new ArrayList<String >();
+           List <String>resultado = new ArrayList<String >();
             try {
                     AaLeer = darJSON(url);
                     JSONObject primero=(JSONObject) AaLeer.get("response");
-                    //System.out.println("Este es el primero" +primero);
+                    //Este es el primero" +primero
                     JSONObject eventos=(JSONObject) AaLeer.get("events");
                     JSONArray obejtos=(JSONArray) eventos.get("items");
-                    //System.out.println("Estos son los obejtos");
+                    //Estos son los obejtos
                     Iterator<JSONObject> iterator = obejtos.iterator();
                     while (iterator.hasNext() ) 
                     {
@@ -258,20 +261,21 @@ public class Busqueda
                             darImagen(ID);
                            
                             String info = ID +"_"+name +"_" + darImagen(ID) + "_" + timezone +"_" + urlP;
-                            arreglo.add(info);
+                            resultado.add(info);
                     }
             } 
             catch (IOException e) 
             {
                     // TODO Auto-generated catch block
-                System.out.println(e.getMessage());
-                return null;
+               e.printStackTrace();
             }
-        return arreglo;
+        return resultado;
     }
     
-    public ArrayList darInfoTransporte()
+    public List <String> darInfoTransporte()
     {
-        return null;
+        List<String> transporteList = new ArrayList<String>();
+         
+        return transporteList;
     }
 }
