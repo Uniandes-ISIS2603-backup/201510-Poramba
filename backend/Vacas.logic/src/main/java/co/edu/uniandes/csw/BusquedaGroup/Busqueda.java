@@ -20,9 +20,9 @@ import java.util.List;
  */
 public class Busqueda 
 {
+    /*lista que retorna la respuesta necesaria, dependiendo de la busqueda*/
     List <String> arreglo ;
        
-    
     public Busqueda()	
     {
         arreglo = new ArrayList<String>();
@@ -122,8 +122,8 @@ public class Busqueda
 		catch (Exception e) 
                 {
                   LOGGER.info(e.getMessage());
+                  throw new RuntimeException(e);
 		}
-                return null;
     }
     
     public String darImagen(String ID )
@@ -159,7 +159,7 @@ public class Busqueda
 			
 		} catch (Exception e) {
                     LOGGER.info(e.getMessage());
-
+                    throw new RuntimeException(e);
 		}
 		return respuesta;
 		
@@ -208,6 +208,7 @@ public class Busqueda
             catch (Exception e) 
             {
                LOGGER.info(e.getMessage());
+               throw new RuntimeException(e);
             }
         return resultadoImagen;
     }
@@ -267,6 +268,7 @@ public class Busqueda
             {
                 // TODO Auto-generated catch block
                LOGGER.info(e.getMessage());
+               throw new RuntimeException(e);
             }
         return resultado;
     }
