@@ -1,7 +1,6 @@
 package co.edu.uniandes.csw.LugarGroup.lugar.logic.entity;
 
 import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
-import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelDTO;
 import co.edu.uniandes.csw.transporteGroup.transporte.logic.dto.transporteDTO;
 import java.io.Serializable;
@@ -11,12 +10,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import static javax.persistence.TemporalType.DATE;
 
 @Entity
 public class LugarEntity implements  Serializable {
 
+    /*constante de serializacion*/
+  private static final long serialVersionUID = 2405172041950251807L;
     @Id
     @GeneratedValue(generator = "Lugar")
     
