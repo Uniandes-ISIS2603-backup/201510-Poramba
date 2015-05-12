@@ -21,7 +21,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author estudiante
  */
-@Path("/city")
+@Path("/cities")
 @Stateless
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
