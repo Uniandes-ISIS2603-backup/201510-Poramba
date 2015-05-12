@@ -1,7 +1,7 @@
 (function (angular) {
     var mocksModule = angular.module('MockModule', ['ngMockE2E']);
 
-    mocksModule.constant('MockModule.baseUrl', 'webresources');
+    mocksModule.constant('MockModule.baseUrl', 'webresourcesa');
 
     mocksModule.run(['$httpBackend', 'MockModule.urls', 'MockModule.mockRecords', 'MockModule.baseUrl', function ($httpBackend, urls, mockRecords, baseUrl) {
             function mockUrls(entity_url) {
