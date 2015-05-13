@@ -10,7 +10,9 @@ import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity.CiudadEntity;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.entity.EventoEntity;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelDTO;
+import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.entity.HotelEntity;
 import co.edu.uniandes.csw.transporteGroup.transporte.logic.dto.transporteDTO;
+import co.edu.uniandes.csw.transporteGroup.transporte.logic.entity.transporteEntity;
 import java.util.List;
 
 /**
@@ -71,56 +73,43 @@ public interface ILugarLogic {
      * @param nuevo Nuevo Evento a agregar.
      * @return El nuevo evento agregado, null si no pudo agregarlo
      */
-//    public EventoEntity updateEvento(String idActual,String idNuevo );
+   public void updateEvento(String idActual,String idNuevo, LugarDTO lug );
     /**
      * El transporte que se va a agregar al lugar
      * @param detail Transporte a agregar
      * @return Retorna el nuevo transporte agregado, nulo si ya exostoa uno
      */
-   // public transporteDTO addTransporte(transporteDTO detail);
+    public void setTransporte(transporteDTO detail, LugarDTO lugar);
     
-    /**
-     * Reemplaza el tranporte actual por uno dado por parametro
-     * @param detail Nuevo transporte
-     */
-    //public void updateTransporte(transporteDTO detail);
     
     /**
      * Elimian el transporte actual
-     * @return true si se elimina el transporte, false en caso contrario
      */
-   // public boolean deleteTRanporte();
+   public void deleteTRanporte(LugarDTO lugar);
     
     /**
      * Retorna el transporte actual del lugar 
      * @return El transporte actual
      */
-    //public transporteDTO getTransporte();
+    public transporteEntity getTransporte(LugarDTO lugar);
     /**
      * El nuevo hotel a agregar en el lugar.
      * @param detail Nuevo hotel
      * @return El nuevo hotel agregado
      */
     
-    //public HotelDTO addHotel(HotelDTO detail);
+    public void setHotel(HotelDTO detail,LugarDTO lugar );
    /**
     * Elimian el hotel actual
     * @return true si se elimina, false en caso contrario. 
     */
-   // public boolean deleteHotel();
+    public void eliminarHotel(LugarDTO lugar);
     
     /**
      * Retorna el hotel actual.
      * @return EL hotel actual, null si no esxite uno
      */
-    //public HotelDTO getHotel();
-    
-    /**
-     * Cambia el hotelactual por uno dado por parametro
-     * @param hotel El nuevo hotel
-     * @return 
-     */
-    //public HotelDTO setHotel(HotelDTO hotel);
+    public HotelEntity getHotel(LugarDTO lugar);
     /**
      * Obtener un lugar a partir de su id.
      * @param id Id del lugar, esta es unica

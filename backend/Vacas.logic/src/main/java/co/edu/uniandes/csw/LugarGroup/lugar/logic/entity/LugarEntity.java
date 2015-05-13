@@ -144,6 +144,24 @@ public class LugarEntity  {
         
         this.ciudad = ciudad;
     }
+    
+    public void cambiarEventoAnteriorPorNuevo(EventoEntity viejo, EventoEntity nuevo)
+    {
+        for(int i = 0; i < eventos.size(); i++)
+        {
+            if(eventos.get(i).getId().equals(viejo.getId()))
+            {
+                eventos.remove(i);
+                eventos.add(i, nuevo);
+                break;
+            }
+        }
+    }
+    
+    public void eliminarTransporteActual()
+    {
+        transporteActual = null;
+    }
  
 
 }

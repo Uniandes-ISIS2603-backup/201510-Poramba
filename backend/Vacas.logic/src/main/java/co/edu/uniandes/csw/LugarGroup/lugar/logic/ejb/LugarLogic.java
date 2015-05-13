@@ -12,8 +12,12 @@ import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity.CiudadEntity;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.converter.EventoConverter;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.entity.EventoEntity;
+import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.converter.HotelConverter;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelDTO;
+import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.entity.HotelEntity;
+import co.edu.uniandes.csw.transporteGroup.transporte.logic.converter.transporteConverter;
 import co.edu.uniandes.csw.transporteGroup.transporte.logic.dto.transporteDTO;
+import co.edu.uniandes.csw.transporteGroup.transporte.logic.entity.transporteEntity;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -150,6 +154,50 @@ public class LugarLogic implements ILugarLogic{
     {
         lug.clean();
     }
- 
+    public void updateEvento(String idActual,String idNuevo, LugarDTO lug )
+    {
+        EventoEntity evViejo = entityManager.find(EventoEntity.class, lug.getEvento(idActual));
+        EventoEntity evNuevo = entityManager.find(EventoEntity.class, lug.getEvento(idNuevo));
+        LugarEntity lugar = entityManager.merge(LugarConverter.persistenceDTO2Entity(lug));
+        lugar.agregarEvento(evNuevo);
+        lugar.cambiarEventoAnteriorPorNuevo(evViejo, evNuevo);
+    }
+    
+    public void setTransporte(transporteDTO detail, LugarDTO lugar)
+    {
+        transporteEntity trans = entityManager.merge(transporteConverter.persistenceDTO2Entity(detail) );
+        LugarEntity lug = entityManager.merge(LugarConverter.persistenceDTO2Entity(lugar));
+        lug.setIDTransporteActual(trans);
+    }
+    
+       public void deleteTRanporte(LugarDTO lugar)
+       {
+           LugarEntity lug = entityManager.merge(LugarConverter.persistenceDTO2Entity(lugar));
+           lug.eliminarTransporteActual();
+       }
+       
+       public transporteEntity getTransporte(LugarDTO lugar)
+       {
+        LugarEntity lug = entityManager.merge(LugarConverter.persistenceDTO2Entity(lugar));
+        return lug.getTransporteActual();
+       }
+       
+       public void setHotel(HotelDTO detail,LugarDTO lugar )
+       {
+           LugarEntity lug = entityManager.merge(LugarConverter.persistenceDTO2Entity(lugar));
+           HotelEntity hot = entityManager.merge(HotelConverter.persistenceDTO2Entity(detail));
+           lug.setIDHotelActual(hot);
+       }
+       
+       public void eliminarHotel(LugarDTO lugar)
+       {
+           LugarEntity lug = entityManager.merge(LugarConverter.persistenceDTO2Entity(lugar));
+           lug.setIDHotelActual(null);
+       }
+       public HotelEntity getHotel(LugarDTO lugar)
+       {
+           LugarEntity lug = entityManager.merge(LugarConverter.persistenceDTO2Entity(lugar));
+           return lug.getHotelActual();
+       }
 
 }
