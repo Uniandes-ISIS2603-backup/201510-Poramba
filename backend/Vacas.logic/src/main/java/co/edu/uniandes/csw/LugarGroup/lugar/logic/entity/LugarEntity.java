@@ -1,9 +1,9 @@
 package co.edu.uniandes.csw.LugarGroup.lugar.logic.entity;
 
-import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
-import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelDTO;
-import co.edu.uniandes.csw.transporteGroup.transporte.logic.dto.transporteDTO;
-import java.io.Serializable;
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity.CiudadEntity;
+import co.edu.uniandes.csw.eventoGroup.evento.logic.entity.EventoEntity;
+import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.entity.HotelEntity;
+import co.edu.uniandes.csw.transporteGroup.transporte.logic.entity.transporteEntity;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
@@ -12,11 +12,14 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import static javax.persistence.TemporalType.DATE;
 
+
+
 @Entity
-public class LugarEntity implements  Serializable {
+public class LugarEntity  {
 
     /*constante de serializacion*/
   private static final long serialVersionUID = 2405172041950251807L;
+
     @Id
     @GeneratedValue(generator = "Lugar")
     
@@ -24,16 +27,17 @@ public class LugarEntity implements  Serializable {
 
     @Temporal(DATE)
     private Date inico;
+    
     @Temporal(DATE)
     private Date fin;
     
-    private String hotelActual;
+    private HotelEntity HotelActual;
     
-    private String transporteActual;
+    private transporteEntity transporteActual;
     
-    private List<String> eventos;
+    private List<EventoEntity> eventos;
     
-    private String ciudad;
+    private CiudadEntity ciudad;
 
     /**
      * @return the id
@@ -80,58 +84,65 @@ public class LugarEntity implements  Serializable {
     /**
      * @return the hotelActual
      */
-    public String getNombreHotelActual() {
-        return hotelActual;
+    public HotelEntity getHotelActual() {
+        return this.HotelActual;
     }
 
     /**
      * @param hotelActual the hotelActual to set
      */
-    public void setNombreHotelActual(HotelDTO hotelActual) {
-        this.hotelActual = hotelActual.getId();
+    public void setIDHotelActual(HotelEntity hotel) {
+        this.HotelActual = hotel;
     }
 
     /**
      * @return the transporteActual
      */
-    public String getNombreTransporteActual() {
+    public transporteEntity getTransporteActual() {
         return transporteActual;
     }
 
     /**
      * @param transporteActual the transporteActual to set
      */
-    public void setNombreTransporteActual(transporteDTO transporteActual) {
-        this.transporteActual = transporteActual.getId();
+    public void setIDTransporteActual(transporteEntity transport) {
+        this.transporteActual = transport;
     }
 
     /**
      * @return the eventos
      */
-    public List<String> getEventos() {
+    public List<EventoEntity> getEventos() {
         return eventos;
     }
 
     /**
-     * @param eventos the eventos to set
+     * @param ideventos id de los eventos to set
      */
-    public void setEventos(List<String> eventos) {
+    public void setEventos(List<EventoEntity> eventos) {
         this.eventos = eventos;
     }
 
     /**
+     * Agrega un evento a la lista que entra por parametro
+     */
+    public void agregarEvento(EventoEntity ev)
+    {
+        eventos.add(ev);
+    }
+    /**
      * @return the ciudad
      */
-    public String getNombreCiudad() {
+    public CiudadEntity getIDCiudad() {
         return ciudad;
     }
 
     /**
      * @param ciudad the ciudad to set
      */
-    public void setNombreCiudadActual(CiudadDTO ciudad) {
+    public void setCiudadActual(CiudadEntity ciudad) {
         
-        this.ciudad = ciudad.getId();
+        this.ciudad = ciudad;
     }
  
 
