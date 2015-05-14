@@ -1,13 +1,17 @@
 package co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+@Entity
+public class CiudadEntity implements Serializable{
 
-public class CiudadEntity {
 
-
+    private static final long serialVersionUID = 06711121155171L;
+     @Id
+    @GeneratedValue(generator = "Ciudad")
     private String id;
     private String nombre;
     private String descripcion;
