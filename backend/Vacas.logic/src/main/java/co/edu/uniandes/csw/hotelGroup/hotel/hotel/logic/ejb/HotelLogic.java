@@ -19,7 +19,7 @@ import javax.persistence.Query;
 public class HotelLogic implements IHotelLogic 
 {
     
-    @PersistenceContext(unitName = "HotelClassPU")
+    @PersistenceContext(unitName = "VacasClassPU")
     protected EntityManager em;
 
     public HotelDTO createHotel(HotelDTO detail) 

@@ -16,7 +16,7 @@ import javax.persistence.Query;
 
 public class EventoLogic implements IEventoLogic {
 
-    @PersistenceContext(unitName = "EventoClassPU")
+    @PersistenceContext(unitName = "VacasClassPU")
     protected EntityManager entityManager;
     
     public EventoDTO createEvento(EventoDTO detail) 
