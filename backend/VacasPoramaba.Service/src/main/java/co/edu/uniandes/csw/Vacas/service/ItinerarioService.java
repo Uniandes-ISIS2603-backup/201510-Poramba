@@ -33,64 +33,36 @@ public class ItinerarioService
 {
 
     @Inject
-    protected IitinerarioLogic countryLogic;
+    protected IitinerarioLogic intineraryLogic;
 
     @POST
     public itinerarioDTO createItinerario(itinerarioDTO itinerario) {
-        return countryLogic.createItinerario(itinerario);
+        return intineraryLogic.createItinerario(itinerario);
     }
 
     @DELETE
     @Path("{id}")
     public void deleteItinerario(@PathParam("id") String id) {
-        countryLogic.deleteItinerario(id);
+        intineraryLogic.deleteItinerario(id);
     }
 
     @GET
     public List<itinerarioDTO> getItinerarios() {
-        return countryLogic.getItinerarios();
+        return intineraryLogic.getItinerarios();
     }
 
     @GET
     @Path("{id}")
     public itinerarioDTO getItinerario(@PathParam("id") String id) {
-        return countryLogic.getItinerario(id);
+        return intineraryLogic.getItinerario(id);
     }
 
     @PUT
     public void updateItinerario( itinerarioDTO itinerario) {
-        countryLogic.updateItinerario(itinerario);
+        intineraryLogic.updateItinerario(itinerario);
     }
     
-    @PUT
-    @Path("/addLugar")
-    public void addLugar( LugarDTO ciudad, itinerarioDTO itinerario) 
-    {
-         countryLogic.addLugar(ciudad, itinerario);
-    }
-    
-    @GET
-    @Path("/getLugares")
-    public List<LugarEntity> getLugares(itinerarioDTO itinerario)
-     {
-                return countryLogic.getLugares(itinerario);
-     }
-    
-    
-    @DELETE
-    @Path("deleteLugar/{id}")
-    public void deleteLugar(LugarDTO ciudad, itinerarioDTO itinerario) 
-    {
-        countryLogic.deleteLugar(ciudad, itinerario);
-    }
 
-    
-    @PUT
-    @Path("{clean}")
-    public void clean(itinerarioDTO itinerario )
-    {
-        countryLogic.clean(itinerario);
-    }
 
    
 }

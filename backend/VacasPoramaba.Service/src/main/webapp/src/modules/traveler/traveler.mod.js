@@ -1,7 +1,8 @@
 (function () {
-    var travelerModule = angular.module('travelerModule', ['CrudModule', 'travelerModule']);
+    var travelerModule = angular.module('travelerModule', ['CrudModule', 'MockModule']);
     travelerModule.constant('traveler.context', 'travelers');
-    travelerModule.config(['traveler.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
-            urlsProvider.registerUrl(context);
+    travelerModule.constant('traveler.skipMock', false);
+    travelerModule.config(['traveler.context', 'MockModule.urlsProvider','traveler.skipMock', function (context, urlsProvider,skipMock) {
+            urlsProvider.registerUrl(context,skipMock);
         }]);
 })();

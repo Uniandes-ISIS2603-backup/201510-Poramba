@@ -8,7 +8,7 @@
                     <div class="container ">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 text-center">
-                                <h2 class="wow animated fadeInDown"><img src="src/assets/img/traveler.png" alt="VACAS"></span></h2>
+                                <h2 class="wow animated fadeInDown"><img src="src/assets/img/traveler.png" alt="VACAS"></h2>
                                 <p class="lead animated fadeIn">
                                     Nuestros viajeros, conoce a otras personas que compartan tus intereses!
                                 </p>
@@ -64,4 +64,5 @@
             </div>
         </form>
     </div>
+                <pagination total-items="totalItems" ng-model="currentPage" ng-change="travelerCtrl.pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></pagination>
 </div>
