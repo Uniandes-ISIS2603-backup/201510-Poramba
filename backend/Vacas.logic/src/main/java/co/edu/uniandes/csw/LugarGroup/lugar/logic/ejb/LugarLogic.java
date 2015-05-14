@@ -128,7 +128,7 @@ public class LugarLogic implements ILugarLogic{
     }
     public List<EventoEntity> getEventos(LugarDTO lug)
     {
-       ArrayList<EventoEntity> retornar = new ArrayList<EventoEntity>();
+       List<EventoEntity> retornar = new ArrayList<EventoEntity>();
 
         if(lug != null)
         {

@@ -41,7 +41,6 @@ public class LugarEntity  implements Serializable{
     private CiudadEntity ciudad;
 public LugarEntity(){}
 
-//    ,mlñ, {ñ, private LugarEntity {}
     /**
      * @return the id
      */
