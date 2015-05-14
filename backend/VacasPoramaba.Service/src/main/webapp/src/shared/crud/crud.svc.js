@@ -1,7 +1,7 @@
-(function (angular) {
+(function () {
     var crud = angular.module('CrudModule');
 
-    crud.factory('CRUDBase', ['Restangular', function (RestAngular) {
+    crud.factory('CRUDBase', ['Restangular','$timeout', function (RestAngular, $timeout) {
             function crudConstructor() {
                 this.api = RestAngular.all(this.url);
 
@@ -23,10 +23,15 @@
                     scope.currentRecord = {};
                     scope.records = [];
 
-                     //Variables de paginacion
-                    
+                    //Variables de paginacion
+                    scope.maxSize = 5;
+                    scope.itemsPerPage = 5;
+                    scope.totalItems = 0;
+                    scope.currentPage = 1;
+
                     //Variables para el controlador
                     ctrl.editMode = false;
+                    ctrl.error = {show: false};
 
                     //Funciones que no requieren del servicio
                     ctrl.createRecord = function () {
@@ -60,10 +65,12 @@
                         });
                     };
                     ctrl.deleteRecord = function (record) {
+                        var self = this;
                         return service.deleteRecord(record).then(function () {
-                            ctrl.fetchRecords();
-                        }, function(){
-                            alert("No se pudo borrar el registro porque tiene otros registros asociados");
+                            self.fetchRecords();
+                        }, function(response){
+                            self.error = {show: true, msg: response.data};
+                            $timeout(function(){self.error = {show: false};}, 3000);
                         });
                     };
                 };
@@ -72,4 +79,4 @@
                     crudConstructor.call(svc);
                 }};
         }]);
-})(window.angular);
+})();

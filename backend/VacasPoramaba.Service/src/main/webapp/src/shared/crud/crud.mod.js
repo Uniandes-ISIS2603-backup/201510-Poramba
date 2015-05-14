@@ -1,7 +1,8 @@
 (function () {
-	var crud = angular.module('CrudModule', ['restangular']);
-	crud.config(['RestangularProvider', function (rp) {
-			rp.setBaseUrl('http://localhost:8080/VacasPoramaba.Service/webresources');
+	var crud = angular.module('CrudModule', ['restangular', 'ui.bootstrap']);
+	
+    crud.config(['RestangularProvider', function (rp) {
+			rp.setBaseUrl('webresources');
                         rp.addRequestInterceptor(function(data,operation){
                             if(operation ==="remove")
                             {
