@@ -19,8 +19,7 @@ public class transporteConverter {
         if (entity != null) {
         	
             transporteDTO dto = new transporteDTO();
-            dto.setCiudad_destino(entity.getCiudad_destino());
-            dto.setCiudad_origen(entity.getCiudad_origen());
+
             dto.setDistancia(entity.getDistancia());
             dto.setId(entity.getId());
             dto.setMedio_de_transporte(entity.getMedio_de_transporte());
@@ -36,8 +35,6 @@ public class transporteConverter {
     public static transporteEntity persistenceDTO2Entity(transporteDTO dto) {
         if (dto != null) {
         	transporteEntity entity = new transporteEntity();
-        	entity.setCiudad_destino(dto.getCiudad_destino());
-        	entity.setCiudad_origen(dto.getCiudad_origen());
         	entity.setDistancia(dto.getDistancia());
         	entity.setId(dto.getId());
         	entity.setMedio_de_transporte(dto.getMedio_de_transporte());

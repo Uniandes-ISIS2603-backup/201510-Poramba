@@ -6,6 +6,7 @@
 package co.edu.uniandes.csw.transporteGroup.transporte.logic.api;
 
 import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity.CiudadEntity;
 import co.edu.uniandes.csw.transporteGroup.transporte.logic.dto.transporteDTO;
 import java.util.List;
 
@@ -23,14 +24,14 @@ public interface ITransporteLogic {
 
     public void deletetransporte(String id);
 
-    public void updatetransporte(transporteDTO detail, String id);
+    public void updatetransporte(transporteDTO detail);
     
-    public void setCiudadOrigen(CiudadDTO origen);
+    public void setCiudadOrigen(CiudadDTO origen, transporteDTO detail);
     
-    public void setCiudadDestino(CiudadDTO destino);
+    public void setCiudadDestino(CiudadDTO destino, transporteDTO detail);
     
-    public CiudadDTO getCiudadOrigen();
+    public CiudadEntity getCiudadOrigen(transporteDTO detail);
     
-    public CiudadDTO getCiudadDestino(); 
+    public CiudadEntity getCiudadDestino(transporteDTO detail); 
    
 }

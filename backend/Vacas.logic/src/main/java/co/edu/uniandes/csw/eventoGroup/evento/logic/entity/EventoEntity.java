@@ -1,18 +1,20 @@
 package co.edu.uniandes.csw.eventoGroup.evento.logic.entity;
 
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity.CiudadEntity;
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-
-public class EventoEntity {
+@Entity
+public class EventoEntity implements Serializable{
 
     private String id;
     private String nombre;
     private Integer minage;
     private Integer maxage;
     private String rules;
-    private String ciudad;
+    private CiudadEntity ciudad;
 
     public String getId() {
         return id;
@@ -54,11 +56,11 @@ public class EventoEntity {
         this.rules = rules;
     }
 
-    public String getCiudad() {
+    public CiudadEntity getCiudad() {
         return ciudad;
     }
 
-    public void setCiudad(String ciudad) {
+    public void setCiudad(CiudadEntity ciudad) {
         this.ciudad = ciudad;
     }
 

@@ -1,129 +1,94 @@
 package co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.ejb;
 
+import co.edu.uniandes.csw.LugarGroup.lugar.logic.converter.LugarConverter;
 import co.edu.uniandes.csw.LugarGroup.lugar.logic.dto.LugarDTO;
+import co.edu.uniandes.csw.LugarGroup.lugar.logic.entity.LugarEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.api.IitinerarioLogic;
+import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.converter.itinerarioConverter;
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.dto.itinerarioDTO;
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.dto.itinerarioPageDTO;
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.entity.itinerarioEntity;
 import java.util.ArrayList;
+import javax.persistence.Query;
 
 public class ItinerarioLogic implements IitinerarioLogic {
 
     @PersistenceContext(unitName = "VacasClassPU")
     protected EntityManager entityManager;
-    
-    public List<itinerarioDTO> itinerarios;
-    public itinerarioDTO itinerarioActual;
-    
-    public ItinerarioLogic()
-    {
-        itinerarios= new ArrayList<itinerarioDTO>();
-        itinerarioActual=null;
-    }
-    
+
     public itinerarioDTO createItinerario(itinerarioDTO detail) 
     {
-        for (int i = 0; i < itinerarios.size(); i++) 
+        itinerarioEntity en = itinerarioConverter.persistenceDTO2Entity(detail);
+        List<LugarEntity> lug = this.getLugares(detail);
+        if(lug != null)
         {
-            itinerarioDTO actual = itinerarios.get(i);
-            if(actual.getId().equals(detail.getId()))
-            {
-                
-                return null;
-            }
+            en.setLugares(lug);
         }
-        itinerarios.add(detail);
-        return detail;
-     }
-
-    public List<itinerarioDTO> getItinerarios()
-    {
-     return itinerarios;
+        entityManager.persist(en);
+        return itinerarioConverter.entity2PersistenceDTO(en);
     }
 
-    //public itinerarioPageDTO getItinerarios(Integer page, Integer maxRecords) 
+    public List<itinerarioDTO> getItinerarios() 
     {
-        
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Query q = entityManager.createQuery("select u from itinerarioEntity u");
+        return itinerarioConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
-    public itinerarioDTO getItinerario(String id)
+    public itinerarioDTO getItinerario(String id) 
     {
-    for (int i = 0; i < itinerarios.size(); i++) 
-        {
-            itinerarioDTO actual = itinerarios.get(i);
-            if(actual.getId().equals(id))
-            {
-                
-                return actual;
-            }
-        }
-       
-        return null; 
+        return itinerarioConverter.entity2PersistenceDTO(entityManager.find(itinerarioEntity.class, id));
     }
 
-    public boolean deleteItinerario(String id) 
+    public void deleteItinerario(String id) 
     {
-      for (int i = 0; i < itinerarios.size(); i++) 
+        itinerarioEntity en = entityManager.find(itinerarioEntity.class, id);
+        entityManager.remove(en);
+    }
+
+    public void updateItinerario(itinerarioDTO detail) 
+    {
+        itinerarioEntity en = entityManager.merge(itinerarioConverter.persistenceDTO2Entity(detail));
+        List<LugarEntity> lug = this.getLugares(detail);
+        if(lug != null)
         {
-            itinerarioDTO actual = itinerarios.get(i);
-            if(actual.getId().equals(id))
-            {
-                itinerarios.remove(i);
-                return true;
-            }
+            en.setLugares(lug);
         }
-       
-        return false; 
+        itinerarioConverter.entity2PersistenceDTO(en);
+    }
+
+    public void addLugar(LugarDTO lugar, itinerarioDTO detail)
+    {
+        itinerarioEntity en = entityManager.merge(itinerarioConverter.persistenceDTO2Entity(detail));
+        LugarEntity lug = entityManager.merge(LugarConverter.persistenceDTO2Entity(lugar));
+        en.agregarLugares(lug);
+        itinerarioConverter.entity2PersistenceDTO(en);
+    }
+
+    public List<LugarEntity> getLugares(itinerarioDTO detail) 
+    {
+        itinerarioEntity en = entityManager.merge(itinerarioConverter.persistenceDTO2Entity(detail));
+        return en.getLugares();
+    }
+
+    public void deleteLugar(LugarDTO lug, itinerarioDTO detail) 
+    {
+        itinerarioEntity en = entityManager.merge(itinerarioConverter.persistenceDTO2Entity(detail));
+        LugarEntity lugar = entityManager.merge(LugarConverter.persistenceDTO2Entity(lug));
+        en.remove(lugar);
+    }
     
+    public void  clean(itinerarioDTO detail)
+    {
+        itinerarioEntity en = entityManager.merge(itinerarioConverter.persistenceDTO2Entity(detail));
+        en.clean();
     }
 
-    public void updateItinerario(itinerarioDTO detail)
-    {
-        itinerarioActual=detail;
-    
-    }
-
-    public LugarDTO addLugar(LugarDTO lugar)
-    {
-       return  itinerarioActual.addLugar(lugar);
-      }
-
-    public List<LugarDTO> getLugares()
-    {
-        return itinerarioActual.getLugares();
-    }
-
-    public LugarDTO getLugar(String id) {
-     return itinerarioActual.getLugar(id);
-             }
-
-    public boolean deleteLugar(String id) 
-    {
-     return itinerarioActual.deleteLugar(id);
-     }
-
-    public void updateLugar(String idACambiar, LugarDTO nuevo)
-    {
-        int pos=itinerarioActual.posiionLugar(idACambiar);
-        
-        if(pos!=-1)
-        {
-         itinerarioActual.getLugares().set(pos, nuevo);
-        }
-     }
-
-  
-    public void clean()   
-    {
-        itinerarios= new ArrayList<itinerarioDTO>();
-     }
 
     
-
+    
 }

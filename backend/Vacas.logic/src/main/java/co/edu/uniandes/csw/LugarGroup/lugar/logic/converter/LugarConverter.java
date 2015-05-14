@@ -13,14 +13,17 @@ import co.edu.uniandes.csw.LugarGroup.lugar.logic.entity.LugarEntity;
 
 
 public class LugarConverter {
+   
+    private LugarConverter()
+    {
+        
+    }
     public static LugarDTO entity2PersistenceDTO(LugarEntity entity) {
         if (entity != null) {
             LugarDTO dto = new LugarDTO(entity.getId(),entity.getInico(),entity.getFin());
-          
-            dto.setHotelActual(entity.getNombreHotelActual());
-            dto.setTransporteActual(entity.getNombreTransporteActual());
-            dto.setCiudad(entity.getNombreCiudad());
-           
+            dto.setHotelActual(entity.getHotelActual().getId());
+            dto.setTransporteActual(entity.getTransporteActual().getId());
+            dto.setCiudad(entity.getIDCiudad().getId());
             return dto;
         }
         return null;
@@ -32,9 +35,6 @@ public class LugarConverter {
             entity.setId(dto.getId());            
             entity.setInico(dto.getInico());
             entity.setFin(dto.getFin());
-            entity.setNombreHotelActual(dto.getHotelActual());
-            entity.setNombreTransporteActual(dto.getTransporteActual());
-            entity.setNombreCiudadActual(dto.getCiudad());
             return entity;
         } else {
             return null;

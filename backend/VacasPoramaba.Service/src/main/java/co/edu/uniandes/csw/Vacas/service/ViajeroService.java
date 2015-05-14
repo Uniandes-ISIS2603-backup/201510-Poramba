@@ -29,34 +29,34 @@ public class ViajeroService
 {
 
     @Inject
-    protected IUsuarioLogic usarioLogic;
+    protected IUsuarioLogic viajLogic;
 
     @POST
     public UsuarioDTO createUsuario(UsuarioDTO cad) {
-        return usarioLogic.createUsuario(cad);
+        return viajLogic.createUsuario(cad);
     }
 
     @DELETE
     @Path("{id}")
     public void deleteUsuario(@PathParam("id") String id) {
-        usarioLogic.deleteUsuario(id);
+        viajLogic.deleteUsuario(id);
     }
 
     @GET
     public List<UsuarioDTO> getUsuarios() {
-        return usarioLogic.getUsuarios();
+        return viajLogic.getUsuarios();
     }
 
     @GET
     @Path("{id}")
     public UsuarioDTO getUsuario(@PathParam("id") String id) {
-        return usarioLogic.getUsuario(id);
+        return viajLogic.getUsuario(id);
     }
 
     @PUT
     @Path("{id}")
-    public void updateUsuario( UsuarioDTO usuario,@PathParam("id") String id) {
-        usarioLogic.updateUsuario(usuario, id);
+    public void updateUsuario( UsuarioDTO usuario) {
+        viajLogic.updateUsuario(usuario);
     }
 
    

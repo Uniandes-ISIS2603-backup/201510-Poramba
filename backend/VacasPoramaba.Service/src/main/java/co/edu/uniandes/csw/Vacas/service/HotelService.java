@@ -27,35 +27,35 @@ import javax.ws.rs.core.MediaType;
 public class HotelService {
 
     @Inject
-    protected IHotelLogic countryLogic;
+    protected IHotelLogic hotelLogic;
 
     @POST
     public HotelDTO createHotel(HotelDTO Hotel) {
-        return countryLogic.createHotel(Hotel);
+        return hotelLogic.createHotel(Hotel);
     }
 
     @DELETE
     @Path("{id}")
     public void deleteHotel(@PathParam("id") String id) {
-        countryLogic.deleteHotel(id);
+        hotelLogic.deleteHotel(id);
     }
 
     @GET
     public List<HotelDTO> getHoteles() {
-        return countryLogic.getHoteles();
+        return hotelLogic.getHoteles();
     }
 
     @GET
     @Path("{id}")
     public HotelDTO getHotel(@PathParam("id") String id) {
-        return countryLogic.getHotel(id);
+        return hotelLogic.getHotel(id);
     }
 
     @PUT
     @Path("{id}")
-    public
-            void updateHotel(HotelDTO hotel, @PathParam("id") String id) {
-        countryLogic.updateHotel(hotel, id);
+    public void updateHotel(HotelDTO hotel) 
+    {
+        hotelLogic.updateHotel(hotel);
     }
 
 }

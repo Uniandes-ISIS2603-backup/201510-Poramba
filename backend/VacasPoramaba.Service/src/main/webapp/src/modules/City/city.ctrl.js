@@ -1,9 +1,8 @@
 (function (angular) {
-    var app = angular.module('cityModule');
-	app.controller('cityCtrl',['$scope','CRUDUtils','city.context',function ($scope, CRUDUtils, context){
-			this.url = context;
-			CRUDUtils.extendCtrl(this, $scope);
-			this.fetchRecords();
-                        $scope.showForm = true;
+    var appCity = angular.module('cityModule',[]);
+	appCity.controller('cityCtrl',['$scope','cityService',function ($scope, cityService){
+		cityService.extendCtrl(this, $scope); 
+                this.fetchRecords();
+               
 		}]);        
 })(window.angular);

@@ -3,6 +3,7 @@ package co.edu.uniandes.csw.Vacas.service;
 
 import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.api.ICiudadLogic;
 import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.ejb.CiudadLogic;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -19,9 +20,9 @@ import javax.ws.rs.core.MediaType;
 
 /**
  *
- * @author estudiante
+ * @author Luis Angel Cervantes Cortes
  */
-@Path("/city")
+@Path("/citys")
 @Stateless
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
@@ -29,11 +30,11 @@ public class CityService
 {
 
     @Inject
-    protected ICiudadLogic countryLogic;
+    protected ICiudadLogic cityLogic;
 
     @POST
     public CiudadDTO createCiudad(CiudadDTO ciudad) {
-        return countryLogic.createCiudad(ciudad);
+        return cityLogic.createCiudad(ciudad);
     }
 
      @GET
@@ -45,23 +46,24 @@ public class CityService
     @DELETE
     @Path("{id}")
     public void deleteCiudad(@PathParam("id") String id) {
-        countryLogic.deleteCiudad(id);
+        cityLogic.deleteCiudad(id);
     }
 
     @GET
     public List<CiudadDTO> getCountries() {
-        return countryLogic.getCiudades();
+        return cityLogic.getCiudades();
     }
 
     @GET
     @Path("{id}")
     public CiudadDTO getCiudad(@PathParam("id") String id) {
-        return countryLogic.getCiudad(id);
+        return cityLogic.getCiudad(id);
     }
 
     @PUT
+    @Path("{id}")
     public void updateCiudad( CiudadDTO ciudad,@PathParam("id") String id) {
-        countryLogic.updateCiudad(ciudad,id);
+        cityLogic.updateCiudad(ciudad,id);
     }
 
    

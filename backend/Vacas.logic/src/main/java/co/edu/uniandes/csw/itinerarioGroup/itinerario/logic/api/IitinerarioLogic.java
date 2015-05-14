@@ -7,6 +7,7 @@ package co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.api;
 
 
 import co.edu.uniandes.csw.LugarGroup.lugar.logic.dto.LugarDTO;
+import co.edu.uniandes.csw.LugarGroup.lugar.logic.entity.LugarEntity;
 import java.util.List;
 
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.dto.itinerarioDTO;
@@ -32,14 +33,7 @@ public interface IitinerarioLogic
      */
     public List<itinerarioDTO> getItinerarios();
     
-    /**
-     * Retorna todos los itinerarios paginados
-     * @param page Pagina de la cual se desea buscar
-     * @param maxRecords numero maximo de respuesta
-     * @return Un objeto JSON con los itinerarios
-     */
-    //public itinerarioPageDTO getItinerarios(Integer page, Integer maxRecords);
-
+    
     
     /**
      * Retrina el itinerario con la id dada por parametro
@@ -53,7 +47,7 @@ public interface IitinerarioLogic
      * @param id ID del itinerario a buscar
      * @return  true si se elimina el itinerario, false en caso contrario.
      */
-    public boolean deleteItinerario(String id);
+    public void deleteItinerario(String id);
     
     /**
      * Cambia el itinerario por uno dado por parametro.
@@ -66,41 +60,27 @@ public interface IitinerarioLogic
      * @param lugar El lugar a agregar
      * @return El lugar agregado, nu lo si el lugar ya existia
      */
-    public LugarDTO addLugar(LugarDTO lugar);
+    public void addLugar(LugarDTO lugar, itinerarioDTO detail);
     
     /**
      * Retrona una lista con todos los lugares
      * @return Lista con todos los lugares
      */
-    public  List<LugarDTO> getLugares();
+    public  List<LugarEntity> getLugares(itinerarioDTO detail);
     
-    /**
-     * Retorna el lugar con el id dado por parametro
-     * @param id Id del lugar buscado
-     * @return El lugar con el id dado por parametro, nulo si no existe.
-     */
-    public LugarDTO getLugar(String id);
     
     /**
      * Elimina el lugar con el id dado por paramentro
      * @param id El id del lugar a eliminar
      * @return  true si elimna, false en caso contrario
      */
-    public boolean deleteLugar(String id);
-    
-    /**
-     * Reemplaza el lugar con el id dado por parametro por otor llugar dao po paramettro
-     * @param idACambiar Id del lugar a cambiar
-     * @param nuevo el lugar a agregar.
-     */
-    public void updateLugar(String idACambiar,LugarDTO nuevo );
-    
- 
-    
+    public void deleteLugar(LugarDTO lug, itinerarioDTO detail);
     /**
      * Elimian todos los lugares asociados con el itinerario
      */
-    public void  clean();
+    public void  clean(itinerarioDTO detail);
+
+  
     
    
 }

@@ -18,25 +18,21 @@ public class LugarDTO {
     private Date inico;
     private Date fin;
     
-    private HotelDTO hotelActual;
+    private String hotelActual;
     
-    private transporteDTO transporteActual;
+    private String transporteActual;
     
-    private List<EventoDTO> eventos;
+    private List<String> IDeventos;
     
-    private CiudadDTO ciudad;
+    private String ciudad;
 
-    public LugarDTO(String id, Date inico, Date fin) 
+    public LugarDTO(String i, Date ini, Date fn) 
     {
-        this.id = id;
-        this.inico = inico;
-        this.fin = fin;
-        eventos= new ArrayList<EventoDTO>();
+        this.id = i;
+        this.inico = ini;
+        this.fin = fn;
+        IDeventos= new ArrayList<String>();
     }
-
-    
-    
-
     
     /**
      * @return the id
@@ -44,185 +40,109 @@ public class LugarDTO {
     public String getId() {
         return id;
     }
-
     /**
      * @param id the id to set
      */
     public void setId(String id) {
         this.id = id;
     }
-
     /**
      * @return the inico
      */
     public Date getInico() {
         return inico;
     }
-
     /**
      * @param inico the inico to set
      */
     public void setInico(Date inico) {
         this.inico = inico;
     }
-
     /**
      * @return the fin
      */
     public Date getFin() {
         return fin;
     }
-
     /**
      * @param fin the fin to set
      */
     public void setFin(Date fin) {
         this.fin = fin;
     }
-
     /**
      * @return the hotelActual
      */
-    public HotelDTO getHotelActual() {
+    public String getHotelActual() {
         return hotelActual;
     }
-
     /**
      * @param hotelActual the hotelActual to set
      */
-    public void setHotelActual(String hotelActual) {
-        
-        //hacer qu apratir del Idse vuvla un hotel
-        
+    public void setHotelActual(String hotel) 
+    {
+        this.hotelActual = hotel;
     }
-
     /**
      * @return the transporteActual
      */
-    public transporteDTO getTransporteActual() {
+    public String getTransporteActual() {
         return transporteActual;
     }
-
     /**
      * @param transporteActual the transporteActual to set
      */
-    public void setTransporteActual(String transporteActual) {
-        //TODO
+    public void setTransporteActual(String transport) {
+        this.transporteActual = transport;
     }
-
     /**
      * @return the eventos
      */
-    public List<EventoDTO> getEventos() {
-        return eventos;
+    public List<String> getEventos() {
+        return IDeventos;
     }
-
     /**
      * @param eventos the eventos to set
      */
-    public void setEventos(List<EventoDTO> eventos) {
-        this.eventos = eventos;
+    public void setEventos(List<String> eventos) {
+        this.IDeventos = eventos;
     }
-
     /**
      * @return the ciudad
      */
-    public CiudadDTO getCiudad() {
+    public String getCiudad() {
         return ciudad;
     }
-
     /**
      * @param ciudad the ciudad to set
      */
-    public void setCiudad(String ciudad) {
-        //TODO
+    public void setCiudad(String city) {
+        this.ciudad = city;
     }
-    
-    
-    public boolean addEvento(String evento)
+    public void addEvento(String evento)
     {
-        for (int i = 0; i < eventos.size(); i++) 
-        {
-            EventoDTO actual = eventos.get(i);
-            if(actual.getId().equals(evento))
-                    {
-                         return false;
-                    }
-           
-        }
-       //TODO
-        return true;
+        IDeventos.add(evento);
     }
-    
-    public boolean deleteEvento(String id)
+    public void deleteEvento(String evento)
     {
-        for (int i = 0; i < eventos.size(); i++) 
+        IDeventos.remove(evento);
+    }
+    public String getEvento(String id)
+    {
+        for (int i = 0; i < IDeventos.size(); i++) 
         {
-            EventoDTO actual = eventos.get(i);
-            if(actual.getId().equals(id))
+            if(IDeventos.get(i).equals(id))
             {
-                eventos.remove(i);
-                 return true;
-             }
-              
-        }
-        
-        return false;
-        
-    }
-    
-    public EventoDTO getEvento(String id)
-    {
-        for (int i = 0; i < eventos.size(); i++) 
-        {
-            EventoDTO actual = eventos.get(i);
-            if(actual.getId().equals(id))
-            {
-               return actual;
-                
-                 
+               return IDeventos.get(i);
             }
-              
         }
-        
         return null;
-        
     }
-    /**
-     * Retorna un evento por su posicion 
-     * @param id Id del evento
-     * @return la posicion del evento, -1 si no lo encuentra
-     */
-    public int eventoPosicion(String id)
-    {
-        int aRetornar=-1;
-        
-         for (int i = 0; i < eventos.size(); i++) 
-        {
-            EventoDTO actual = eventos.get(i);
-            if(actual.getId().equals(id))
-            {
-                aRetornar=i;
-               return aRetornar;
-                
-                 
-            }
-              
-        }
-         return aRetornar;
-    }
-        
-    
     public void clean()
     {
-     
         hotelActual = null;
         transporteActual = null;
-        eventos = null;
+        IDeventos = null;
         ciudad = null;
     }
-        
-    
-   
-    
 }

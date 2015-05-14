@@ -1,12 +1,13 @@
 package co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.entity;
 
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class HotelEntity {
+public class HotelEntity implements Serializable{
 
     @Id
     @GeneratedValue(generator = "Hotel")

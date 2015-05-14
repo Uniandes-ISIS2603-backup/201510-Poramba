@@ -1,8 +1,8 @@
-
-(function () {
-    var transportationModule = angular.module('transportationModule', ['CrudModule', 'transportationModule']);
+(function (angular) {
+    var transportationModule = angular.module('transportationModule', ['CrudModule', 'MockModule']);
     transportationModule.constant('transportation.context', 'transportations');
-    transportationModule.config(['transportation.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
-            urlsProvider.registerUrl(context);
+    transportationModule.constant('transportationModule.skipMock', false);
+    transportationModule.config(['transportation.context', 'MockModule.urlsProvider','transportationModule.skipMock', function (context, urlsProvider,skipMock) {
+            urlsProvider.registerUrl(context,skipMock);
         }]);
-})();
+})(window.angular);

@@ -6,6 +6,7 @@
 package co.edu.uniandes.csw.eventoGroup.evento.logic.api;
 
 import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity.CiudadEntity;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;
 import java.util.List;
 
@@ -23,10 +24,10 @@ public interface IEventoLogic {
 
     public void deleteEvento(String id);
 
-    public void updateEvento(EventoDTO detail,String id);
+    public void updateEvento(EventoDTO detail);
 
-    public void setCiudad(CiudadDTO ciudad);   
+    public void setCiudad(CiudadDTO ciudad, EventoDTO detail);   
 
-    public CiudadDTO getCiudad();
+    public CiudadEntity getCiudad(EventoDTO detail);
 
 }
