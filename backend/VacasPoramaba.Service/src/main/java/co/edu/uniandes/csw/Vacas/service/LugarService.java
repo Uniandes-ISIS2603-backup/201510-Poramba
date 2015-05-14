@@ -55,6 +55,7 @@ public class LugarService
     }
 
     @PUT
+    @Path("{id}")
     public void updateCiudad( CiudadDTO ciudad,@PathParam("id") String id) {
         lugarLogic.updateCiudad(ciudad,id);
     }

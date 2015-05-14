@@ -25,7 +25,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author estudiante
  */
-@Path("/itinerary")
+@Path("/itineraries")
 @Stateless
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
@@ -58,11 +58,8 @@ public class ItinerarioService
     }
 
     @PUT
+    @Path("{id}")
     public void updateItinerario( itinerarioDTO itinerario) {
         intineraryLogic.updateItinerario(itinerario);
     }
-    
-
-
-   
 }
