@@ -31,7 +31,7 @@
                 </div>
             </div>
         </section>
-				 <!-- Navegacion en modulos -->
+<!--				  Navegacion en modulos 
                 <div class="collapse navbar-collapse" id="country-navbar"><br>
                     <center><button id="createBtn" class="btn btn-lg btn-theme" ng-hide="transportationCtrl.editMode" ng-click="transportationCtrl.createRecord()"><i class="fa fa-plus-circle"></i> Crear</button>
                     <button id="saveBtn" class="btn btn-lg btn-theme" ng-show="transportationCtrl.editMode" ng-click="transportationCtrl.saveRecord()"><i class="fa fa-floppy-o"></i> Guardar</button>
@@ -40,7 +40,7 @@
             </div>
         </nav>
     </div>
-    <!--Elementos-->
+    Elementos
     <div ng-hide="transportationCtrl.editMode">
         <div ng-repeat="record in records">
             <div class="col-md-3 margin20">
@@ -52,7 +52,7 @@
                     </div>
                 </div>                                  
         </div>
-    </div><!--Termina elementos-->
+    </div>Termina elementos
 	<div ng-show="transportationCtrl.editMode">
 		<form name="countryForm" role="form">
 			<input id="name" class="form-control" type="hidden" ng-model="currentRecord.id"/>
@@ -96,7 +96,7 @@
                 <label for="img">Imagen</label>
                 <input id="img" class="form-control" type="text" ng-model="currentRecord.img"/>
             </div>
-		</form>
+		</form>-->
 	</div>
-                <pagination total-items="totalItems" ng-model="currentPage" ng-change="transportationCtrl.pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></pagination>
+</div>
 </div>
