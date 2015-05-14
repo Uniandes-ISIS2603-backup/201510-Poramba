@@ -5,8 +5,7 @@ import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.api.IHotelLogic;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.converter.HotelConverter;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelPageDTO;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.entity.HotelEntity;
-import java.util.AbstractList;
-import java.util.ArrayList;
+
 
 import java.util.List;
 import javax.ejb.LocalBean;
@@ -20,7 +19,7 @@ import javax.persistence.Query;
 public class HotelLogic implements IHotelLogic 
 {
     
-    @PersistenceContext(unitName = "SportClassPU")
+    @PersistenceContext(unitName = "HotelClassPU")
     protected EntityManager em;
 
     public HotelDTO createHotel(HotelDTO detail) 
@@ -46,7 +45,7 @@ public class HotelLogic implements IHotelLogic
         Query count = em.createQuery("select count (u) from HotelEntity u");
         Long regC = 0L;
         regC = Long.parseLong(count.getSingleResult().toString());
-        Query q = em.createQuery("select y from HotelEntity u");
+        Query q = em.createQuery("select u from HotelEntity u");
         if(page != null && maxRecords != null)
         {
             q.setFirstResult((page-1)*maxRecords);
