@@ -65,6 +65,4 @@ public class CityService
     public void updateCiudad( CiudadDTO ciudad,@PathParam("id") String id) {
         cityLogic.updateCiudad(ciudad,id);
     }
-
-   
 }

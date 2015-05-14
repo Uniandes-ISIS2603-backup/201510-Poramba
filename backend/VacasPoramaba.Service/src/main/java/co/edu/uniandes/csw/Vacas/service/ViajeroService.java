@@ -21,13 +21,12 @@ import javax.ws.rs.core.MediaType;
  *
  * @author estudiante
  */
-@Path("/viajero")
+@Path("/travelers")
 @Stateless
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class ViajeroService 
 {
-
     @Inject
     protected IUsuarioLogic viajLogic;
 
@@ -58,6 +57,4 @@ public class ViajeroService
     public void updateUsuario( UsuarioDTO usuario) {
         viajLogic.updateUsuario(usuario);
     }
-
-   
 }

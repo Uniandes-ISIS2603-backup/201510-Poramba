@@ -20,7 +20,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author estudiante
  */
-@Path("/hotel")
+@Path("/hotels")
 @Stateless
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
@@ -57,5 +57,4 @@ public class HotelService {
     {
         hotelLogic.updateHotel(hotel);
     }
-
 }
