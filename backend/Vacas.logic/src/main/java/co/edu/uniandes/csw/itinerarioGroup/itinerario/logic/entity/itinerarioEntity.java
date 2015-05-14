@@ -2,13 +2,14 @@ package co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.entity;
 
 import co.edu.uniandes.csw.LugarGroup.lugar.logic.dto.LugarDTO;
 import co.edu.uniandes.csw.LugarGroup.lugar.logic.entity.LugarEntity;
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class itinerarioEntity {
+public class itinerarioEntity implements Serializable{
 	
 
     @Id

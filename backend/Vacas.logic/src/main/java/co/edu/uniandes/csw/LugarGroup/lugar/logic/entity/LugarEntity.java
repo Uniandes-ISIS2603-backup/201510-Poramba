@@ -4,6 +4,7 @@ import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity.CiudadEntity;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.entity.EventoEntity;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.entity.HotelEntity;
 import co.edu.uniandes.csw.transporteGroup.transporte.logic.entity.transporteEntity;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
@@ -15,7 +16,7 @@ import static javax.persistence.TemporalType.DATE;
 
 
 @Entity
-public class LugarEntity  {
+public class LugarEntity  implements Serializable{
 
     /*constante de serializacion*/
   private static final long serialVersionUID = 2405172041950251807L;
