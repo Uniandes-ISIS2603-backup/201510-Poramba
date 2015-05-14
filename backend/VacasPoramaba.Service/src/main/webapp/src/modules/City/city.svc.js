@@ -6,7 +6,7 @@
             CRUDBase.extendService(this);
             this.sirve = function()
             {
-                alert('yuf');
+//                alert   alerta ('yuf')
                 return this.api.customGET('/city/conectado');
             };
         }]);
