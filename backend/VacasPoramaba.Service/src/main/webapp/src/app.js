@@ -18,6 +18,8 @@
                 templateUrl: 'src/modules/Map/map.tpl.html'
             }).when('/Buscador',{
                 templateUrl: 'src/modules/Buscador/Buscador.tpl.html'                
+            }).when('/registro', {
+                templateUrl: 'src/modules/registro/registro.tpl.html'
             }).otherwise('/');
         }]);
 })();

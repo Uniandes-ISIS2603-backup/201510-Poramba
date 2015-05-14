@@ -178,7 +178,7 @@
 //        assertTrue(success);
 //        Thread.sleep(1000);
 //    }
-//    
+//
 //    @Test
 //    @RunAsClient
 //    public void t3createItinerary() throws InterruptedException {
@@ -197,7 +197,7 @@
 //        driver.findElement(By.id("final")).clear();
 //        driver.findElement(By.id("final")).sendKeys("24/05/1015");
 //        driver.findElement(By.id("rules")).clear();
-//        driver.findElement(By.id("rules")).sendKeys("No violencia");        
+//        driver.findElement(By.id("rules")).sendKeys("No violencia");
 //        org.openqa.selenium.support.ui.Select ciudades = new org.openqa.selenium.support.ui.Select(driver.findElement(By.id("ciudad")));
 //        ciudades.selectByVisibleText("Bogota");
 //        org.openqa.selenium.support.ui.Select eventos = new org.openqa.selenium.support.ui.Select(driver.findElement(By.id("eventos")));
@@ -214,7 +214,7 @@
 //        assertTrue(success);
 //        Thread.sleep(1000);
 //    }
-//    
+//
 //    @Test
 //    @RunAsClient
 //    public void t4createTransportation() throws InterruptedException {
@@ -224,30 +224,57 @@
 //        Thread.sleep(3000);
 //        driver.findElement(By.id("createBtn")).click();
 //        Thread.sleep(2000);
-//        driver.findElement(By.id("name")).clear();
-//        driver.findElement(By.id("name")).sendKeys("Itinerairo 1");
-//        driver.findElement(By.id("Descripcion")).clear();
-//        driver.findElement(By.id("Descripcion")).sendKeys("Primer viaje");
-//        driver.findElement(By.id("inicio")).clear();
-//        driver.findElement(By.id("inicio")).sendKeys("06/05/1015");
-//        driver.findElement(By.id("final")).clear();
-//        driver.findElement(By.id("final")).sendKeys("24/05/1015");
-//        driver.findElement(By.id("rules")).clear();
-//        driver.findElement(By.id("rules")).sendKeys("No violencia");        
-//        org.openqa.selenium.support.ui.Select ciudades = new org.openqa.selenium.support.ui.Select(driver.findElement(By.id("ciudad")));
-//        ciudades.selectByVisibleText("Bogota");
-//        org.openqa.selenium.support.ui.Select eventos = new org.openqa.selenium.support.ui.Select(driver.findElement(By.id("eventos")));
-//        eventos.selectByVisibleText("Rock al Parque");
+//        org.openqa.selenium.support.ui.Select origenes = new org.openqa.selenium.support.ui.Select(driver.findElement(By.id("origen")));
+//        origenes.selectByVisibleText("Nueva York");
+//        org.openqa.selenium.support.ui.Select destinos = new org.openqa.selenium.support.ui.Select(driver.findElement(By.id("destino")));
+//        destinos.selectByVisibleText("Madrid");
+//        org.openqa.selenium.support.ui.Select transportes = new org.openqa.selenium.support.ui.Select(driver.findElement(By.id("transport")));
+//        destinos.selectByVisibleText("Avion");
+//        driver.findElement(By.id("img")).clear();
+//        driver.findElement(By.id("img")).sendKeys("Sin imagen");
 //        driver.findElement(By.id("saveBtn")).click();
 //        Thread.sleep(2000);
 //        List<WebElement> rows = driver.findElements(By.xpath("//table[contains(@id,'recordList')]/tbody/tr"));
 //        for (WebElement webElement : rows) {
 //            List<WebElement> elems = webElement.findElements(By.xpath("td"));
-//            if (elems.get(0).getText().equals("Itinerario 1") && elems.get(1).getText().equals("Primer viaje") && elems.get(2).getText().equals("06/05/1015") && elems.get(3).getText().equals("06/05/1015") && elems.get(4).getText().equals("Bogota") && elems.get(4).getText().equals("Rock al parque")) {
+//            if (elems.get(0).getText().equals("Nueva York") && elems.get(1).getText().equals("Madrid") && elems.get(2).getText().equals("Avion") && elems.get(3).getText().equals("Sin imagen")) {
 //                success = true;
 //            }
 //        }
 //        assertTrue(success);
 //        Thread.sleep(1000);
 //    }
+//
+//    @Test
+//    @RunAsClient
+//    public void t5createTraveler() throws InterruptedException {
+//        Thread.sleep(1500);
+//        boolean success = false;
+//        driver.findElement(By.partialLinkText("VIAJERO")).click();
+//        Thread.sleep(3000);
+//        driver.findElement(By.id("createBtn")).click();
+//        Thread.sleep(2000);
+//        driver.findElement(By.id("pasaporte")).clear();
+//        driver.findElement(By.id("pasaporte")).sendKeys("G15223371");
+//        driver.findElement(By.id("nombre")).clear();
+//        driver.findElement(By.id("nombre")).sendKeys("Luis");
+//        driver.findElement(By.id("apellido")).clear();
+//        driver.findElement(By.id("apellido")).sendKeys("Hernandez");
+//        driver.findElement(By.id("edad")).clear();
+//        driver.findElement(By.id("edad")).sendKeys("24");
+//        driver.findElement(By.id("img")).clear();
+//        driver.findElement(By.id("img")).sendKeys("Sin imagen");
+//        driver.findElement(By.id("saveBtn")).click();
+//        Thread.sleep(2000);
+//        List<WebElement> rows = driver.findElements(By.xpath("//table[contains(@id,'recordList')]/tbody/tr"));
+//        for (WebElement webElement : rows) {
+//            List<WebElement> elems = webElement.findElements(By.xpath("td"));
+//            if (elems.get(0).getText().equals("G15223371") && elems.get(1).getText().equals("Luis") && elems.get(2).getText().equals("Hernandez") && elems.get(3).getText().equals("24") && elems.get(4).getText().equals("Sin imagen")) {
+//                success = true;
+//            }
+//        }
+//        assertTrue(success);
+//        Thread.sleep(1000);
+//    }
+//
 //}

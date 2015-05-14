@@ -1,7 +1,8 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
+(function (angular) {
+    var cityModule = angular.module('regModule', ['CrudModule', 'MockModule']);
+    cityModule.constant('reg.context', 'registro');
+     cityModule.constant('reg.skipMock', false);
+    cityModule.config(['reg.context', 'MockModule.urlsProvider','reg.skipMock', function (context, urlsProvider,skipMock) {
+            urlsProvider.registerUrl(context,skipMock);
+        }]);
+})(window.angular);
