@@ -1,4 +1,3 @@
-<head>
     <style type="text/css">
         #map{
             width: 750px;
@@ -9,7 +8,6 @@
             margin-bottom: 10px;
         }
     </style>
-</head>
 <div ng-controller="mapCtrl as mapCtrl">
     <div id="header">
         <nav class="navbar navbar-default" role="navigation">
@@ -20,7 +18,7 @@
                     <div class="container ">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 text-center">
-                                <h2 class="wow animated fadeInDown"><img src="src/assets/img/map.png" alt="VACAS"></span></h2>
+                                <h2 class="wow animated fadeInDown"><img src="src/assets/img/map.png" alt="VACAS"></h2>
                                 <p class="lead animated fadeIn">
                                     Navega a traves de los lugares más interesantes de Colombia y el mundo!
                                 </p>
@@ -78,4 +76,5 @@
                                         }
         </script>
     </div>
+                <pagination total-items="totalItems" ng-model="currentPage" ng-change="mapCtrl.pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></pagination>
 </div>

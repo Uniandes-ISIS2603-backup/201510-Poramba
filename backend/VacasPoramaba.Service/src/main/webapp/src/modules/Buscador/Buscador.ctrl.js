@@ -1,8 +1,7 @@
-(function () {
+(function (angular) {
     var app = angular.module('BuscadorModule');
-    app.controller('BuscadorCtrl', ['$scope', 'CRUDUtils', 'Buscador.context', function ($scope, CRUDUtils, context) {
-            this.url = context;
-            CRUDUtils.extendCtrl(this, $scope);
+    app.controller('BuscadorCtrl', ['$scope', 'BuscadorService', function ($scope, Buscadorservice) {
+            Buscadorservice.extendCtrl(this, $scope);
             this.fetchRecords();
         }]);
-})();
+})(window.angular);

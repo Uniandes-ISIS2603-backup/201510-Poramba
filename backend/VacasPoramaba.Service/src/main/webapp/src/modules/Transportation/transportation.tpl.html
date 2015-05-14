@@ -6,7 +6,7 @@
             <div class="container ">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 text-center">
-                        <h2 class="wow animated fadeInDown"><img src="src/assets/img/airplane.png" alt="VACAS"></span></h2>
+                        <h2 class="wow animated fadeInDown"><img src="src/assets/img/airplane.png" alt="VACAS"></h2>
                         <p class="lead animated fadeIn">
                            Los viajes en los mejores horario y con los mejores precios estan acá!
                            <form name="busquedaForm" role="form">
@@ -48,7 +48,7 @@
                         <img src="{{record.img}}" class="img-responsive" alt="">
                         <h4>Origen: {{record.origin}}  Destino: {{record.destiny}}</h4>
                         <span>Medio de transporte: {{record.transport}}</span><br>
-                        <button class="btn btn-lg btn-theme" ng-click="AGREGAR A ITINERARIO"><i class="fa fa-calendar-o"></i> Agregar a intinerario</button>                     
+                        <button class="btn btn-lg btn-theme" ng-click=""><i class="fa fa-calendar-o"></i> Agregar a intinerario</button>                     
                     </div>
                 </div>                                  
         </div>
@@ -98,4 +98,5 @@
             </div>
 		</form>
 	</div>
+                <pagination total-items="totalItems" ng-model="currentPage" ng-change="transportationCtrl.pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></pagination>
 </div>

@@ -1,5 +1,5 @@
 (function (angular) {
-    var itineraryModule = angular.module('itineraryModule', ['CrudModule','itineraryModule']);
+    var itineraryModule = angular.module('itineraryModule', ['CrudModule','MockModule']);
 
     itineraryModule.constant('itinerary.context', 'itineraries');
     

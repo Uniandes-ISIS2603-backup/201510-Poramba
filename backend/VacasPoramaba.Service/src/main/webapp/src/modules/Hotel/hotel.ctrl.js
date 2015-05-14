@@ -1,8 +1,7 @@
 (function (angular) {
 	var app = angular.module('hotelModule');
-	app.controller('hotelCtrl', ['$scope', 'CRUDUtils', 'hotel.context', '$location', function ($scope, CRUDUtils, context) {
-			this.url = context;
-			CRUDUtils.extendCtrl(this, $scope);
+	app.controller('hotelCtrl', ['$scope', 'hotelService', function ($scope,hotelService ) {
+			hotelService.extendCtrl(this, $scope);
                          this.inicializarNombre = function(){
                                 $scope.currentRecord.name = 'Pestana casino park';
                             };

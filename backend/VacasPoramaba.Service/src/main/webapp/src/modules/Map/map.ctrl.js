@@ -1,8 +1,7 @@
 (function () {
     var app = angular.module('mapModule');
-    app.controller('mapCtrl', ['$scope', 'CRUDUtils', 'map.context', function ($scope, CRUDUtils, context) {
-            this.url = context;
-            CRUDUtils.extendCtrl(this, $scope);
+    app.controller('mapCtrl', ['$scope','mapService',function ($scope,mapService) {
+            mapService.extendCtrl(this, $scope);
             this.fetchRecords();
         }]);
 })();

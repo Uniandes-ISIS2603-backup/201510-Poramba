@@ -1,7 +1,8 @@
-(function () {
-    var mapModule = angular.module('mapModule', ['CrudModule', 'mapModule']);
+(function (angular) {
+    var mapModule = angular.module('mapModule', ['CrudModule', 'MockModule']);
     mapModule.constant('map.context', 'maps');
-    mapModule.config(['map.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
-            urlsProvider.registerUrl(context);
+    mapModule.constant('map.skipMock',false );
+            mapModule.config(['map.context', 'MockModule.urlsProvider','map.skipMock', function (context, urlsProvider,skipMock) {
+            urlsProvider.registerUrl(context,skipMock);
         }]);
-})();
+})(window.angular);
