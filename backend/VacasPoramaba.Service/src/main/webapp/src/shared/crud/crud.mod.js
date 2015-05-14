@@ -1,5 +1,5 @@
 (function () {
-	var crud = angular.module('CrudModule', ['restangular']);
+	var crud = angular.module('CrudModule', ['restangular', 'ui.bootstrap']);
 	
     crud.config(['RestangularProvider', function (rp) {
 			rp.setBaseUrl('webresources');
