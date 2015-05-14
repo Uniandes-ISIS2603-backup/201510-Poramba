@@ -16,7 +16,7 @@
                     </div>
                 </section>
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <!-- Navegacion en modulos -->
+<!--                 Navegacion en modulos 
                 <div class="collapse navbar-collapse" id="country-navbar"><br>
                     <center><button id="createBtn" class="btn btn-lg btn-theme" ng-hide="itineraryCtrl.editMode" ng-click="itineraryCtrl.createRecord()"><i class="fa fa-plus-circle"></i> Crear</button>
                         <button id="saveBtn" class="btn btn-lg btn-theme" ng-show="itineraryCtrl.editMode" ng-click="itineraryCtrl.saveRecord()"><i class="fa fa-floppy-o"></i> Guardar</button>
@@ -25,7 +25,7 @@
             </div>
         </nav>
     </div>
-    <!--Elementos-->
+    Elementos
     <div ng-hide="itineraryCtrl.editMode">
         <div ng-repeat="record in records">
             <div class="col-md-3 margin20">
@@ -39,7 +39,7 @@
                 </div>
             </div>                                  
         </div>
-    </div><!--Termina elementos-->
+    </div>Termina elementos
     <div ng-show="itineraryCtrl.editMode">
         <form name="countryForm" role="form">
             <div class="form-group">
@@ -73,7 +73,7 @@
                 <label for="eventos">Eventos</label>
                 <select id="eventos" class="form-control" ng-options="event.id as event.name for ciudad in eventRecords" ng-model="currentRecord.event"></select>
             </div>
-        </form>
+        </form>-->
     </div>
-            <pagination total-items="totalItems" ng-model="currentPage" ng-change="itineraryCtrl.pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></pagination>
 </div>
+    </div>

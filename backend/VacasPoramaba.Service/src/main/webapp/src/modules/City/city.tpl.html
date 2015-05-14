@@ -19,14 +19,13 @@
                                      <!-- Boton Buscar (remplazar # por lo que quieren) --->
                                      <a href=""><button class="btn btn-lg btn-theme-bg" type="button">Go!</button></a>
                                 </span>
-                                
+                                 </div>
                          </form>
-                            </div>
                     </div>
                 </div>
             </div>
         </section>
-  <!-- Navegacion en modulos -->
+<!--   Navegacion en modulos 
                 <div class="collapse navbar-collapse" id="country-navbar"><br>
                     <center><button id="createBtn" class="btn btn-lg btn-theme" ng-hide="cityCtrl.editMode" ng-click="cityCtrl.createRecord()"><i class="fa fa-plus-circle"></i> Crear</button>
                     <button id="saveBtn" class="btn btn-lg btn-theme" ng-show="cityCtrl.editMode" ng-click="cityCtrl.saveRecord()"><i class="fa fa-floppy-o"></i> Guardar</button>
@@ -35,7 +34,7 @@
             </div>
         </nav>
     </div>
-    <!--Elementos-->
+    Elementos
     <div ng-show="cityCtrl.darRecords" and ng-hide="cityCtrl.editMode" and ng-hide="cityCtrl.darOpinion">
         <div ng-repeat="record in records">
             <div class="col-md-3 margin20">
@@ -50,7 +49,7 @@
                     </div>
                 </div>                                  
         </div>
-    </div><!--Termina elementos-->
+    </div>Termina elementos
     <div ng-show="cityCtrl.editMode" and ng-hide="cityCtrl.darOpinion" and ng-hide="cityCtrl.darRecords">
         <form name="countryForm" role="form">
             <div class="form-group">
@@ -92,5 +91,5 @@
                     <button class="btn btn-lg btn-theme" ng-show="cityCtrl.darOpinion" ng-click="cityCtrl.fetchRecords()"><i class="fa fa-exclamation-circle"></i> Cancelar</button>
             </form>
     </div>
-     <pagination total-items="totalItems" ng-model="currentPage" ng-change="cityCtrl.pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></pagination>
+     <pagination total-items="totalItems" ng-model="currentPage" ng-change="cityCtrl.pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></pagination>-->
     </div>
