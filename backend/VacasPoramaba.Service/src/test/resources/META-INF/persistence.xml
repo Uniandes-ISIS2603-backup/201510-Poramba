@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-    <persistence-unit name="VacasPorambaPU" transaction-type="JTA">
+    <persistence-unit name="SportClassPU" transaction-type="JTA">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <class>co.edu.uniandes.csw.LugarGroup.lugar.logic.entity.LugarEntity</class>
-        <class>co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity.CiudadEntity</class>
-        <class>co.edu.uniandes.csw.eventoGroup.evento.logic.entity.EventoEntity</class>
-        <class>co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.entity.itinerarioEntity</class>
-        <class>co.edu.uniandes.csw.transporteGroup.transporte.logic.entity.transporteEntity</class>
-        <class>co.edu.uniandes.csw.usuarioGroup.usuairo.logic.entity.UusarioEntity</class>
+        <class>co.edu.uniandes.csw.SportGroup.country.logic.entity.CountryEntity</class>
+        <class>co.edu.uniandes.csw.SportGroup.sport.logic.entity.SportEntity</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <shared-cache-mode>NONE</shared-cache-mode>
         <properties>
