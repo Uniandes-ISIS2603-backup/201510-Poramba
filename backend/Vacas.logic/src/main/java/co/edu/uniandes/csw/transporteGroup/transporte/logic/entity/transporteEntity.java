@@ -1,5 +1,6 @@
 package co.edu.uniandes.csw.transporteGroup.transporte.logic.entity;
 
+import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity.CiudadEntity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,25 +19,25 @@ public class transporteEntity {
     public void setId(String id) {
         this.id = id;
     }
-    private String ciudad_origen;
-    private String ciudad_destino;
+    private CiudadEntity ciudad_origen;
+    private CiudadEntity ciudad_destino;
     private Long distancia;
     private Integer medio_de_transporte;
     private String reglas;
 
-    public String getCiudad_origen() {
+    public CiudadEntity getCiudad_origen() {
         return ciudad_origen;
     }
 
-    public void setCiudad_origen(String ciudad_origen) {
+    public void setCiudad_origen(CiudadEntity ciudad_origen) {
         this.ciudad_origen = ciudad_origen;
     }
 
-    public String getCiudad_destino() {
+    public CiudadEntity getCiudad_destino() {
         return ciudad_destino;
     }
 
-    public void setCiudad_destino(String ciudad_destino) {
+    public void setCiudad_destino(CiudadEntity ciudad_destino) {
         this.ciudad_destino = ciudad_destino;
     }
 

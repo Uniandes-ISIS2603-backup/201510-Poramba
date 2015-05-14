@@ -33,14 +33,7 @@ public interface IitinerarioLogic
      */
     public List<itinerarioDTO> getItinerarios();
     
-    /**
-     * Retorna todos los itinerarios paginados
-     * @param page Pagina de la cual se desea buscar
-     * @param maxRecords numero maximo de respuesta
-     * @return Un objeto JSON con los itinerarios
-     */
-    //public itinerarioPageDTO getItinerarios(Integer page, Integer maxRecords);
-
+    
     
     /**
      * Retrina el itinerario con la id dada por parametro
@@ -86,6 +79,8 @@ public interface IitinerarioLogic
      * Elimian todos los lugares asociados con el itinerario
      */
     public void  clean(itinerarioDTO detail);
+
+  
     
    
 }

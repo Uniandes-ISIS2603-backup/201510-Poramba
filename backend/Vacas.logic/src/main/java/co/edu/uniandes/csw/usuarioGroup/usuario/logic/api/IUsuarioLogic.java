@@ -23,9 +23,7 @@ public interface IUsuarioLogic {
 
     public void deleteUsuario(String id);
 
-    public void updateUsuario(UsuarioDTO detail, String id);
+    public void updateUsuario(UsuarioDTO detail);
     
-    /*public UsuarioDTO getMostPopulated();
-    
-    public UsuarioDTO getLeastPopulated();*/
+
 }
