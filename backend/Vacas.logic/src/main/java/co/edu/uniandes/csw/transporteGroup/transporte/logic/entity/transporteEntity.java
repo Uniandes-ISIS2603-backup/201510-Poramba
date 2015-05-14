@@ -1,12 +1,13 @@
 package co.edu.uniandes.csw.transporteGroup.transporte.logic.entity;
 
 import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity.CiudadEntity;
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class transporteEntity {
+public class transporteEntity implements Serializable{
 
     @Id
     @GeneratedValue(generator = "transporte")
