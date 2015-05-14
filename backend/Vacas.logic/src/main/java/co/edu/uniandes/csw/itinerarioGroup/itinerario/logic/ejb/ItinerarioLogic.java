@@ -87,6 +87,8 @@ public class ItinerarioLogic implements IitinerarioLogic {
         itinerarioEntity en = entityManager.merge(itinerarioConverter.persistenceDTO2Entity(detail));
         en.clean();
     }
+
+
     
     
 }

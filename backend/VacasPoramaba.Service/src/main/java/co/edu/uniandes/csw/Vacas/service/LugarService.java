@@ -29,34 +29,34 @@ public class LugarService
 {
 
     @Inject
-    protected ICiudadLogic countryLogic;
+    protected ICiudadLogic lugarLogic;
 
     @POST
     public CiudadDTO createCiudad(CiudadDTO ciudad)
     {
-        return countryLogic.createCiudad(ciudad);
+        return lugarLogic.createCiudad(ciudad);
     }
 
     @DELETE
     @Path("{id}")
     public void deleteCiudad(@PathParam("id") String id) {
-        countryLogic.deleteCiudad(id);
+        lugarLogic.deleteCiudad(id);
     }
 
     @GET
     public List<CiudadDTO> getCountries() {
-        return countryLogic.getCiudades();
+        return lugarLogic.getCiudades();
     }
 
     @GET
     @Path("{id}")
     public CiudadDTO getCiudad(@PathParam("id") String id) {
-        return countryLogic.getCiudad(id);
+        return lugarLogic.getCiudad(id);
     }
 
     @PUT
     public void updateCiudad( CiudadDTO ciudad,@PathParam("id") String id) {
-        countryLogic.updateCiudad(ciudad,id);
+        lugarLogic.updateCiudad(ciudad,id);
     }
 
    
