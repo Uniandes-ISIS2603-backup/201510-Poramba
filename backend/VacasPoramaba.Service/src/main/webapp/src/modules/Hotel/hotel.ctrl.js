@@ -1,5 +1,5 @@
 (function (angular) {
-	var app = angular.module('hotelModule');
+	var app = angular.module('hotelModule',[]);
 	app.controller('hotelCtrl', ['$scope', 'hotelService', function ($scope,hotelService ) {
 			hotelService.extendCtrl(this, $scope);
                          this.inicializarNombre = function(){
