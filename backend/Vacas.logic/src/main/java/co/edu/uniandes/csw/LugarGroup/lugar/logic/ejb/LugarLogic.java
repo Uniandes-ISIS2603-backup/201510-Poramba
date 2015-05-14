@@ -128,9 +128,10 @@ public class LugarLogic implements ILugarLogic{
     }
     public List<EventoEntity> getEventos(LugarDTO lug)
     {
+       ArrayList<EventoEntity> retornar = new ArrayList<EventoEntity>();
+
         if(lug != null)
         {
-           ArrayList<EventoEntity> retornar = new ArrayList<EventoEntity>();
            int i = 0;
            int fin = lug.getEventos().size();
            while(i < fin)
@@ -142,7 +143,7 @@ public class LugarLogic implements ILugarLogic{
         }
         else
         {
-            return null;
+            return retornar;
         }
     }
     

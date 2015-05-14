@@ -21,7 +21,7 @@ public class CiudadConverter {
             dto.setNombre(entity.getNombre());
             dto.setDescripcion(entity.getDescripcion());
             dto.setLink(entity.getLink());
-            /*dto.setPopulation(entity.getPopulation());*/
+            /* solo es un comnetario dto. setPopulation(entity. getPopulation())*/
             return dto;
         } else {
             return null;
