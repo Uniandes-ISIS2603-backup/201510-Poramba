@@ -4,7 +4,6 @@ import co.edu.uniandes.csw.usuarioGroup.usuario.logic.api.IUsuarioLogic;
 import co.edu.uniandes.csw.usuarioGroup.usuario.logic.converter.UsuarioConverter;
 import co.edu.uniandes.csw.usuarioGroup.usuario.logic.dto.UsuarioDTO;
 import co.edu.uniandes.csw.usuarioGroup.usuario.logic.entity.UsuarioEntity;
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -46,6 +45,11 @@ public class UsuarioLogic implements IUsuarioLogic{
         UsuarioEntity en = entityManager.merge(UsuarioConverter.persistenceDTO2Entity(detail));
         UsuarioConverter.entity2PersistenceDTO(en);
     }
+
+    public boolean darIngreso(String id, String clave) {
+         UsuarioEntity en = entityManager.find(UsuarioEntity.class, id);
+        return en.getClave().equals(clave);
+      }
     
     
 

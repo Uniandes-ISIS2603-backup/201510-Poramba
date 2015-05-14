@@ -9,7 +9,7 @@ import javax.persistence.Id;
 @Entity
 public class EventoEntity implements Serializable{
 
-    private String id;
+     @Id private String id;
     private String nombre;
     private Integer minage;
     private Integer maxage;

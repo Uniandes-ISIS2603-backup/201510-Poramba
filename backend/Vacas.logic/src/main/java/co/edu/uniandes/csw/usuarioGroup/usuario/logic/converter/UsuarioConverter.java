@@ -21,8 +21,9 @@ public class UsuarioConverter {
             dto.setPasaporte(entity.getPasaporte());
             dto.setNombre(entity.getNombre());
             dto.setApellido(entity.getApellido());
-            dto.setFechaNacimento(entity.getFechaNacimiento());
-            /*dto.setPopulation(entity.getPopulation());*/
+            dto.setFechaNacimiento(entity.getFechaNacimiento());
+            dto.setClave(entity.getClave());
+           
             return dto;
         } else {
             return null;
@@ -38,6 +39,7 @@ public class UsuarioConverter {
             entity.setNombre(dto.getNombre());
             entity.setApellido(dto.getApellido());
             entity.setFechaNacimiento(dto.getFechaNacimiento());
+            entity.setClave(dto.getClave());
 
             return entity;
         } else {
