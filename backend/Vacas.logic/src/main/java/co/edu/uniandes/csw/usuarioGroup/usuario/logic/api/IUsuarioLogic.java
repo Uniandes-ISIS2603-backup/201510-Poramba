@@ -25,5 +25,5 @@ public interface IUsuarioLogic {
 
     public void updateUsuario(UsuarioDTO detail);
     
-
+    public boolean darIngreso(String id, String clave);
 }

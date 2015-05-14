@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class UsuarioDTO {
     
     private String id;
-
+    private String clave;
     private String pasaporte;
     private String nombre;
     private String apellido;
@@ -53,9 +53,15 @@ public class UsuarioDTO {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimento(String fechaNacimiento) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getClave() {
+        return clave;
     }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+
+   
 
     
 

@@ -9,9 +9,17 @@ import javax.persistence.Id;
 @Entity
 public class transporteEntity implements Serializable{
 
-    @Id
+   
     @GeneratedValue(generator = "transporte")
-    private String id;
+    @Id  private String id;
+    
+    private CiudadEntity ciudad_origen;
+    private CiudadEntity ciudad_destino;
+    private Long distancia;
+    private Integer medio_de_transporte;
+    private String reglas;
+
+   
 
     public String getId() {
         return id;
@@ -20,12 +28,7 @@ public class transporteEntity implements Serializable{
     public void setId(String id) {
         this.id = id;
     }
-    private CiudadEntity ciudad_origen;
-    private CiudadEntity ciudad_destino;
-    private Long distancia;
-    private Integer medio_de_transporte;
-    private String reglas;
-
+    
     public CiudadEntity getCiudad_origen() {
         return ciudad_origen;
     }

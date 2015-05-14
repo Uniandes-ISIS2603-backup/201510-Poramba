@@ -12,13 +12,14 @@ import javax.persistence.Id;
 public class itinerarioEntity implements Serializable{
 	
 
-    @Id
+    
     @GeneratedValue(generator = "itinerario")
     private String nombe;
 	private String descripcion;
 	private String terminacion;
 	private String acciones;
-	private String id;
+        
+	@Id private String id;
         private List<LugarEntity> lugares;
 
     public List<LugarEntity> getLugares() 
