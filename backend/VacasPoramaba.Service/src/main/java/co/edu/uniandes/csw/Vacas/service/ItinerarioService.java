@@ -4,6 +4,7 @@ package co.edu.uniandes.csw.Vacas.service;
 
 import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
 import co.edu.uniandes.csw.LugarGroup.lugar.logic.dto.LugarDTO;
+import co.edu.uniandes.csw.LugarGroup.lugar.logic.entity.LugarEntity;
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.api.IitinerarioLogic;
 import co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.dto.itinerarioDTO;
 import java.util.List;
@@ -63,45 +64,32 @@ public class ItinerarioService
     
     @PUT
     @Path("/addLugar")
-    public LugarDTO addLugar( LugarDTO ciudad) 
+    public void addLugar( LugarDTO ciudad, itinerarioDTO itinerario) 
     {
-        return countryLogic.addLugar(ciudad);
+         countryLogic.addLugar(ciudad, itinerario);
     }
     
     @GET
     @Path("/getLugares")
-    public List<LugarDTO> getLugares()
+    public List<LugarEntity> getLugares(itinerarioDTO itinerario)
      {
-                return countryLogic.getLugares();
+                return countryLogic.getLugares(itinerario);
      }
     
-    @GET
-    @Path("getLugar/{id}")
-    
-    public LugarDTO getLugar (@PathParam("id") String id)
-     {
-             return countryLogic.getLugar(id);
-     }
     
     @DELETE
     @Path("deleteLugar/{id}")
-    public void deleteLugar(@PathParam("id") String id) 
+    public void deleteLugar(LugarDTO ciudad, itinerarioDTO itinerario) 
     {
-        countryLogic.deleteLugar(id);
+        countryLogic.deleteLugar(ciudad, itinerario);
     }
-    
-     @PUT
-     @Path("updateLugar/{id}")
-    public void updateLugar( LugarDTO lugar,@PathParam("id") String id)
-    {
-        countryLogic.updateLugar(id,lugar);
-    }
+
     
     @PUT
     @Path("{clean}")
-    public void clean( )
+    public void clean(itinerarioDTO itinerario )
     {
-        countryLogic.clean();
+        countryLogic.clean(itinerario);
     }
 
    
