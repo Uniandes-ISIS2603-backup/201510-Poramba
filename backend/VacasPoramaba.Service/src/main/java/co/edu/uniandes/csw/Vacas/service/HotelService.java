@@ -55,7 +55,6 @@ public class HotelService {
     @Path("{id}")
     public
             void updateHotel(HotelDTO hotel, @PathParam("id") String id) {
-        countryLogic.updateHotel(hotel, id);
     }
 
 }

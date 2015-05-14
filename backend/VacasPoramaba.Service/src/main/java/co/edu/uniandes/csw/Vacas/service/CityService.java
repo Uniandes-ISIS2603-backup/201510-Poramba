@@ -21,7 +21,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author Luis Angel Cervantes Cortes
  */
-@Path("/cities")
+@Path("/citys")
 @Stateless
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
@@ -60,6 +60,7 @@ public class CityService
     }
 
     @PUT
+    @Path("{id}")
     public void updateCiudad( CiudadDTO ciudad,@PathParam("id") String id) {
         countryLogic.updateCiudad(ciudad,id);
     }

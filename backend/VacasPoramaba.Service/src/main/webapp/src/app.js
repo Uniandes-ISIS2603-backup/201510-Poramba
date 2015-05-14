@@ -1,7 +1,6 @@
-(function (angular) {
+(function () {
 
-    var mainApp = angular.module('mainApp', ['ngRoute', 'hotelModule', 'eventModule', 'travelerModule', 'transportationModule', 'itineraryModule', 
-        'cityModule', 'mapModule','BuscadorModule']);
+    var mainApp = angular.module('mainApp', ['ngRoute','hotelModule','eventModule','travelerModule','transportationModule','itineraryModule','cityModule','mapModule','BuscadorModule']);
 
     mainApp.config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/hotel', {
@@ -21,5 +20,4 @@
                 templateUrl: 'src/modules/Buscador/Buscador.tpl.html'                
             }).otherwise('/');
         }]);
-
-})(window.angular);
+})();

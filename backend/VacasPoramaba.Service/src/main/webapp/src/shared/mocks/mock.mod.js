@@ -1,7 +1,7 @@
 (function (angular) {
     var mocksModule = angular.module('MockModule', ['ngMockE2E']);
 
-    mocksModule.constant('MockModule.baseUrl', 'http://localhost:8080/VacasPoramaba.Service/webresources');
+    mocksModule.constant('MockModule.baseUrl', 'webresources');
 
     mocksModule.run(['$httpBackend', 'MockModule.urls', 'MockModule.mockRecords', 'MockModule.baseUrl', function ($httpBackend, urls, mockRecords, baseUrl) {
             function mockUrls(entity_url) {
@@ -54,6 +54,7 @@
                     return [200, null, {}];
                 });
             }
+
             function skipUrl(entity_url) {
                 var fullUrl = baseUrl + '/' + entity_url;
                 var url_regexp = new RegExp(fullUrl + '/([0-9]+)');
