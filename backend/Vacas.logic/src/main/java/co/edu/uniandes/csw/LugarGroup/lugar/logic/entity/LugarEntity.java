@@ -40,9 +40,10 @@ public class LugarEntity  implements Serializable{
     private List<EventoEntity> eventos;
     
     private CiudadEntity ciudad;
+    
 public LugarEntity()
 {
-                eventos= new ArrayList<EventoEntity>();
+ eventos= new ArrayList<EventoEntity>();
 
 }
 

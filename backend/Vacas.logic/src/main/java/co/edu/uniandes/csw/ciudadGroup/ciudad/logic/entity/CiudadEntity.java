@@ -1,5 +1,4 @@
 package co.edu.uniandes.csw.ciudadGroup.ciudad.logic.entity;
-;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
