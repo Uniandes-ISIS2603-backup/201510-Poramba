@@ -24,11 +24,11 @@ public class ItinerarioLogic implements IitinerarioLogic {
     public itinerarioDTO createItinerario(itinerarioDTO detail) 
     {
         itinerarioEntity en = itinerarioConverter.persistenceDTO2Entity(detail);
-        List<LugarEntity> lug = this.getLugares(detail);
-        if(lug != null)
-        {
-            en.setLugares(lug);
-        }
+//        List<LugarEntity> lug = this.getLugares(detail);
+//        if(lug != null)
+//        {
+//            en.setLugares(lug);
+//        }
         entityManager.persist(en);
         return itinerarioConverter.entity2PersistenceDTO(en);
     }

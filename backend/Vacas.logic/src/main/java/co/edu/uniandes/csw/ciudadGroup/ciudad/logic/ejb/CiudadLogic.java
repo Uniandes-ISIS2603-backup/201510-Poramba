@@ -27,7 +27,7 @@ public class CiudadLogic implements ICiudadLogic{
 
     public List<CiudadDTO> getCiudades() 
     {
-        Query q = entityManager.createQuery("select u from CiudadyEntity u");
+        Query q = entityManager.createQuery("select u from CiudadEntity u");
         return CiudadConverter.entity2PersistenceDTOList(q.getResultList());
         
     }

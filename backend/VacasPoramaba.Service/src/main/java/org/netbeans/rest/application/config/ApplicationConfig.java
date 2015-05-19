@@ -33,6 +33,7 @@ public class ApplicationConfig extends Application {
         resources.add(co.edu.uniandes.csw.Vacas.service.HotelService.class);
         resources.add(co.edu.uniandes.csw.Vacas.service.ItinerarioService.class);
         resources.add(co.edu.uniandes.csw.Vacas.service.LugarService.class);
+        resources.add(co.edu.uniandes.csw.Vacas.service.TransporteService.class);
         resources.add(co.edu.uniandes.csw.Vacas.service.ViajeroService.class);
     }
     

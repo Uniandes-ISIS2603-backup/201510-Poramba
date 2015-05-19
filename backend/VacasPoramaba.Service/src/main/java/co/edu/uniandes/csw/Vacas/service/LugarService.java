@@ -1,8 +1,9 @@
 package co.edu.uniandes.csw.Vacas.service;
 
 
-import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.api.ICiudadLogic;
-import co.edu.uniandes.csw.ciudadGroup.ciudad.logic.dto.CiudadDTO;
+import co.edu.uniandes.csw.LugarGroup.lugar.logic.api.ILugarLogic;
+import co.edu.uniandes.csw.LugarGroup.lugar.logic.dto.LugarDTO;
+
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -29,35 +30,26 @@ public class LugarService
 {
 
     @Inject
-    protected ICiudadLogic lugarLogic;
+    protected ILugarLogic lugarLogic;
 
     @POST
-    public CiudadDTO createCiudad(CiudadDTO ciudad)
+    public LugarDTO createCiudad(LugarDTO ciudad)
     {
-        return lugarLogic.createCiudad(ciudad);
+        return lugarLogic.createLugar(ciudad);
     }
 
     @DELETE
     @Path("{id}")
     public void deleteCiudad(@PathParam("id") String id) {
-        lugarLogic.deleteCiudad(id);
+        lugarLogic.deleteLugar(id);
     }
 
-    @GET
-    public List<CiudadDTO> getCountries() {
-        return lugarLogic.getCiudades();
-    }
+   
 
     @GET
     @Path("{id}")
-    public CiudadDTO getCiudad(@PathParam("id") String id) {
-        return lugarLogic.getCiudad(id);
-    }
-
-    @PUT
-    @Path("{id}")
-    public void updateCiudad( CiudadDTO ciudad,@PathParam("id") String id) {
-        lugarLogic.updateCiudad(ciudad,id);
+    public LugarDTO getCiudad(@PathParam("id") String id) {
+        return lugarLogic.getLugar(id);
     }
 
    
