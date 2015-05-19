@@ -7,7 +7,6 @@ package co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.converter;
  */
 
 
-/*import co.edu.uniandes.csw.SportGroup.usuario.logic.entity;*/
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.dto.HotelDTO;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.entity.HotelEntity;
 import java.util.ArrayList;
@@ -27,7 +26,6 @@ public class HotelConverter {
             dto.setEstrellas(entity.getEstrellas());
             dto.setDescripcion(entity.getDescripcion());
             dto.setLink(entity.getLink());
-            /*dto.setPopulation(entity.getPopulation());*/
             return dto;
         } else {
             return null;

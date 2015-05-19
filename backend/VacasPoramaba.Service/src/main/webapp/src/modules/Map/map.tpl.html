@@ -49,7 +49,7 @@
                                 function iniciar() {
                                 var mapOptions = {
                                 center: new google.maps.LatLng(4.60, - 74.08),
-                                        zoom: 10,
+                                        zoom: 2,
                                         mapTypeId: google.maps.MapTypeId.ROADMAP};
                                         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
                                         //marcador con la ubicación de la Universidad
@@ -73,8 +73,107 @@
                                                 }
                                         //Dispara accion al dar un clic en el marcador          
                                         google.maps.event.addListener(marker, 'click', showInfo);
-                                        }
+                                                var place2 = new google.maps.LatLng(40.703649, - 73.979681);
+                                                var marker2 = new google.maps.Marker({
+                                                position: place2
+                                                        , title: 'Nueva York'
+                                                        , map: map
+                                                        , });
+                                                var popup2 = new google.maps.InfoWindow({
+                                                content: '¡Nueva York!'});
+                                                popup2.open(map, marker2);
+                                                //globo de informacion al dar un clic en el marcador
+                                                        function showInfo2() {
+                                                        map.setZoom(16); //aumenta el zoom
+                                                                map.setCenter(marker.getPosition());
+                                                                var contentString = 'Ubicación Actual';
+                                                                var infowindow = new google.maps.InfoWindow({
+                                                                content: 'Conoce m�s sobre esta increible ciudad:<a href = "http://www.nycgo.com/"> New York</a>'});
+                                                                infowindow.open(map, marker2);
+                                                        }
+                                                //Dispara accion al dar un clic en el marcador          
+                                                google.maps.event.addListener(marker2, 'click', showInfo2);
+                                                        var place3 = new google.maps.LatLng(21.121473, - 86.849440);
+                                                        var marker3 = new google.maps.Marker({
+                                                        position: place3
+                                                                , title: 'Cancun'
+                                                                , map: map
+                                                                , });
+                                                        var popup3 = new google.maps.InfoWindow({
+                                                        content: '¡Cancun!'});
+                                                        popup3.open(map, marker3);
+                                                        //globo de informacion al dar un clic en el marcador
+                                                                function showInfo3() {
+                                                                map.setZoom(16); //aumenta el zoom
+                                                                        map.setCenter(marker.getPosition());
+                                                                        var contentString = 'Ubicación Actual';
+                                                                        var infowindow = new google.maps.InfoWindow({
+                                                                        content: 'Una de las mejores playas:<a href = "http://www.cancun.com.mx">Cancun</a>'});
+                                                                        infowindow.open(map, marker3);
+                                                                }
+                                                        //Dispara accion al dar un clic en el marcador          
+                                                        google.maps.event.addListener(marker3, 'click', showInfo3);
+                                                                var place4 = new google.maps.LatLng( - 22.911373, - 43.448447);
+                                                                var marker4 = new google.maps.Marker({
+                                                                position: place4
+                                                                        , title: 'Rio de Janeiro'
+                                                                        , map: map
+                                                                        , });
+                                                                var popup4 = new google.maps.InfoWindow({
+                                                                content: '¡Rio de Janeiro!'});
+                                                                popup4.open(map, marker4);
+                                                                //globo de informacion al dar un clic en el marcador
+                                                                        function showInfo4() {
+                                                                        map.setZoom(16); //aumenta el zoom
+                                                                                map.setCenter(marker.getPosition());
+                                                                                var contentString = 'Ubicación Actual';
+                                                                                var infowindow = new google.maps.InfoWindow({
+                                                                                content: 'Visita este increible lugar:<a href = "http://www.turismoenrio.com">Rio</a>'});
+                                                                                infowindow.open(map, marker4);
+                                                                        }
+                                                                //Dispara accion al dar un clic en el marcador          
+                                                                google.maps.event.addListener(marker4, 'click', showInfo4);
+                                                                        var place5 = new google.maps.LatLng( - 34.615900, - 58.43332029999999);
+                                                                        var marker5 = new google.maps.Marker({
+                                                                        position: place5
+                                                                                , title: 'Buenos Aires'
+                                                                                , map: map
+                                                                                , });
+                                                                        var popup5 = new google.maps.InfoWindow({
+                                                                        content: '¡Buenos Aires!'});
+                                                                        popup5.open(map, marker5);
+                                                                        //globo de informacion al dar un clic en el marcador
+                                                                                function showInfo5() {
+                                                                                map.setZoom(16); //aumenta el zoom
+                                                                                        map.setCenter(marker.getPosition());
+                                                                                        var contentString = 'Ubicación Actual';
+                                                                                        var infowindow = new google.maps.InfoWindow({
+                                                                                        content: 'Un buen lugar en sudamerica:<a href = "http://www.buenosaires.gob.ar">Buenos Aires</a>'});
+                                                                                        infowindow.open(map, marker5);
+                                                                                }
+                                                                        //Dispara accion al dar un clic en el marcador          
+                                                                        google.maps.event.addListener(marker5, 'click', showInfo5);
+                                                                                var place6 = new google.maps.LatLng( 48.858877, 2.347059);
+                                                                                var marker6 = new google.maps.Marker({
+                                                                                position: place6
+                                                                                        , title: 'Paris'
+                                                                                        , map: map
+                                                                                        , });
+                                                                                var popup6 = new google.maps.InfoWindow({
+                                                                                content: '¡Paris!'});
+                                                                                popup6.open(map, marker6);
+                                                                                //globo de informacion al dar un clic en el marcador
+                                                                                        function showInfo6() {
+                                                                                        map.setZoom(16); //aumenta el zoom
+                                                                                                map.setCenter(marker.getPosition());
+                                                                                                var contentString = 'Ubicación Actual';
+                                                                                                var infowindow = new google.maps.InfoWindow({
+                                                                                                content: 'Paris, un encanto frances:<a href = "http://www.paris.es/">Paris</a>'});
+                                                                                                infowindow.open(map, marker6);
+                                                                                        }
+                                                                                //Dispara accion al dar un clic en el marcador          
+                                                                                google.maps.event.addListener(marker6, 'click', showInfo6);
+                                                                                }
         </script>
     </div>
-                <pagination total-items="totalItems" ng-model="currentPage" ng-change="mapCtrl.pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></pagination>
 </div>

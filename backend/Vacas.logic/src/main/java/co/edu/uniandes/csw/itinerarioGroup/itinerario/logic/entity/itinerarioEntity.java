@@ -12,7 +12,6 @@ import javax.persistence.Id;
 public class itinerarioEntity implements Serializable{
 	  private static final long serialVersionUID = 240172041950251807L;
 
-    
     @GeneratedValue(generator = "itinerario")
     private String nombe;
 	private String descripcion;

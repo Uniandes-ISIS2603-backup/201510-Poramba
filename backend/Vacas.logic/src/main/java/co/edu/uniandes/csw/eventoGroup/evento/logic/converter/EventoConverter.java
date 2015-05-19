@@ -5,7 +5,6 @@
  */
 package co.edu.uniandes.csw.eventoGroup.evento.logic.converter;
 
-/*import co.edu.uniandes.csw.SportGroup.evento.logic.entity;*/
 import co.edu.uniandes.csw.eventoGroup.evento.logic.dto.EventoDTO;
 import co.edu.uniandes.csw.eventoGroup.evento.logic.entity.EventoEntity;
 import java.util.ArrayList;
@@ -16,6 +15,7 @@ import java.util.List;
  * @author poramba
  */
 public class EventoConverter {
+    private EventoConverter(){}
     public static EventoDTO entity2PersistenceDTO(EventoEntity entity) {
         if (entity != null) {
             EventoDTO dto = new EventoDTO();
@@ -25,7 +25,6 @@ public class EventoConverter {
             dto.setMaxAge(entity.getMaxAge());            
             dto.setRules(entity.getRules());
             dto.setCiudad(entity.getCiudad().getId());
-            /*dto.setPopulation(entity.getPopulation());*/
             return dto;
         } else {
             return null;

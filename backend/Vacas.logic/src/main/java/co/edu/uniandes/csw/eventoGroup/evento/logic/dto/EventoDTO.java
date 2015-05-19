@@ -46,7 +46,7 @@ public class EventoDTO {
     }
 
     public String getRules() {
-        return nombre;
+        return rules;
     }
 
     public void setRules(String rules) {

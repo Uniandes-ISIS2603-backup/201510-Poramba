@@ -31,7 +31,8 @@ public class LugarConverter {
 
     public static LugarEntity persistenceDTO2Entity(LugarDTO dto) {
         if (dto != null) {
-            LugarEntity entity = new LugarEntity();
+            LugarEntity entity;
+            entity = new LugarEntity();
             entity.setId(dto.getId());            
             entity.setInico(dto.getInico());
             entity.setFin(dto.getFin());
