@@ -8,7 +8,7 @@ import javax.persistence.Id;
 
 @Entity
 public class EventoEntity implements Serializable{
-
+  private static final long serialVersionUID = 240572041950251807L;
      @Id private String id;
     private String nombre;
     private Integer minage;
