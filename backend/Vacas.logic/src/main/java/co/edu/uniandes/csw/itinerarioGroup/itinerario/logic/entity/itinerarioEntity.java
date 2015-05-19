@@ -3,6 +3,7 @@ package co.edu.uniandes.csw.itinerarioGroup.itinerario.logic.entity;
 import co.edu.uniandes.csw.LugarGroup.lugar.logic.dto.LugarDTO;
 import co.edu.uniandes.csw.LugarGroup.lugar.logic.entity.LugarEntity;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,6 +22,12 @@ public class itinerarioEntity implements Serializable{
 	@Id private String id;
         private List<LugarEntity> lugares;
 
+     public  itinerarioEntity()
+             
+     {
+         lugares= new ArrayList<LugarEntity>();
+     }
+        
     public List<LugarEntity> getLugares() 
     {
         return lugares;

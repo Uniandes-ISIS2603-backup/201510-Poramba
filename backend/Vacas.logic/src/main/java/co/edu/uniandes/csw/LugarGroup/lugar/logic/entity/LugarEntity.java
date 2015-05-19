@@ -5,6 +5,7 @@ import co.edu.uniandes.csw.eventoGroup.evento.logic.entity.EventoEntity;
 import co.edu.uniandes.csw.hotelGroup.hotel.hotel.logic.entity.HotelEntity;
 import co.edu.uniandes.csw.transporteGroup.transporte.logic.entity.transporteEntity;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
@@ -39,7 +40,11 @@ public class LugarEntity  implements Serializable{
     private List<EventoEntity> eventos;
     
     private CiudadEntity ciudad;
-public LugarEntity(){}
+public LugarEntity()
+{
+                eventos= new ArrayList<EventoEntity>();
+
+}
 
     /**
      * @return the id
