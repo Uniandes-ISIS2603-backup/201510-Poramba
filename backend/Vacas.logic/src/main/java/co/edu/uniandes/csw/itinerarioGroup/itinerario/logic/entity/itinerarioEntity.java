@@ -20,7 +20,7 @@ public class itinerarioEntity implements Serializable{
 	private String acciones;
         
 	@Id private String id;
-        private ArrayList<LugarEntity> lugares;
+        private List<LugarEntity> lugares;
 
      public  itinerarioEntity()
              
